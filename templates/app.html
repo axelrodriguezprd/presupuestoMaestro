@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Presupueso Maestro</title>
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"/>
-  </head>
-  <body>
 
-    <div class="container">
-      <h1>Presupuesto Maestro</h1>
-    </div>
-
-    <div class="container">
-      <h3>Presupuesto de operación</h3>
-    </div>
-
-    <div class="container" >
-      <form action="/send" method="POST">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Presupueso Maestro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Presupuesto Maestro</h1>
+  </div>
+  <div class="container">
+    <h3>Presupuesto de operación</h3>
+  </div>
+  <div class="container">
+    <form action="/send" method="POST" autocomplete="on">
       <table class="u-full-width">
         <thead>
           <tr>
@@ -40,21 +38,21 @@
           </tr>
           <tr>
             <td>Unidades a vender</td>
-            <td><input type="number" placeholder="Unidades" autofocus name="PApresVenUnidVend1S"/></td>
-            <td><input type="number" placeholder="Unidades" name="PApresVenUnidVend2S"/></td>
+            <td><input type="number" step="0.01" placeholder="Unidades" autofocus name="PApresVenUnidVend1S" /></td>
+            <td><input type="number" step="0.01" placeholder="Unidades" name="PApresVenUnidVend2S" /></td>
             <td></td>
           </tr>
           <tr>
             <td>Precio de venta</td>
-            <td><input type="number" placeholder="Precio" name="PApresVenPrecVent1S"/></td>
-            <td><input type="number" placeholder="Precio" name="PApresVenPrecVent2S"/></td>
+            <td><input type="number" step="0.01" placeholder="Precio" name="PApresVenPrecVent1S" /></td>
+            <td><input type="number" step="0.01" placeholder="Precio" name="PApresVenPrecVent2S" /></td>
             <td></td>
           </tr>
           <tr>
             <td>Importe de venta</td>
-            <td> {{  PAIV1S  }} </td>
-            <td> {{  PAIV2S  }} </td>
-            <td> {{  TotalAnualPA  }} </td>
+            <td> {{ PAIV1S }} </td>
+            <td> {{ PAIV2S }} </td>
+            <td> {{ TotalAnualPA }} </td>
           </tr>
           <tr>
             <td>Producto B</td>
@@ -64,21 +62,21 @@
           </tr>
           <tr>
             <td>Unidades a vender</td>
-            <td><input type="number" placeholder="Unidades" name="PBpresVenUnidVend1S"/></td>
-            <td><input type="number" placeholder="Unidades" name="PBpresVenUnidVend2S"/></td>
+            <td><input type="number" step="0.01" placeholder="Unidades" name="PBpresVenUnidVend1S" /></td>
+            <td><input type="number" step="0.01" placeholder="Unidades" name="PBpresVenUnidVend2S" /></td>
             <td></td>
           </tr>
           <tr>
             <td>Precio de venta</td>
-            <td><input type="number" placeholder="Precio" name="PBpresVenPrecVent1S"/></td>
-            <td><input type="number" placeholder="Precio" name="PBpresVenPrecVent2S"/></td>
+            <td><input type="number" step="0.01" placeholder="Precio" name="PBpresVenPrecVent1S" /></td>
+            <td><input type="number" step="0.01" placeholder="Precio" name="PBpresVenPrecVent2S" /></td>
             <td></td>
           </tr>
           <tr>
             <td>Importe de venta</td>
-            <td> {{  PBIV1S  }} </td>
-            <td> {{  PBIV2S  }} </td>
-            <td> {{  TotalAnualPB  }} </td>
+            <td> {{ PBIV1S }} </td>
+            <td> {{ PBIV2S }} </td>
+            <td> {{ TotalAnualPB }} </td>
           </tr>
           <tr>
             <td>Producto C</td>
@@ -88,96 +86,88 @@
           </tr>
           <tr>
             <td>Unidades a vender</td>
-            <td><input type="number" placeholder="Unidades" name="PCpresVenUnidVend1S"/></td>
-            <td><input type="number" placeholder="Unidades" name="PCpresVenUnidVend2S"/></td>
+            <td><input type="number" step="0.01" placeholder="Unidades" name="PCpresVenUnidVend1S" /></td>
+            <td><input type="number" step="0.01" placeholder="Unidades" name="PCpresVenUnidVend2S" /></td>
             <td></td>
           </tr>
           <tr>
             <td>Precio de venta</td>
-            <td><input type="number" placeholder="Precio" name="PCpresVenPrecVent1S"/></td>
-            <td><input type="number" placeholder="Precio" name="PCpresVenPrecVent2S"/></td>
+            <td><input type="number" step="0.01" placeholder="Precio" name="PCpresVenPrecVent1S" /></td>
+            <td><input type="number" step="0.01" placeholder="Precio" name="PCpresVenPrecVent2S" /></td>
             <td></td>
           </tr>
           <tr>
             <td>Importe de venta</td>
-            <td> {{  PBIV1S  }} </td>
-            <td> {{  PBIV2S  }} </td>
-            <td> {{  TotalAnualP  }} </td>
+            <td> {{ PBIV1S }} </td>
+            <td> {{ PBIV2S }} </td>
+            <td> {{ TotalAnualP }} </td>
           </tr>
           <tr>
             <td>Total de Ventas por Semestre</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td> {{ TotalVentasPorSemestre1S }} </td>
+            <td> {{ TotalVentasPorSemestre2S }} </td>
+            <td> {{ TotalVentasPorSemestre }} </td>
           </tr>
         </tbody>
       </table>
-        <div>
-          <table class="u-full-width">
-            <thead>
-              <tr>
-            <th>2. Determinación del saldo de Clientes y Flujo de Entradas</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Descripción</td>
-                <td>Importe</td>
-                <td>Total</td>
-              </tr>
+      <div>
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>2. Determinación del saldo de Clientes y Flujo de Entradas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Descripción</td>
+              <td>Importe</td>
+              <td>Total</td>
+            </tr>
             <tr>
               <td>Saldo de clientes 31-Dic-2020</td>
               <td></td>
-              <td><input type="number" placeholder="Cantidad" name="DSCFESaldo2020"/></td>
+              <td><input type="number" placeholder="Cantidad" name="DSCFESaldo2020" /></td>
             </tr>
-
             <tr>
               <td>Ventas 2021</td>
               <td></td>
-              <td> {{  TotalVentasPorSemestre  }} </td>
+              <td> {{ TotalVentasPorSemestre }} </td>
             </tr>
-
             <tr>
               <td>Total de Clientes 2021</td>
               <td></td>
-              <td> {{  DSCFETotal2021  }} </td>
+              <td> {{ DSCFETotal2021 }} </td>
             </tr>
-
             <br>
-
             <tr>
-              <td>Entradas  de Efectivo:</td>
+              <td>Entradas de Efectivo:</td>
             </tr>
-
             <tr>
               <td>Por Cobranza del 2020</td>
-              <td> {{  DSCFESaldo2020  }} </td>
-              <td><input type="number" placeholder="Porcentaje" name="DSCFEPorcentaje2020" value="0"/></td>
+              <td> {{ DSCFESaldo2020 }} </td>
+              <td><input type="number" placeholder="Porcentaje" name="DSCFEPorcentaje2020" value="0" /></td>
             </tr>
-
             <tr>
               <td>Por Cobranza del 2021</td>
-              <td> {{  DSCFECobranza2021  }} </td>
-              <td><input type="number" placeholder="Porcentaje" name="DSCFEPorcentaje2021" value="0"/></td>
+              <td> {{ DSCFECobranza2021 }} </td>
+              <td><input type="number" placeholder="Porcentaje" name="DSCFEPorcentaje2021" value="0" /></td>
             </tr>
-            
             <tr>
               <td>Total de Entradas 2021: </td>
               <td></td>
-              <td> {{  DSCFETotalEnt2021  }} </td>
+              <td> {{ DSCFETotalEnt2021 }} </td>
             </tr>
-
             <tr>
               <td>Saldo de Clientes del 2021:</td>
               <td></td>
-              <td> {{  DSCFESaldoClientes2021  }} </td>
+              <td> {{ DSCFESaldoClientes2021 }} </td>
             </tr>
           </tbody>
-          </table>
-        </div>
-        <div>
-          <table class="u-full-width">
-            <thead>
+        </table>
+      </div>
+      <div>
+        <table class="u-full-width">
+          <thead>
             <tr>
               <th>3. Presupuesto de Producción</th>
             </tr>
@@ -188,7 +178,6 @@
               <td>1er. Semestre</td>
               <td>2do. Semestre</td>
               <td>Total 2021</td>
-
             </tr>
             <tr>
               <td>Producto A</td>
@@ -196,132 +185,115 @@
               <td></td>
               <td></td>
             </tr>
-
             <tr>
               <td>Unidades a vender</td>
-              <td> {{  PAPPPApresVenUnidVend1S  }} </td>
-              <td> {{  PAPPPApresVenUnidVend2S  }} </td>
-              <td> {{  PAPPUnidsAVender  }} </td>
+              <td> {{ PAPPPApresVenUnidVend1S }} </td>
+              <td> {{ PAPPPApresVenUnidVend2S }} </td>
+              <td> {{ PAPPUnidsAVender }} </td>
             </tr>
-
             <tr>
               <td>(+)Inventario Final</td>
-              <td><input type="number" placeholder="Cantidad" name="PAPPInvFinal1S"/></td>
-              <td><input type="number" placeholder="Cantidad" name="PAPPInvFinal2S"/></td></td>
-              <td> {{  PAPPInvFinalTotal2021  }} </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="PAPPInvFinal1S" /></td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="PAPPInvFinal2S" /></td>
+              </td>
+              <td> {{ PAPPInvFinalTotal2021 }} </td>
             </tr>
-
             <tr>
               <td>(=) Total de Unidades</td>
-              <td> {{  PAPPTotalUnidades1S  }} </td>
-              <td> {{  PAPPTotalUnidades2S  }} </td>
-              <td> {{  PAPPTotalUnidades2021  }} </td>
+              <td> {{ PAPPTotalUnidades1S }} </td>
+              <td> {{ PAPPTotalUnidades2S }} </td>
+              <td> {{ PAPPTotalUnidades2021 }} </td>
             </tr>
-
             <tr>
               <td>(-) Inventario Inicial</td>
-              <td><input type="number" placeholder="Cantidad" name="PAPPInvInicial1S"/></td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="PAPPInvInicial1S" /></td>
               <td> {{PAPPInvInicial2S}} </td>
               <td> {{PAPPInvTotal2021}} </td>
             </tr>
-
             <tr>
               <td>(=) Unidades a Producir</td>
-              <td> {{  PAPPUnidsAProducir1S  }} </td>
-              <td> {{  PAPPUnidsAProducir2S  }} </td>
-              <td> {{  PAPPUnidsAProducir2021  }} </td>
+              <td> {{ PAPPUnidsAProducir1S }} </td>
+              <td> {{ PAPPUnidsAProducir2S }} </td>
+              <td> {{ PAPPUnidsAProducir2021 }} </td>
             </tr>
-
             <tr>
               <td>Producto B</td>
               <td></td>
               <td></td>
               <td></td>
             </tr>
-
             <tr>
               <td>Unidades a vender</td>
-              <td> {{  PBPPPApresVenUnidVend1S  }} </td>
-              <td> {{  PBPPPApresVenUnidVend2S }} </td>
-              <td> {{  PBPPUnidsAVender  }} </td>
+              <td> {{ PBPPPApresVenUnidVend1S }} </td>
+              <td> {{ PBPPPApresVenUnidVend2S }} </td>
+              <td> {{ PBPPUnidsAVender }} </td>
             </tr>
-
             <tr>
               <td>(+)Inventario Final</td>
-              <td><input type="number" placeholder="Cantidad" name="PBPPInvFinal1S"/></td>
-              <td><input type="number" placeholder="Cantidad" name="PBPPInvFinal2S"/></td>
-              <td> {{  PBPPInvFinalTotal2021  }} </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="PBPPInvFinal1S" /></td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="PBPPInvFinal2S" /></td>
+              <td> {{ PBPPInvFinalTotal2021 }} </td>
             </tr>
-
             <tr>
               <td>(=) Total de Unidades</td>
-              <td> {{  PBPPTotalUnidades1S  }} </td>
-              <td> {{  PBPPTotalUnidades2S  }} </td>
-              <td> {{  PBPPTotalUnidades2021  }} </td>
+              <td> {{ PBPPTotalUnidades1S }} </td>
+              <td> {{ PBPPTotalUnidades2S }} </td>
+              <td> {{ PBPPTotalUnidades2021 }} </td>
             </tr>
-
             <tr>
               <td>(-) Inventario Inicial</td>
-              <td><input type="number" placeholder="Cantidad" name="PBPPInvInicial1S"/></td>
+              <td><input type="number" placeholder="Cantidad" name="PBPPInvInicial1S" /></td>
               <td> {{PBPPInvInicial2S}} </td>
               <td> {{PBPPInvTotal2021}}</td>
             </tr>
-
             <tr>
               <td>(=) Unidades a Producir</td>
-              <td> {{  PBPPUnidsAProducir1S  }}</td>
-              <td> {{  PBPPUnidsAProducir2S  }} </td>
-              <td> {{  PBPPUnidsAProducir2021  }} </td>
+              <td> {{ PBPPUnidsAProducir1S }}</td>
+              <td> {{ PBPPUnidsAProducir2S }} </td>
+              <td> {{ PBPPUnidsAProducir2021 }} </td>
             </tr>
-
             <tr>
               <td>Producto C</td>
               <td></td>
               <td></td>
               <td></td>
             </tr>
-
             <tr>
               <td>Unidades a vender</td>
-              <td> {{  PCPPPApresVenUnidVend1S  }} </td>
-              <td> {{  PCPPPApresVenUnidVend2S }} </td>
-              <td> {{  PCPPUnidsAVender  }} </td>
+              <td> {{ PCPPPApresVenUnidVend1S }} </td>
+              <td> {{ PCPPPApresVenUnidVend2S }} </td>
+              <td> {{ PCPPUnidsAVender }} </td>
             </tr>
-
             <tr>
               <td>(+)Inventario Final</td>
-              <td><input type="number" placeholder="Cantidad" name="PCPPInvFinal1S"/></td>
-              <td><input type="number" placeholder="Cantidad" name="PCPPInvFinal2S"/></td>
-              <td> {{  PCPPInvFinalTotal2021  }} </td>
+              <td><input type="number" placeholder="Cantidad" name="PCPPInvFinal1S" /></td>
+              <td><input type="number" placeholder="Cantidad" name="PCPPInvFinal2S" /></td>
+              <td> {{ PCPPInvFinalTotal2021 }} </td>
             </tr>
-
             <tr>
               <td>(=) Total de Unidades</td>
-              <td> {{  PCPPTotalUnidades1S  }} </td>
-              <td> {{  PCPPTotalUnidades2S  }} </td>
-              <td> {{  PCPPTotalUnidades2021  }} </td>
+              <td> {{ PCPPTotalUnidades1S }} </td>
+              <td> {{ PCPPTotalUnidades2S }} </td>
+              <td> {{ PCPPTotalUnidades2021 }} </td>
             </tr>
-
             <tr>
               <td>(-) Inventario Inicial</td>
-              <td><input type="number" placeholder="Cantidad" name="PCPPInvInicial1S"/></td>
+              <td><input type="number" placeholder="Cantidad" name="PCPPInvInicial1S" /></td>
               <td> {{PCPPInvInicial2S}} </td>
               <td> {{PCPPInvTotal2021}}</td>
             </tr>
-
             <tr>
               <td>(=) Unidades a Producir</td>
-              <td> {{  PCPPUnidsAProducir1S  }}</td>
-              <td> {{  PCPPUnidsAProducir2S  }} </td>
-              <td> {{  PCPPUnidsAProducir2021  }} </td>
+              <td> {{ PCPPUnidsAProducir1S }}</td>
+              <td> {{ PCPPUnidsAProducir2S }} </td>
+              <td> {{ PCPPUnidsAProducir2021 }} </td>
             </tr>
           </tbody>
-          </table>
-        </div>
-
-        <div>
-          <table class="u-full-width">
-            <thead>
+        </table>
+      </div>
+      <div>
+        <table class="u-full-width">
+          <thead>
             <tr>
               <th>4. Presupuesto de Requerimiento de Materiales</th>
             </tr>
@@ -339,716 +311,1290 @@
               <td>2do. Semestre</td>
               <td>Total 2021</td>
             </tr>
-
             <tr>
               <td>Unidades a Producir</td>
-              <td> {{  PAPPUnidsAProducir1S  }} </td>
-              <td> {{  PAPPUnidsAProducir2S  }} </td>
-              <td> {{  PAPPUnidsAProducir2021  }} </td>
+              <td> {{ PAPPUnidsAProducir1S }} </td>
+              <td> {{ PAPPUnidsAProducir2S }} </td>
+              <td> {{ PAPPUnidsAProducir2021 }} </td>
             </tr>
-
             <tr>
               <td>Material A</td>
               <td></td>
               <td></td>
               <td></td>
             </tr>
-
             <tr>
               <td>Requerimiento de material</td>
-              <td><input type="number" placeholder="Cantidad" name="PAPRMReqMatA"/></td>
-              <td> {{  PAPRMReqMatA  }} </td>
-              <td> {{  PAPRMReqMatA  }} </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="PAPRMReqMatA" /></td>
+              <td> {{ PAPRMReqMatA }} </td>
+              <td> {{ PAPRMReqMatA }} </td>
             </tr>
-
             <tr>
               <td>Total de Material A requerido</td>
-              <td> {{  PAPRMTotalMatA1S  }} </td>
-              <td> {{  PAPRMTotalMatA2S  }} </td>
-              <td> {{  PAPRMTotalMatATotal  }} </td>
+              <td> {{ PAPRMTotalMatA1S }} </td>
+              <td> {{ PAPRMTotalMatA2S }} </td>
+              <td> {{ PAPRMTotalMatATotal }} </td>
             </tr>
-
             <tr>
               <td>Material B</td>
               <td></td>
               <td></td>
               <td></td>
             </tr>
-
             <tr>
               <td>Requerimiento de material</td>
-              <td><input type="number" placeholder="Cantidad" name="PAPRMReqMatB"/></td>
-              <td> {{  PAPRMReqMatB  }} </td>
-              <td> {{  PAPRMReqMatB  }} </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="PAPRMReqMatB" /></td>
+              <td> {{ PAPRMReqMatB }} </td>
+              <td> {{ PAPRMReqMatB }} </td>
             </tr>
-
             <tr>
               <td>Total de Material B requerido</td>
-              <td> {{  PAPRMTotalMatB1S  }} </td>
-              <td> {{  PAPRMTotalMatB2S  }} </td>
-              <td> {{  PAPRMTotalMatBTotal  }} </td>
+              <td> {{ PAPRMTotalMatB1S }} </td>
+              <td> {{ PAPRMTotalMatB2S }} </td>
+              <td> {{ PAPRMTotalMatBTotal }} </td>
             </tr>
-
             <tr>
               <td>Material C</td>
               <td></td>
               <td></td>
               <td></td>
             </tr>
-
             <tr>
               <td>Requerimiento de material</td>
-              <td><input type="number" placeholder="Cantidad" name="PAPRMReqMatC"/></td>
-              <td> {{  PAPRMReqMatC  }} </td>
-              <td> {{  PAPRMReqMatC  }} </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="PAPRMReqMatC" /></td>
+              <td> {{ PAPRMReqMatC }} </td>
+              <td> {{ PAPRMReqMatC }} </td>
             </tr>
-
             <tr>
               <td>Total de Material C requerido</td>
-              <td> {{  PAPRMTotalMatC1S  }} </td>
-              <td> {{  PAPRMTotalMatC2S  }} </td>
-              <td> {{  PAPRMTotalMatCTotal  }} </td>
+              <td> {{ PAPRMTotalMatC1S }} </td>
+              <td> {{ PAPRMTotalMatC2S }} </td>
+              <td> {{ PAPRMTotalMatCTotal }} </td>
             </tr>
-
-            
             <tr>
               <td>Producto B</td>
               <td></td>
               <td></td>
               <td></td>
             </tr>
-
             <tr>
               <td>Unidades a Producir</td>
-              <td> {{  PBPPUnidsAProducir1S  }} </td>
-              <td> {{  PBPPUnidsAProducir2S  }} </td>
-              <td> {{  PBPPUnidsAProducir2021  }} </td>
+              <td> {{ PBPPUnidsAProducir1S }} </td>
+              <td> {{ PBPPUnidsAProducir2S }} </td>
+              <td> {{ PBPPUnidsAProducir2021 }} </td>
             </tr>
-
             <tr>
               <td>Material A</td>
               <td></td>
               <td></td>
               <td></td>
             </tr>
-
             <tr>
               <td>Requerimiento de material</td>
-              <td><input type="number" placeholder="Cantidad" name="PBPRMReqMatA"/></td>
-              <td> {{  PBPRMReqMatA  }} </td>
-              <td> {{  PBPRMReqMatA  }} </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="PBPRMReqMatA" /></td>
+              <td> {{ PBPRMReqMatA }} </td>
+              <td> {{ PBPRMReqMatA }} </td>
             </tr>
-
             <tr>
               <td>Total de Material A requerido</td>
-              <td> {{  PBPRMTotalMatA1S  }} </td>
-              <td> {{  PBPRMTotalMatA2S  }} </td>
-              <td> {{  PBPRMTotalMatATotal  }} </td>
+              <td> {{ PBPRMTotalMatA1S }} </td>
+              <td> {{ PBPRMTotalMatA2S }} </td>
+              <td> {{ PBPRMTotalMatATotal }} </td>
             </tr>
-
             <tr>
               <td>Material B</td>
               <td></td>
               <td></td>
               <td></td>
             </tr>
-
             <tr>
               <td>Requerimiento de material</td>
-              <td><input type="number" placeholder="Cantidad" name="PBPRMReqMatB"/></td>
-              <td> {{  PBPRMReqMatB  }} </td>
-              <td> {{  PBPRMReqMatB  }} </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="PBPRMReqMatB" /></td>
+              <td> {{ PBPRMReqMatB }} </td>
+              <td> {{ PBPRMReqMatB }} </td>
             </tr>
-
             <tr>
               <td>Total de Material B requerido</td>
-              <td> {{  PBPRMTotalMatB1S  }} </td>
-              <td> {{  PBPRMTotalMatB2S  }} </td>
-              <td> {{  PBPRMTotalMatBTotal  }} </td>
+              <td> {{ PBPRMTotalMatB1S }} </td>
+              <td> {{ PBPRMTotalMatB2S }} </td>
+              <td> {{ PBPRMTotalMatBTotal }} </td>
             </tr>
-
             <tr>
               <td>Material C</td>
               <td></td>
               <td></td>
               <td></td>
             </tr>
-
             <tr>
               <td>Requerimiento de material</td>
-              <td><input type="number" placeholder="Cantidad" name="PBPRMReqMatC"/></td>
-              <td> {{  PBPRMReqMatC  }} </td>
-              <td> {{  PBPRMReqMatC  }} </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="PBPRMReqMatC" /></td>
+              <td> {{ PBPRMReqMatC }} </td>
+              <td> {{ PBPRMReqMatC }} </td>
             </tr>
-
             <tr>
               <td>Total de Material C requerido</td>
-              <td> {{  PBPRMTotalMatC1S  }} </td>
-              <td> {{  PBPRMTotalMatC2S  }} </td>
-              <td> {{  PBPRMTotalMatCTotal  }} </td>
+              <td> {{ PBPRMTotalMatC1S }} </td>
+              <td> {{ PBPRMTotalMatC2S }} </td>
+              <td> {{ PBPRMTotalMatCTotal }} </td>
             </tr>
-
             <tr>
               <td>Producto C</td>
               <td></td>
               <td></td>
               <td></td>
             </tr>
-
             <tr>
               <td>Unidades a Producir</td>
-              <td> {{  PCPPUnidsAProducir1S  }} </td>
-              <td> {{  PCPPUnidsAProducir2S  }} </td>
-              <td> {{  PCPPUnidsAProducir2021  }} </td>
+              <td> {{ PCPPUnidsAProducir1S }} </td>
+              <td> {{ PCPPUnidsAProducir2S }} </td>
+              <td> {{ PCPPUnidsAProducir2021 }} </td>
             </tr>
-
             <tr>
               <td>Material A</td>
               <td></td>
               <td></td>
               <td></td>
             </tr>
-
             <tr>
               <td>Requerimiento de material</td>
-              <td><input type="number" placeholder="Cantidad" name="PCPRMReqMatA"/></td>
-              <td> {{  PCPRMReqMatA  }} </td>
-              <td> {{  PCPRMReqMatA  }} </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="PCPRMReqMatA" /></td>
+              <td> {{ PCPRMReqMatA }} </td>
+              <td> {{ PCPRMReqMatA }} </td>
             </tr>
-
             <tr>
               <td>Total de Material A requerido</td>
-              <td> {{  PCPRMTotalMatA1S  }} </td>
-              <td> {{  PCPRMTotalMatA2S  }} </td>
-              <td> {{  PCPRMTotalMatATotal  }} </td>
+              <td> {{ PCPRMTotalMatA1S }} </td>
+              <td> {{ PCPRMTotalMatA2S }} </td>
+              <td> {{ PCPRMTotalMatATotal }} </td>
             </tr>
-
             <tr>
               <td>Material B</td>
               <td></td>
               <td></td>
               <td></td>
             </tr>
-
             <tr>
               <td>Requerimiento de material</td>
-              <td><input type="number" placeholder="Cantidad" name="PCPRMReqMatB"/></td>
-              <td> {{  PCPRMReqMatB  }} </td>
-              <td> {{  PCPRMReqMatB  }} </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="PCPRMReqMatB" /></td>
+              <td> {{ PCPRMReqMatB }} </td>
+              <td> {{ PCPRMReqMatB }} </td>
             </tr>
-
             <tr>
               <td>Total de Material B requerido</td>
-              <td> {{  PCPRMTotalMatB1S  }} </td>
-              <td> {{  PCPRMTotalMatB2S  }} </td>
-              <td> {{  PCPRMTotalMatBTotal  }} </td>
+              <td> {{ PCPRMTotalMatB1S }} </td>
+              <td> {{ PCPRMTotalMatB2S }} </td>
+              <td> {{ PCPRMTotalMatBTotal }} </td>
             </tr>
-
             <tr>
               <td>Material C</td>
               <td></td>
               <td></td>
               <td></td>
             </tr>
-
             <tr>
               <td>Requerimiento de material</td>
-              <td><input type="number" placeholder="Cantidad" name="PCPRMReqMatC"/></td>
-              <td> {{  PCPRMReqMatC  }} </td>
-              <td> {{  PCPRMReqMatC  }} </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="PCPRMReqMatC" /></td>
+              <td> {{ PCPRMReqMatC }} </td>
+              <td> {{ PCPRMReqMatC }} </td>
             </tr>
-
             <tr>
               <td>Total de Material C requerido</td>
-              <td> {{  PCPRMTotalMatC1S  }} </td>
-              <td> {{  PCPRMTotalMatC2S  }} </td>
-              <td> {{  PCPRMTotalMatCTotal  }} </td>
+              <td> {{ PCPRMTotalMatC1S }} </td>
+              <td> {{ PCPRMTotalMatC2S }} </td>
+              <td> {{ PCPRMTotalMatCTotal }} </td>
             </tr>
-
             <tr>
               <td>Total de Requerimientos (gramos)</td>
               <td></td>
               <td></td>
               <td></td>
             </tr>
-
             <tr>
               <td>Material A</td>
-              <td> {{  TotalMatAReqPP1S  }} </td>
-              <td> {{  TotalMatAReqPP2S  }} </td>
-              <td> {{  TotalPARPMMatA  }} </td>
+              <td> {{ TotalMatAReqPP1S }} </td>
+              <td> {{ TotalMatAReqPP2S }} </td>
+              <td> {{ TotalPARPMMatA }} </td>
             </tr>
-
             <tr>
               <td>Material B</td>
-              <td> {{  TotalMatBReqPP1S  }} </td>
-              <td> {{  TotalMatBReqPP2S  }} </td>
-              <td> {{  TotalPARPMMatB  }} </td>
+              <td> {{ TotalMatBReqPP1S }} </td>
+              <td> {{ TotalMatBReqPP2S }} </td>
+              <td> {{ TotalPARPMMatB }} </td>
             </tr>
-
             <tr>
               <td>Material C</td>
-              <td> {{  TotalMatCReqPP1S  }} </td>
-              <td> {{  TotalMatCReqPP2S  }} </td>
-              <td> {{  TotalPARPMMatC  }} </td>
+              <td> {{ TotalMatCReqPP1S }} </td>
+              <td> {{ TotalMatCReqPP2S }} </td>
+              <td> {{ TotalPARPMMatC }} </td>
             </tr>
           </tbody>
-          </table>
-        </div>
-
-        <div>
-          <table class="u-full-width">
+        </table>
+      </div>
+      <div>
+        <table class="u-full-width">
+          <thead>
+            <th>5. Presupuesto de Compra de Materiales</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Material</td>
+              <td>1er. Semestre</td>
+              <td>2do. Semestre</td>
+              <td>Total 2021</td>
+            </tr>
+            <tr>
+              <td>Material A</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Requerimiento de materiales</td>
+              <td> {{ TotalMatAReqPP1S }} </td>
+              <td> {{ TotalMatAReqPP2S }} </td>
+              <td> {{ TotalPARPMMatA }} </td>
+            </tr>
+            <tr>
+              <td>(+) Inventario Final</td>
+              <td><input type="number" placeholder="Unidades" name="MAPCMInvFinal1S" /></td>
+              <td><input type="number" placeholder="Unidades" name="MAPCMInvFinal2S" /></td>
+              <td> {{ MAPCMInvFinal2S }} </td>
+            </tr>
+            <tr>
+              <td>Total de Materiales</td>
+              <td> {{ MAPCMTotalMat1S }} </td>
+              <td> {{ MAPCMTotalMat2S }} </td>
+              <td> {{ MAPCMTotalMatAnual }} </td>
+            </tr>
+            <tr>
+              <td>(-) Inventario Inicial</td>
+              <td><input type="number" placeholder="Unidades" name="MAPCMInvFinal1S" /></td>
+              <td> {{ MAPCMInvFinal1S }} </td>
+              <td> {{ MAPCMInvFinal1S }} </td>
+            </tr>
+            <tr>
+              <td>Material a comprar</td>
+              <td> {{ MAPCMMatComp1S }} </td>
+              <td> {{ MAPCMMatComp2S }} </td>
+              <td> {{ MAPCMMatCompAnual }} </td>
+            </tr>
+            <tr>
+              <td>Precio de Compra</td>
+              <td><input type="number" step="0.01" placeholder="Precio" name="MAPCMPrecioComp1S" /></td>
+              <td><input type="number" step="0.01" placeholder="Precio" name="MAPCMPrecioComp2S" /></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Total de Material A en $:</td>
+              <td> {{ MAPCMTotalEnPesos1S }} </td>
+              <td> {{ MAPCMTotalEnPesos2S }} </td>
+              <td> {{ MAPCMTotalEnPesosAnual }} </td>
+            </tr>
+            <tr>
+              <td>Material B</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Requerimiento de materiales</td>
+              <td> {{ TotalMatBReqPP1S }} </td>
+              <td> {{ TotalMatBReqPP2S }} </td>
+              <td> {{ TotalPARPMMatB }} </td>
+            </tr>
+            <tr>
+              <td>(+) Inventario Final</td>
+              <td><input type="number" placeholder="Unidades" name="MBPCMInvFinal1S" /></td>
+              <td><input type="number" placeholder="Unidades" name="MBPCMInvFinal2S" /></td>
+              <td> {{ MBPCMInvFinal2S }} </td>
+            </tr>
+            <tr>
+              <td>Total de Materiales</td>
+              <td> {{ MBPCMTotalMat1S }} </td>
+              <td> {{ MBPCMTotalMat2S }} </td>
+              <td> {{ MBPCMTotalMatAnual }} </td>
+            </tr>
+            <tr>
+              <td>(-) Inventario Inicial</td>
+              <td><input type="number" placeholder="Unidades" name="MBPCMInvFinal1S" /></td>
+              <td> {{ MBPCMInvFinal1S }} </td>
+              <td> {{ MBPCMInvFinal1S }} </td>
+            </tr>
+            <tr>
+              <td>Material a comprar</td>
+              <td> {{ MBPCMMatComp1S }} </td>
+              <td> {{ MBPCMMatComp2S }} </td>
+              <td> {{ MBPCMMatCompAnual }} </td>
+            </tr>
+            <tr>
+              <td>Precio de Compra</td>
+              <td><input type="number" step="0.01" placeholder="Precio" name="MBPCMPrecioComp1S" /></td>
+              <td><input type="number" step="0.01" placeholder="Precio" name="MBPCMPrecioComp2S" /></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Total de Material B en $:</td>
+              <td> {{ MBPCMTotalEnPesos1S }} </td>
+              <td> {{ MBPCMTotalEnPesos2S }} </td>
+              <td> {{ MBPCMTotalEnPesosAnual }} </td>
+            </tr>
+            <tr>
+              <td>Material C</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Requerimiento de materiales</td>
+              <td> {{ TotalMatCReqPP1S }} </td>
+              <td> {{ TotalMatCReqPP2S }} </td>
+              <td> {{ TotalPARPMMatC }} </td>
+            </tr>
+            <tr>
+              <td>(+) Inventario Final</td>
+              <td><input type="number" placeholder="Unidades" name="MCPCMInvFinal1S" /></td>
+              <td><input type="number" placeholder="Unidades" name="MCPCMInvFinal2S" /></td>
+              <td> {{ MCPCMInvFinal2S }} </td>
+            </tr>
+            <tr>
+              <td>Total de Materiales</td>
+              <td> {{ MCPCMTotalMat1S }} </td>
+              <td> {{ MCPCMTotalMat2S }} </td>
+              <td> {{ MCPCMTotalMatAnual }} </td>
+            </tr>
+            <tr>
+              <td>(-) Inventario Inicial</td>
+              <td><input type="number" placeholder="Unidades" name="MCPCMInvFinal1S" /></td>
+              <td> {{ MCPCMInvFinal1S }} </td>
+              <td> {{ MCPCMInvFinal1S }} </td>
+            </tr>
+            <tr>
+              <td>Material a comprar</td>
+              <td> {{ MCPCMMatComp1S }} </td>
+              <td> {{ MCPCMMatComp2S }} </td>
+              <td> {{ MCPCMMatCompAnual }} </td>
+            </tr>
+            <tr>
+              <td>Precio de Compra</td>
+              <td><input type="number" placeholder="Precio" name="MCPCMPrecioComp1S" /></td>
+              <td><input type="number" placeholder="Precio" name="MCPCMPrecioComp2S" /></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Total de Material C en $:</td>
+              <td> {{ MCPCMTotalEnPesos1S }} </td>
+              <td> {{ MCPCMTotalEnPesos2S }} </td>
+              <td> {{ MCPCMTotalEnPesosAnual }} </td>
+            </tr>
+            <tr>
+              <td>Compras totales: </td>
+              <td> {{ TMPCM1S }} </td>
+              <td> {{ TMPCM2S }} </td>
+              <td> {{ TMPCMAnual }} </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>6. Determinación del saldo de Proveedores y Flujo de Salidas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Descripción</td>
+              <td>Importe</td>
+              <td>Total</td>
+            </tr>
+            <tr>
+              <td>Saldo de Proveedores 31-Dic-2020</td>
+              <td></td>
+              <td><input type="number" step="0.01" placeholder="Saldo" name="DSPFSSaldoProvTotal2020" /></td>
+            </tr>
+            <tr>
+              <td>Compras 2021</td>
+              <td></td>
+              <td> {{ TMPCMAnual }} </td>
+            </tr>
+            <tr>
+              <td>Total de Proveedores 2021 </td>
+              <td></td>
+              <td> {{ DSPFSTotalProv2021 }} </td>
+            </tr>
+            <tr>
+              <td>Salidas de Efectivo: </td>
+            </tr>
+            <tr>
+              <td>Por Proveedores del 2020</td>
+              <td> {{ DSPFSPorProv2020 }} </td>
+              <td><input type="number" step="0.01" placeholder="Porcentaje" name="DSPFSPorceProv2020" /></td>
+            </tr>
+            <tr>
+              <td>Por Proveedores del 2021</td>
+              <td> {{ DSPFSPorProv2021 }} </td>
+              <td><input type="number" step="0.01" placeholder="Porcentaje" name="DSPFSPorceProv2021" /></td>
+            </tr>
+            <tr>
+              <td>Total de Salidas 2021</td>
+              <td></td>
+              <td> {{ DSPFSTotalSalidas2021 }} </td>
+            </tr>
+            <tr>
+              <td>Saldo de Proveedores del 2021</td>
+              <td></td>
+              <td> {{ DSPFSSaldoTotal2021 }} </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>7. Presupuesto de Mano de Obra Directa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Producto</td>
+              <td>1er. Semestre</td>
+              <td>2do. Semestre</td>
+              <td>Total 2021</td>
+            </tr>
+            <tr>
+              <td>Producto A</td>
+            </tr>
+            <tr>
+              <td>Unidades a producir</td>
+              <td> {{ PAPPUnidsAProducir1S }} </td>
+              <td> {{ PAPPUnidsAProducir2S }} </td>
+              <td> {{ PAPPUnidsAProducir2021 }} </td>
+            </tr>
+            <tr>
+              <td>Horas requeridas por unidad</td>
+              <td><input type="number" step="0.01" placeholder="Horas" name="PAPMODHorasReq" /></td>
+              <td> {{ PAPMODHorasReq }} </td>
+              <td> {{ PAPMODHorasReq }} </td>
+            </tr>
+            <tr>
+              <td>Total de horas requeridas</td>
+              <td> {{ PAPMODTotalHorasRequer1S }} </td>
+              <td> {{ PAPMODTotalHorasRequer2S }} </td>
+              <td> {{ PAPMODTotalHorasRequerAnual }} </td>
+            </tr>
+            <tr>
+              <td>Cuota por hora</td>
+              <td><input type="number" step="0.01" placeholder="Cuota" name="PAPMODCuotaHora1S" /></td>
+              <td><input type="number" step="0.01" placeholder="Cuota" name="PAPMODCuotaHora2S" /></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Importe de M.O.D.</td>
+              <td> {{ PAMODImporte1S }} </td>
+              <td> {{ PAMODImporte2S}} </td>
+              <td> {{ PAMODImporteAnual }} </td>
+            </tr>
+            <tr>
+              <td>Producto B</td>
+            </tr>
+            <tr>
+              <td>Unidades a producir</td>
+              <td> {{ PBPPUnidsAProducir1S }} </td>
+              <td> {{ PBPPUnidsAProducir2S }} </td>
+              <td> {{ PBPPUnidsAProducir2021 }} </td>
+            </tr>
+            <tr>
+              <td>Horas requeridas por unidad</td>
+              <td><input type="number" step="0.01" placeholder="Horas" name="PBPMODHorasReq" /></td>
+              <td> {{ PBPMODHorasReq }} </td>
+              <td> {{ PBPMODHorasReq }} </td>
+            </tr>
+            <tr>
+              <td>Total de horas requeridas</td>
+              <td> {{ PBPMODTotalHorasRequer1S }} </td>
+              <td> {{ PBPMODTotalHorasRequer2S }} </td>
+              <td> {{ PBPMODTotalHorasRequerAnual }} </td>
+            </tr>
+            <tr>
+              <td>Cuota por hora</td>
+              <td><input type="number" step="0.01" placeholder="Cuota" name="PBPMODCuotaHora1S" /></td>
+              <td><input type="number" step="0.01" placeholder="Cuota" name="PBPMODCuotaHora2S" /></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Importe de M.O.D.</td>
+              <td> {{ PBMODImporte1S }} </td>
+              <td> {{ PBMODImporte2S}} </td>
+              <td> {{ PBMODImporteAnual }} </td>
+            </tr>
+            <tr>
+              <td>Producto C</td>
+            </tr>
+            <tr>
+              <td>Unidades a producir</td>
+              <td> {{ PCPPUnidsAProducir1S }} </td>
+              <td> {{ PCPPUnidsAProducir2S }} </td>
+              <td> {{ PCPPUnidsAProducir2021 }} </td>
+            </tr>
+            <tr>
+              <td>Horas requeridas por unidad</td>
+              <td><input type="number" step="0.01" placeholder="Horas" name="PCPMODHorasReq" /></td>
+              <td> {{ PCPMODHorasReq }} </td>
+              <td> {{ PCPMODHorasReq }} </td>
+            </tr>
+            <tr>
+              <td>Total de horas requeridas</td>
+              <td> {{ PCPMODTotalHorasRequer1S }} </td>
+              <td> {{ PCPMODTotalHorasRequer2S }} </td>
+              <td> {{ PCPMODTotalHorasRequerAnual }} </td>
+            </tr>
+            <tr>
+              <td>Cuota por hora</td>
+              <td><input type="number" step="0.01" placeholder="Cuota" name="PCPMODCuotaHora1S" /></td>
+              <td><input type="number" step="0.01" placeholder="Cuota" name="PCPMODCuotaHora2S" /></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Importe de M.O.D.</td>
+              <td> {{ PCMODImporte1S }} </td>
+              <td> {{ PCMODImporte2S}} </td>
+              <td> {{ PCMODImporteAnual }} </td>
+            </tr>
+            <tr>
+              <td>Total de horas requeridas por Semestre</td>
+              <td> {{ PMODTotalHoras1S }} </td>
+              <td> {{ PMODTotalHoras2S }}</td>
+              <td> {{ PMODTotalHorasAnual }}</td>
+            </tr>
+            <tr>
+              <td>Total de M.O.D. por Semestre</td>
+              <td>{{ PMODTotalMOD1S }}</td>
+              <td>{{ PMODTotalMOD2S }}</td>
+              <td>{{ PMODTotalMODAnual }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>8. Presupuesto de Gastos Indirectos de Fabricación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>1er. Semestre</td>
+              <td>2do. Semestre</td>
+              <td>Total 2021</td>
+            </tr>
+            <tr>
+              <td>Depreciación</td>
+              <td> {{ PGIFDepreciacion1S }} </td>
+              <td> {{ PGIFDepreciacion2S }} </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="PGIFDepreciacionAnual" /></td>
+            </tr>
+            <tr>
+              <td>Seguros</td>
+              <td> {{ PGIFSeguros1S }} </td>
+              <td> {{ PGIFSeguros2S }} </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="PGIFSegurosAnual" /></td>
+            </tr>
+            <tr>
+              <td>Mantenimiento</td>
+              <td> {{ PGIFMantenimiento1S }} </td>
+              <td> {{ PGIFMantenimiento2S }} </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="PGIFMantenimientoAnual" /></td>
+            </tr>
+            <tr>
+              <td>Energéticos</td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="PGIFEnergeticos1S" /></td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="PGIFEnergeticos2S" /></td>
+              <td> {{PGIFEnergeticosAnual}} </td>
+            </tr>
+            <tr>
+              <td>Varios</td>
+              <td> {{ PGIFVarios1S }} </td>
+              <td> {{ PGIFVarios2S }} </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="PGIFVariosAnual" /></td>
+            </tr>
+            <tr>
+              <td>Total G.I.F. por Semestre</td>
+              <td> {{ PGIFTotalGIFPorSem1S }} </td>
+              <td> {{ PGIFTotalGIFPorSem2S }} </td>
+              <td> {{ PGIFTotalGIFPorSemAnual }} </td>
+            </tr>
+            <tr>
+              <td>Total de G.I.F.</td>
+              <td></td>
+              <td></td>
+              <td> {{ PGIFTotalGIFPorSemAnual }} </td>
+            </tr>
+            <tr>
+              <td>(/) Total horas M.O.D. Anual</td>
+              <td></td>
+              <td></td>
+              <td> {{ PMODTotalHorasAnual }} </td>
+            </tr>
+            <tr>
+              <td>(=) Costo por Hora de G.I.F.</td>
+              <td></td>
+              <td></td>
+              <td> {{ PGIFCostoPorHoraGIF }} </td>
+            </tr>
+          </tbody>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>9. Presupuesto de Gastos de Operación</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td>1er. Semestre</td>
+                  <td>2do. Semestre</td>
+                  <td>Total 2021</td>
+                </tr>
+                <tr>
+                  <td>Depreciación</td>
+                  <td> {{ PGODepreciacion1S }} </td>
+                  <td> {{ PGODepreciacion2S }} </td>
+                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PGODepreciacionAnual" /></td>
+                </tr>
+                <tr>
+                  <td>Sueldos y Salarios</td>
+                  <td> {{ PGOSueldos1S }} </td>
+                  <td> {{ PGOSueldos2S }} </td>
+                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PGOSueldosAnual" /></td>
+                </tr>
+                <tr>
+                  <td>Comisiones</td>
+                  <td> {{ PGOComisiones1S }} </td>
+                  <td> {{ PGOComisiones2S }} </td>
+                  <td> {{ PGOComisionesAnual }} </td>
+                </tr>
+                <tr>
+                  <td>Varios</td>
+                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PGOVarios1S" /></td>
+                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PGOVarios2S" /></td>
+                  <td> {{ PGOVariosAnual }} </td>
+                </tr>
+                <tr>
+                  <td>Intereses por préstamo</td>
+                  <td> {{ PGOPrestamo1S }} </td>
+                  <td> {{ PGOPrestamo2S }} </td>
+                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PGOPrestamoAnual" /></td>
+                </tr>
+                <tr>
+                  <td>Total de Gastos de Operación</td>
+                  <td> {{ PGOTotal1S }} </td>
+                  <td> {{ PGOTotal2S }} </td>
+                  <td> {{ PGOTotalAnual }} </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>10. Determinación del Costo Unitario de Productos Terminados</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Producto A</td>
+                </tr>
+                <tr>
+                  <td>Descripción</td>
+                  <td>Costo</td>
+                  <td>Cantidad</td>
+                  <td>Costo Unitario</td>
+                </tr>
+                <tr>
+                  <td>Material A</td>
+                  <td><input type="number" step="0.01" placeholder="Costo" name="PAMADCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PAMADCUPTCantidad" /></td>
+                  <td> {{ PAMADCUPTCostoUni }} </td>
+                </tr>
+                <tr>
+                  <td>Material B</td>
+                  <td><input type="number" step="0.01" placeholder="Costo" name="PAMBDCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PAMBDCUPTCantidad" /></td>
+                  <td> {{ PAMBDCUPTCostoUni }} </td>
+                </tr>
+                <tr>
+                  <td>Material C</td>
+                  <td><input type="number" step="0.01" placeholder="Costo" name="PAMCDCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PAMCDCUPTCantidad" /></td>
+                  <td> {{ PAMCDCUPTCostoUni }} </td>
+                </tr>
+                <tr>
+                  <td>Mano de Obra</td>
+                  <td><input type="number" step="0.01" placeholder="Costo" name="PAManoObraDCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PAManoObraDCUPTCantidad" /></td>
+                  <td> {{ PAManoObraDCUPTCostUni }} </td>
+                </tr>
+                <tr>
+                  <td>Gastos Indirectos de Fabricación</td>
+                  <td> {{ PGIFCostoPorHoraGIF }} </td>
+                  <td> {{ PAManoObraDCUPTCantidad }} </td>
+                  <td> {{ PAGastoIndDCUPTCostoUni }} </td>
+                </tr>
+                <tr>
+                  <td>Costo Unitario</td>
+                  <td></td>
+                  <td></td>
+                  <td> {{ PACostoUniDCUPTCostoUni }} </td>
+                </tr>
+                <tr>
+                  <td>Producto B</td>
+                </tr>
+                <tr>
+                  <td>Descripción</td>
+                  <td>Costo</td>
+                  <td>Cantidad</td>
+                  <td>Costo Unitario</td>
+                </tr>
+                <tr>
+                  <td>Material A</td>
+                  <td><input type="number" step="0.01" placeholder="Costo" name="PBMADCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PBMADCUPTCantidad" /></td>
+                  <td> {{ PBMADCUPTCostoUni }} </td>
+                </tr>
+                <tr>
+                  <td>Material B</td>
+                  <td><input type="number" step="0.01" placeholder="Costo" name="PBMBDCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PBMBDCUPTCantidad" /></td>
+                  <td> {{ PBMBDCUPTCostoUni }} </td>
+                </tr>
+                <tr>
+                  <td>Material C</td>
+                  <td><input type="number" step="0.01" placeholder="Costo" name="PBMCDCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PBMCDCUPTCantidad" /></td>
+                  <td> {{ PBMCDCUPTCostoUni }} </td>
+                </tr>
+                <tr>
+                  <td>Mano de Obra</td>
+                  <td><input type="number" step="0.01" placeholder="Costo" name="PBManoObraDCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PBManoObraDCUPTCantidad" /></td>
+                  <td> {{ PBManoObraDCUPTCostUni }} </td>
+                </tr>
+                <tr>
+                  <td>Gastos Indirectos de Fabricación</td>
+                  <td> {{ PGIFCostoPorHoraGIF }} </td>
+                  <td> {{ PBManoObraDCUPTCantidad }} </td>
+                  <td> {{ PBGastoIndDCUPTCostoUni }} </td>
+                </tr>
+                <tr>
+                  <td>Costo Unitario</td>
+                  <td></td>
+                  <td></td>
+                  <td> {{ PBCostoUniDCUPTCostoUni }} </td>
+                </tr>
+                <tr>
+                  <td>Producto C</td>
+                </tr>
+                <tr>
+                  <td>Descripción</td>
+                  <td>Costo</td>
+                  <td>Cantidad</td>
+                  <td>Costo Unitario</td>
+                </tr>
+                <tr>
+                  <td>Material A</td>
+                  <td><input type="number" step="0.01" placeholder="Costo" name="PCMADCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PCMADCUPTCantidad" /></td>
+                  <td> {{ PCMADCUPTCostoUni }} </td>
+                </tr>
+                <tr>
+                  <td>Material B</td>
+                  <td><input type="number" step="0.01" placeholder="Costo" name="PCMBDCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PCMBDCUPTCantidad" /></td>
+                  <td> {{ PBMBDCUPTCostoUni }} </td>
+                </tr>
+                <tr>
+                  <td>Material C</td>
+                  <td><input type="number" step="0.01" placeholder="Costo" name="PCMCDCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PCMCDCUPTCantidad" /></td>
+                  <td> {{ PCMCDCUPTCostoUni }} </td>
+                </tr>
+                <tr>
+                  <td>Mano de Obra</td>
+                  <td><input type="number" step="0.01" placeholder="Costo" name="PCManoObraDCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PCManoObraDCUPTCantidad" /></td>
+                  <td> {{ PCManoObraDCUPTCostUni }} </td>
+                </tr>
+                <tr>
+                  <td>Gastos Indirectos de Fabricación</td>
+                  <td> {{ PGIFCostoPorHoraGIF }} </td>
+                  <td> {{ PCManoObraDCUPTCantidad }} </td>
+                  <td> {{ PCGastoIndDCUPTCostoUni }} </td>
+                </tr>
+                <tr>
+                  <td>Costo Unitario</td>
+                  <td></td>
+                  <td></td>
+                  <td> {{ PCCostoUniDCUPTCostoUni }} </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+          <table>
             <thead>
-              <th>5. Presupuesto de Compra de Materiales</th>
+              <tr>
+                <th>11. Valuación de Inventarios Finales</th>
+              </tr>
             </thead>
-
             <tbody>
               <tr>
-                <td>Material</td>
-                <td>>1er. Semestre</td>
-                <td>2do. Semestre</td>
-                <td>Total 2021</td>
+                <td>Inventario Final de Materiales</td>
+              </tr>
+              <tr>
+                <td>Descripción</td>
+                <td>Unidades</td>
+                <td>Costo Unitario</td>
+                <td>Costo Total</td>
               </tr>
               <tr>
                 <td>Material A</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td> {{  MAPCMInvFinal2S  }} </td>
+                <td> {{  PAMADCUPTCantidad  }} </td>
+                <td> {{  MAVIFCostoTotal  }} </td>
               </tr>
-
-              <tr>
-                <td>Requerimiento de materiales</td>
-                <td> {{  TotalMatAReqPP1S  }} </td>
-                <td> {{  TotalMatAReqPP2S  }} </td>
-                <td> {{  TotalPARPMMatA  }}  </td>
-              </tr>
-
-              <tr>
-                <td>(+) Inventario Final</td>
-                <td><input type="number" placeholder="Unidades" name="MAPCMInvFinal1S"/></td>
-                <td><input type="number" placeholder="Unidades" name="MAPCMInvFinal2S"/></td>
-                <td> {{ MAPCMInvFinal2S }} </td>
-              </tr>
-
-              <tr>
-                <td>Total de Materiales</td>
-                <td>  {{  MAPCMTotalMat1S  }} </td>
-                <td>  {{  MAPCMTotalMat2S  }} </td>
-                <td>  {{  MAPCMTotalMatAnual  }}  </td>
-              </tr>
-
-              <tr>
-                <td>(-) Inventario Inicial</td>
-                <td><input type="number" placeholder="Unidades" name="MAPCMInvFinal1S"/></td>
-                <td> {{  MAPCMInvFinal1S  }}  </td>
-                <td> {{  MAPCMInvFinal1S  }} </td>
-              </tr>
-
-              <tr>
-                <td>Material a comprar</td>
-                <td> {{  MAPCMMatComp1S  }} </td>
-                <td> {{  MAPCMMatComp2S  }}  </td>
-                <td> {{  MAPCMMatCompAnual  }} </td>
-              </tr>
-
-              <tr>
-                <td>Precio de Compra</td>
-                <td><input type="number" placeholder="Precio" name="MAPCMPrecioComp1S"/></td>
-                <td><input type="number" placeholder="Precio" name="MAPCMPrecioComp2S"/></td>
-                <td></td>
-              </tr>
-              
-              <tr>
-                <td>Total de Material A en $:</td>
-                <td> {{  MAPCMTotalEnPesos1S  }} </td>
-                <td> {{  MAPCMTotalEnPesos2S  }} </td>
-                <td> {{  MAPCMTotalEnPesosAnual  }} </td>
-              </tr>
-
-              
               <tr>
                 <td>Material B</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td> {{  MBPCMInvFinal2S  }} </td>
+                <td> {{  PAMBDCUPTCantidad  }} </td>
+                <td> {{  MBVIFCostoTotal  }} </td>
               </tr>
-
-              <tr>
-                <td>Requerimiento de materiales</td>
-                <td> {{  TotalMatBReqPP1S  }} </td>
-                <td> {{  TotalMatBReqPP2S  }} </td>
-                <td> {{  TotalPARPMMatB  }}  </td>
-              </tr>
-
-              <tr>
-                <td>(+) Inventario Final</td>
-                <td><input type="number" placeholder="Unidades" name="MBPCMInvFinal1S"/></td>
-                <td><input type="number" placeholder="Unidades" name="MBPCMInvFinal2S"/></td>
-                <td> {{ MBPCMInvFinal2S }} </td>
-              </tr>
-
-              <tr>
-                <td>Total de Materiales</td>
-                <td>  {{  MBPCMTotalMat1S  }} </td>
-                <td>  {{  MBPCMTotalMat2S  }} </td>
-                <td>  {{  MBPCMTotalMatAnual  }}  </td>
-              </tr>
-
-              <tr>
-                <td>(-) Inventario Inicial</td>
-                <td><input type="number" placeholder="Unidades" name="MBPCMInvFinal1S"/></td>
-                <td> {{  MBPCMInvFinal1S  }}  </td>
-                <td> {{  MBPCMInvFinal1S  }} </td>
-              </tr>
-
-              <tr>
-                <td>Material a comprar</td>
-                <td> {{  MBPCMMatComp1S  }} </td>
-                <td> {{  MBPCMMatComp2S  }}  </td>
-                <td> {{  MBPCMMatCompAnual  }} </td>
-              </tr>
-
-              <tr>
-                <td>Precio de Compra</td>
-                <td><input type="number" placeholder="Precio" name="MBPCMPrecioComp1S"/></td>
-                <td><input type="number" placeholder="Precio" name="MBPCMPrecioComp2S"/></td>
-                <td></td>
-              </tr>
-              
-              <tr>
-                <td>Total de Material B en $:</td>
-                <td> {{  MBPCMTotalEnPesos1S  }} </td>
-                <td> {{  MBPCMTotalEnPesos2S  }} </td>
-                <td> {{  MBPCMTotalEnPesosAnual  }} </td>
-              </tr>
-
               <tr>
                 <td>Material C</td>
+                <td> {{  MCPCMInvFinal2S  }} </td>
+                <td> {{  PAMCDCUPTCantidad  }} </td>
+                <td> {{  MCVIFCostoTotal  }} </td>
+              </tr>
+              <tr>
+                <td>Inventario Final de Materiales</td>
                 <td></td>
                 <td></td>
-                <td></td>
+                <td> {{  VIFInvFinalMat  }} </td>
               </tr>
-
               <tr>
-                <td>Requerimiento de materiales</td>
-                <td> {{  TotalMatCReqPP1S  }} </td>
-                <td> {{  TotalMatCReqPP2S  }} </td>
-                <td> {{  TotalPARPMMatC  }}  </td>
+                <td>Inventario Final de Producto Terminado
+                <td>
               </tr>
-
-              <tr>
-                <td>(+) Inventario Final</td>
-                <td><input type="number" placeholder="Unidades" name="MCPCMInvFinal1S"/></td>
-                <td><input type="number" placeholder="Unidades" name="MCPCMInvFinal2S"/></td>
-                <td> {{ MCPCMInvFinal2S }} </td>
-              </tr>
-
-              <tr>
-                <td>Total de Materiales</td>
-                <td>  {{  MCPCMTotalMat1S  }} </td>
-                <td>  {{  MCPCMTotalMat2S  }} </td>
-                <td>  {{  MCPCMTotalMatAnual  }}  </td>
-              </tr>
-
-              <tr>
-                <td>(-) Inventario Inicial</td>
-                <td><input type="number" placeholder="Unidades" name="MCPCMInvFinal1S"/></td>
-                <td> {{  MCPCMInvFinal1S  }}  </td>
-                <td> {{  MCPCMInvFinal1S  }} </td>
-              </tr>
-
-              <tr>
-                <td>Material a comprar</td>
-                <td> {{  MCPCMMatComp1S  }} </td>
-                <td> {{  MCPCMMatComp2S  }}  </td>
-                <td> {{  MCPCMMatCompAnual  }} </td>
-              </tr>
-
-              <tr>
-                <td>Precio de Compra</td>
-                <td><input type="number" placeholder="Precio" name="MCPCMPrecioComp1S"/></td>
-                <td><input type="number" placeholder="Precio" name="MCPCMPrecioComp2S"/></td>
-                <td></td>
-              </tr>
-              
-              <tr>
-                <td>Total de Material C en $:</td>
-                <td> {{  MCPCMTotalEnPesos1S  }} </td>
-                <td> {{  MCPCMTotalEnPesos2S  }} </td>
-                <td> {{  MCPCMTotalEnPesosAnual  }} </td>
-              </tr>
-              
-              <tr>
-                <td>Compras totales: </td>
-                <td> {{  TMPCM1S  }} </td>
-                <td> {{  TMPCM2S  }} </td>
-                <td> {{  TMPCMAnual  }} </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div>
-          <table class="u-full-width">
-            <thead>
-              <tr>
-                <th>6. Determinación del saldo de Proveedores y Flujo de Salidas</th>
-              </tr>
-            </thead>
-            <tbody>
               <tr>
                 <td>Descripción</td>
-                <td>Importe</td>
-                <td>Total</td>
-              </tr>
-              <tr>
-                <td>Saldo de Proveedores 31-Dic-2020</td>
-                <td></td>
-                <td><input type="number" placeholder="Saldo" name="DSPFSSaldoProvTotal2020"/></td>
-              </tr>
-
-              <tr>
-                <td>Compras 2021</td>
-                <td></td>
-                <td> {{  TMPCMAnual  }} </td>
-              </tr>
-
-              <tr>
-                <td>Total de Proveedores 2021 </td>
-                <td></td>
-                <td> {{  DSPFSTotalProv2021  }} </td>
-              </tr>
-
-              <tr>
-                <td>Salidas de Efectivo: </td>
-              </tr>
-
-              <tr>
-                <td>Por Proveedores del 2020</td>
-                <td> {{  DSPFSPorProv2020  }} </td>
-                <td><input type="number" placeholder="Porcentaje" name="DSPFSPorceProv2020"/></td>
-              </tr>
-              <tr>
-                <td>Por Proveedores del 2021</td>
-                <td> {{  DSPFSPorProv2021  }} </td>
-                <td><input type="number" placeholder="Porcentaje" name="DSPFSPorceProv2021"/></td>
-              </tr>
-              <tr>
-                <td>Total de Salidas 2021</td>
-                <td></td>
-                <td> {{  DSPFSTotalSalidas2021  }} </td>
-              </tr>
-              <tr>
-                <td>Saldo de Proveedores del 2021</td>
-                <td></td>
-                <td> {{  DSPFSSaldoTotal2021  }} </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div>
-          
-          <table  class="u-full-width">
-            <thead>
-              <tr>
-                <th>7. Presupuesto de Mano de Obra Directa</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Producto</td>
-                <td>1er. Semestre</td>
-                <td>2do. Semestre</td>
-                <td>Total 2021</td>
+                <td>Unidades</td>
+                <td>Costo Unitario</td>
+                <td>Costo Total</td>
               </tr>
               <tr>
                 <td>Producto A</td>
-              </tr>
-              <tr>
-                <td>Unidades a producir</td>
-                <td> {{  PAPPUnidsAProducir1S  }} </td>
-                <td> {{  PAPPUnidsAProducir2S  }} </td>
-                <td> {{  PAPPUnidsAProducir2021  }} </td>
-              </tr>
-              <tr>
-                <td>Horas requeridas por unidad</td>
-                <td><input type="number" placeholder="Horas" name="PAPMODHorasReq"/></td>
-                <td> {{  PAPMODHorasReq  }} </td>
-                <td> {{  PAPMODHorasReq  }} </td>
-              </tr>
-              <tr>
-                <td>Total de horas requeridas</td>
-                <td> {{  PAPMODTotalHorasRequer1S  }} </td>
-                <td> {{  PAPMODTotalHorasRequer2S  }} </td>
-                <td> {{  PAPMODTotalHorasRequerAnual  }} </td>
-              </tr>
-              <tr>
-                <td>Cuota por hora</td>
-                <td><input type="number" placeholder="Cuota" name="PAPMODCuotaHora1S"/></td>
-                <td><input type="number" placeholder="Cuota" name="PAPMODCuotaHora2S"/></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Importe de M.O.D.</td>
-                <td> {{  PAMODImporte1S }} </td>
-                <td> {{  PAMODImporte2S}} </td>
-                <td> {{  PAMODImporteAnual  }} </td>
+                <td> {{  PAPPInvFinal2S  }} </td>
+                <td> {{  PACostoUniDCUPTCostoUni  }} </td>
+                <td> {{  PAVIFCostoTotal  }} </td>
               </tr>
               <tr>
                 <td>Producto B</td>
-              </tr>
-              <tr>
-                <td>Unidades a producir</td>
-                <td> {{  PBPPUnidsAProducir1S  }} </td>
-                <td> {{  PBPPUnidsAProducir2S  }} </td>
-                <td> {{  PBPPUnidsAProducir2021  }} </td>
-              </tr>
-              <tr>
-                <td>Horas requeridas por unidad</td>
-                <td><input type="number" placeholder="Horas" name="PBPMODHorasReq"/></td>
-                <td> {{  PBPMODHorasReq  }} </td>
-                <td> {{  PBPMODHorasReq  }} </td>
-              </tr>
-              <tr>
-                <td>Total de horas requeridas</td>
-                <td> {{  PBPMODTotalHorasRequer1S  }} </td>
-                <td> {{  PBPMODTotalHorasRequer2S  }} </td>
-                <td> {{  PBPMODTotalHorasRequerAnual  }} </td>
-              </tr>
-              <tr>
-                <td>Cuota por hora</td>
-                <td><input type="number" placeholder="Cuota" name="PBPMODCuotaHora1S"/></td>
-                <td><input type="number" placeholder="Cuota" name="PBPMODCuotaHora2S"/></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Importe de M.O.D.</td>
-                <td> {{  PBMODImporte1S }} </td>
-                <td> {{  PBMODImporte2S}} </td>
-                <td> {{  PBMODImporteAnual  }} </td>
+                <td> {{  PBPPInvFinal2S  }} </td>
+                <td> {{  PBCostoUniDCUPTCostoUni  }} </td>
+                <td> {{  PBVIFCostoTotal  }} </td>
               </tr>
               <tr>
                 <td>Producto C</td>
+                <td> {{  PCPPInvFinal2S  }} </td>
+                <td> {{  PCCostoUniDCUPTCostoUni  }} </td>
+                <td> {{  PCVIFCostoTotal  }} </td>
               </tr>
               <tr>
-                <td>Unidades a producir</td>
-                <td> {{  PCPPUnidsAProducir1S  }} </td>
-                <td> {{  PCPPUnidsAProducir2S  }} </td>
-                <td> {{  PCPPUnidsAProducir2021  }} </td>
-              </tr>
-              <tr>
-                <td>Horas requeridas por unidad</td>
-                <td><input type="number" placeholder="Horas" name="PCPMODHorasReq"/></td>
-                <td> {{  PCPMODHorasReq  }} </td>
-                <td> {{  PCPMODHorasReq  }} </td>
-              </tr>
-              <tr>
-                <td>Total de horas requeridas</td>
-                <td> {{  PCPMODTotalHorasRequer1S  }} </td>
-                <td> {{  PCPMODTotalHorasRequer2S  }} </td>
-                <td> {{  PCPMODTotalHorasRequerAnual  }} </td>
-              </tr>
-              <tr>
-                <td>Cuota por hora</td>
-                <td><input type="number" placeholder="Cuota" name="PCPMODCuotaHora1S"/></td>
-                <td><input type="number" placeholder="Cuota" name="PCPMODCuotaHora2S"/></td>
+                <td>Inventario Final de Producto Terminado</td>
                 <td></td>
-              </tr>
-              <tr>
-                <td>Importe de M.O.D.</td>
-                <td> {{  PCMODImporte1S }} </td>
-                <td> {{  PCMODImporte2S}} </td>
-                <td> {{  PCMODImporteAnual  }} </td>
-              </tr>
-              <tr>
-                <td>Total de horas requeridas por Semestre</td>
-                <td> {{ PMODTotalHoras1S }} </td>
-                <td> {{ PMODTotalHoras2S }}</td>
-                <td> {{ PMODTotalHorasAnual }}</td>
-              </tr>
-              <tr>
-                <td>Total de M.O.D. por Semestre</td>
-                <td>{{  PMODTotalMOD1S  }}</td>
-                <td>{{  PMODTotalMOD2S  }}</td>
-                <td>{{  PMODTotalMODAnual  }}</td>
+                <td></td>
+                <td> {{  VIFInvFinalProd }} </td>
               </tr>
             </tbody>
           </table>
-        </div>
-        <div>
-          <table class="u-full-width">
-            <thead>
-              <tr>
-                <th>8. Presupuesto de Gastos Indirectos de Fabricación</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td></td>
-                <td>1er. Semestre</td>
-                <td>2do. Semestre</td>
-                <td>Total 2021</td>
-              </tr>
-              <tr>
-                <td>Depreciación</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Seguros</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Mantenimiento</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Energéticos</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Varios</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              
-              <tr>
-                <td>Total G.I.F. por Semestre</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Total de G.I.F.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>(/) Total horas M.O.D. Anual</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>(=) Costo por Hora de G.I.F.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <input type="submit" class="u-full-width" value="Calcular" id="calc_btn" />
-      </form>
-    </div>
-  </body>
+          </div>
+        </table>
+      </div>
+      <div class="container">
+        <h3>Presupuesto Financiero</h3>
+      </div>
+      <div class="container">
+        <table>
+          <thead>
+            <tr>
+              <th>Estado de Costo de Producción y Ventas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Saldo Inicial de Materiales</td>
+              <td><input type="number" step="0.01" placeholder="Saldo" name="ECPVSaldoInicialMat" /></td>
+            </tr>
+            <tr>
+              <td>(+) Compras de Materiales</td>
+              <td> {{  TMPCMAnual  }} </td>
+            </tr>
+            <tr>
+              <td>(=) Material Disponible</td>
+              <td> {{  ECPVMaterialDisp  }} </td>
+            </tr>
+            <tr>
+              <td>(-) Inventario Final de Materiales</td>
+              <td> {{  VIFInvFinalMat  }} </td>
+            </tr>
+            <tr>
+              <td>(=) Materiales Utilizados</td>
+              <td> {{  ECPVMaterialesUtil  }} </td>
+            </tr>
+            <tr>
+              <td>(+) Mano de Obra Directa</td>
+              <td> {{  PMODTotalMODAnual  }} </td>
+            </tr>
+            <tr>
+              <td>(+) Gastos de Fabricación Indirectos</td>
+              <td> {{  PGIFTotalGIFPorSemAnual  }} </td>
+            </tr>
+            <tr>
+              <td>(=) Costo de Produccón</td>
+              <td> {{  ECPVCostoProduccion  }} </td>
+            </tr>
+            <tr>
+              <td>(+) Inventario Inicial de Productos Terminados</td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="ECPVInvInicPT" /></td>
+            </tr>
+            <tr>
+              <td>(=) Total de Produccón Disponible</td>
+              <td> {{  ECPVTotalProdDisp  }} </td>
+            </tr>
+            <tr>
+              <td>(-) Inventario Final de Productos Terminados</td>
+              <td> {{  VIFInvFinalProd  }} </td>
+            </tr>
+            <tr>
+              <td>(=) Costo de Ventas</td>
+              <td> {{  ECPVCostoVentas  }} </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="container">
+        <table>
+          <thead>
+            <tr>
+              <th>Estado de Resultados</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ventas</td>
+              <td> {{  TotalVentasPorSemestre  }} </td>
+            </tr>
+            <tr>
+              <td>(-) Costo de Ventas</td>
+              <td> {{  ECPVCostoVentas  }} </td>
+            </tr>
+            <tr>
+              <td>(=) Utilidad Bruta</td>
+              <td> {{  ERUtilidadBruta  }} </td>
+            </tr>
+            <tr>
+              <td>(-) Gastos de Operación</td>
+              <td> {{  PGOTotalAnual  }} </td>
+            </tr>
+            <tr>
+              <td>(=) Utilidad de Operacón</td>
+              <td> {{  ERUtilidadOperacion  }} </td>
+            </tr>
+            <tr>
+              <td>(-) ISR</td>
+              <td> {{  ERISRCalc  }} </td>
+              <td>
+                <select name="ISRPorcentaje">
+                  <option value="1.92">1.92%</option> 
+                  <option value="6.40">6.40%</option> 
+                  <option value="10.88">10.88%</option>
+                  <option value="16.00">16.00%</option> 
+                  <option value="17.92">17.92%</option> 
+                  <option value="21.36">21.36%</option>
+                  <option value="23.52">23.52%</option> 
+                  <option value="30.00">30.00%</option> 
+                  <option value="32.00">32.00%</option>
+                  <option value="34.00">34.00%</option> 
+                  <option value="35.00">35.00%</option> 
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>(-) PTU</td>
+              <td> {{  ERPTUCalc  }} </td>
+            </tr>
+            <tr>
+              <td>(=) Utilidad Neta</td>
+              <td> {{  ERUtilidadNeta  }} </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="container">
+        <table>
+          <thead>
+            <tr>
+              <th>Estado de Flujo de Efectivo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Saldo Inicial de Efectivo</td>
+              <td></td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="EFESaldoIni" /></td>
+            </tr>
+            <tr>
+              <td>Entradas</td>
+            </tr>
+            <tr>
+              <td>Cobranza 2021</td>
+              <td> {{  DSCFECobranza2021  }} </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Cobranza 2020</td>
+              <td> {{  DSCFESaldo2020  }} </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Total de Entradas</td>
+              <td></td>
+              <td> {{  EFETotalEntradas  }} </td>
+            </tr>
+            <tr>
+              <td>Efectivo Disponible</td>
+              <td></td>
+              <td> {{  EFEEfectivoDisp  }} </td>
+            </tr>
+            <tr>
+              <td>Salidas: </td>
+            </tr>
+            <tr>
+              <td>Proveedores 2021</td>
+              <td> {{  DSPFSPorProv2021  }} </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Proveedores 2020</td>
+              <td> {{  DSPFSPorProv2020  }} </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Pago Mano de Obra Directa</td>
+              <td> {{  PMODTotalMODAnual  }} </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Pago Gastos Indirectos de Fabricación</td>
+              <td> {{  EFEPagoGIF  }} </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Pago de Gastos de Operacón</td>
+              <td> {{  EFEPagoGO  }} </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Compra de Activo Fijo (Maquinaria)</td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="EFECompraAvtivoFij" /></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Pago ISR 2020</td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="EFEPAGOISR" /></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Total de Salidas</td>
+              <td></td>
+              <td> {{  EFETotalSalidas  }} </td>
+            </tr>
+            <tr>
+              <td>Flujo de Efectivo Actual</td>
+              <td></td>
+              <td> {{  EFETotalFlujo  }} </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="container">
+        <table>
+          <thead>
+            <tr>
+              <th>Balance General</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ACTIVO</td>
+            </tr>
+            <tr>
+              <td>CIRCULANTE</td>
+            </tr>
+            <tr>
+              <td>Efectivo</td>
+              <td>{{  EFETotalFlujo  }}</td>
+            </tr>
+            <tr>
+              <td>Clientes</td>
+              <td> {{  DSCFESaldoClientes2021  }} </td>
+            </tr>
+            <tr>
+              <td>Deudores Diversos</td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="BGDuedoresDiv" /></td>
+            </tr>
+            <tr>
+              <td>Funcionarios y Empleados</td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="BGFuncionariosEmp" /></td>
+            </tr>
+            <tr>
+              <td>Inventario de Materiales</td>
+              <td> {{  VIFInvFinalMat  }} </td>
+            </tr>
+            <tr>
+              <td>Inventario de Producto Terminado</td>
+              <td> {{  VIFInvFinalProd  }} </td>
+            </tr>
+            <tr>
+              <td>Total de Activos Circulante</td>
+              <td></td>
+              <td> {{  BGTotalActCir  }} </td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+            <tr>
+              <td>No Circulante</td>
+            </tr>
+            <tr>
+              <td>Terreno</td>
+              <td> {{  BGTerreno  }}  </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="BGTerreno" /></td>
+            </tr>
+            <tr>
+              <td>Planta y Equipo</td>
+              <td> {{BGPlantaEquipoCalc}} </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="BGPlantaEquipo" /></td>
+            </tr>
+            <tr>
+              <td>Depreciación Acumulada</td>
+              <td> {{BGTotalDepreciacion}} </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="BGDepreciaAcum" /></td>
+            </tr>
+            <tr>
+              <td>Total Activos No Circulante</td>
+              <td></td>
+              <td> {{  BGTotalActivosNoCir  }} </td>
+            </tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr>
+              <td>ACTIVO TOTAL</td>
+              <td></td>
+              <td> {{  BGActivoTotal  }} </td>
+            </tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr>
+              <td>PASIVO</td>
+            </tr>
+            <tr>
+              <td>Corto Plazo</td>
+            </tr>
+            <tr>
+              <td>Proveedores</td>
+              <td> {{DSPFSSaldoTotal2021}} </td>
+            </tr>
+            <tr>
+              <td>Documentos por Pagar</td>
+              <td> {{BGDocPorPagar}} </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="BGDocPorPagar" /></td>
+            </tr>
+            <tr>
+              <td>ISR por Pagar</td>
+              <td> {{ERISRCalc}} </td>
+            </tr>
+            <tr>
+              <td>PTU por Pagar</td>
+              <td> {{ERPTUCalc}} </td>
+            </tr>
+            <tr>
+              <td>Total de Pasivo Corto Plazo</td>
+              <td></td>
+              <td> {{  BGTotalPasivCP  }} </td>
+            </tr>
+            <tr><td></td></tr>
+            <tr>
+              <td>Largo Plazo</td>
+            </tr>
+            <tr>
+              <td>Préstamos Bancarios</td>
+              <td> {{BGPrestamoBanc}} </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="BGPrestamoBanc" /></td>
+            </tr>
+            <tr>
+              <td>Total de Pasivo Largo Plazo</td>
+              <td> {{BGPrestamoBanc}} </td>
+            </tr>
+            <tr><td></td></tr>
+            <tr>
+              <td>PASIVO TOTAL</td>
+              <td></td>
+              <td> {{BGPasivoTotal}} </td>
+            </tr>
+            <tr>
+              <td>CAPITAL CONTABLE</td>
+            </tr>
+            <tr>
+              <td>Capital Contribuido</td>
+              <td>{{BGCapCont}} </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="BGCapCont" /></td>
+            </tr>
+            <tr>
+              <td>Capital Ganado</td>
+              <td>{{BGCapGan}} </td>
+              <td><input type="number" step="0.01" placeholder="Cantidad" name="BGCapGan" />
+            </tr>
+            <tr>
+              <td>Utilidad del Ejercicio</td>
+              <td>{{ERUtilidadNeta}} </td>
+            </tr>
+            <tr>
+              <td>Total de Capital Contable</td>
+              <td></td>
+              <td> {{BFTotalCapCon}} </td>
+            </tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr>
+              <td>SUMA DE PASIVO Y CAPITAL</td>
+              <td></td>
+              <td> {{BGSumaPyC}} </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <input type="submit" class="u-full-width" value="Calcular" id="calc_btn" />
+    </form>
+  </div>
+</body>
+
 </html>

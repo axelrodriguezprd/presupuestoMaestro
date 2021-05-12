@@ -2,6 +2,9 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+if __name__ == ' __main__':
+    app.run(debug = True)
+
 @app.route('/')
 def main():
     return render_template('app.html')
@@ -38,6 +41,8 @@ def send():
         PCIV2S = float(PCpresVenUnidVend2S) * float(PCpresVenPrecVent2S)
         TotalAnualPC = PCIV1S + PCIV2S
 
+        TotalVentasPorSemestre1S = PAIV1S + PBIV1S + PBIV1S
+        TotalVentasPorSemestre2S = PAIV2S + PBIV2S + PBIV2S
         TotalVentasPorSemestre = TotalAnualPA + TotalAnualPB + TotalAnualPC
 
         # 2 Determinacion del saldo de Clientes y Flujo de Entradas
@@ -300,7 +305,6 @@ def send():
         PCPMODCuotaHora1S = request.form['PCPMODCuotaHora1S']
         PCPMODCuotaHora2S = request.form['PCPMODCuotaHora2S']
 
-
         PCPMODTotalHorasRequer1S = PCPPUnidsAProducir1S * int(PCPMODHorasReq)
         PCPMODTotalHorasRequer2S = PCPPUnidsAProducir2S * int(PCPMODHorasReq)
         PCPMODTotalHorasRequerAnual = PCPPUnidsAProducir2021 * int(PCPMODHorasReq)
@@ -317,6 +321,199 @@ def send():
         PMODTotalMOD2S = PAMODImporte2S + PBMODImporte2S + PCMODImporte2S
         PMODTotalMODAnual = PAMODImporteAnual + PBMODImporteAnual + PCMODImporteAnual
 
+        # 8. Presupuesto de Gastos Indirectos de Fabricación
+
+        PGIFDepreciacionAnual = request.form['PGIFDepreciacionAnual']
+
+        PGIFDepreciacion1S = float(PGIFDepreciacionAnual) / 2
+        PGIFDepreciacion2S = PGIFDepreciacion1S
+
+        PGIFSegurosAnual = request.form['PGIFSegurosAnual']
+
+        PGIFSeguros1S = float(PGIFSegurosAnual) / 2
+        PGIFSeguros2S = PGIFSeguros1S
+
+        PGIFMantenimientoAnual = request.form['PGIFMantenimientoAnual']
+
+        PGIFMantenimiento1S = float(PGIFMantenimientoAnual) / 2
+        PGIFMantenimiento2S = PGIFMantenimiento1S
+
+        PGIFEnergeticos1S = request.form['PGIFEnergeticos1S']
+        PGIFEnergeticos2S = request.form['PGIFEnergeticos2S']
+        PGIFEnergeticosAnual = float(PGIFEnergeticos1S) + float(PGIFEnergeticos2S)
+
+        PGIFVariosAnual = request.form['PGIFVariosAnual']
+
+        PGIFVarios1S = float(PGIFVariosAnual) / 2
+        PGIFVarios2S = PGIFVarios1S
+
+        PGIFTotalGIFPorSem1S = PGIFDepreciacion1S + PGIFSeguros1S + PGIFMantenimiento1S + float(PGIFEnergeticos1S) + PGIFVarios1S
+        PGIFTotalGIFPorSem2S = PGIFDepreciacion2S + PGIFDepreciacion2S + PGIFMantenimiento2S + float(PGIFEnergeticos2S)+ PGIFVarios2S
+        PGIFTotalGIFPorSemAnual = PGIFTotalGIFPorSem1S + PGIFTotalGIFPorSem2S
+
+        PGIFCostoPorHoraGIF = PGIFTotalGIFPorSemAnual / PMODTotalHorasAnual
+
+        # 9. Presupuesto de Gastos de Operación
+
+        PGODepreciacionAnual = request.form['PGODepreciacionAnual']
+        PGODepreciacion1S = float(PGODepreciacionAnual) / 2
+        PGODepreciacion2S = PGODepreciacion1S
+
+        PGOSueldosAnual = request.form['PGOSueldosAnual']
+        PGOSueldos1S = float(PGOSueldosAnual) / 2
+        PGOSueldos2S = PGOSueldos1S
+
+        PGOComisiones1S = (TotalVentasPorSemestre1S * 1) / 100
+        PGOComisiones2S = (TotalVentasPorSemestre2S * 1) / 100
+        PGOComisionesAnual = PGOComisiones1S + PGOComisiones2S
+
+        PGOVarios1S = request.form['PGOVarios1S']
+        PGOVarios2S = request.form['PGOVarios2S']
+
+        PGOVariosAnual = float(PGOVarios1S) + float(PGOVarios2S)
+
+        PGOPrestamoAnual = request.form['PGOPrestamoAnual']
+
+        PGOPrestamo1S = float(PGOPrestamoAnual) / 2
+        PGOPrestamo2S = PGOPrestamo1S
+
+        PGOTotal1S = PGODepreciacion1S + PGOSueldos1S + PGOComisiones1S + float(PGOVarios1S) + PGOPrestamo1S
+        PGOTotal2S = PGODepreciacion2S + PGOSueldos2S + PGOComisiones2S + float(PGOVarios2S) + PGOPrestamo2S
+        PGOTotalAnual = PGOTotal1S + PGOTotal2S
+
+        # 10. Determinación del Costo Unitario de Productos Terminados
+        #Producto A
+        PAMADCUPTCosto = request.form['PAMADCUPTCosto']
+        PAMADCUPTCantidad = request.form['PAMADCUPTCantidad']
+        PAMADCUPTCostoUni = float(PAMADCUPTCosto) * float(PAMADCUPTCantidad)
+
+        PAMBDCUPTCosto = request.form['PAMBDCUPTCosto']
+        PAMBDCUPTCantidad = request.form['PAMBDCUPTCantidad']
+        PAMBDCUPTCostoUni = float(PAMBDCUPTCosto) * float(PAMBDCUPTCantidad)
+        
+        PAMCDCUPTCosto = request.form['PAMCDCUPTCosto']
+        PAMCDCUPTCantidad = request.form['PAMCDCUPTCantidad']
+        PAMCDCUPTCostoUni = float(PAMCDCUPTCosto) * float(PAMCDCUPTCantidad)
+
+        PAManoObraDCUPTCosto = request.form['PAManoObraDCUPTCosto']
+        PAManoObraDCUPTCantidad = request.form['PAManoObraDCUPTCantidad']
+        PAManoObraDCUPTCostUni = float(PAManoObraDCUPTCosto) * float(PAManoObraDCUPTCantidad)
+
+        PAGastoIndDCUPTCostoUni = PGIFCostoPorHoraGIF * float(PAManoObraDCUPTCantidad)
+
+        PACostoUniDCUPTCostoUni = PAMADCUPTCostoUni + PAMBDCUPTCostoUni + PAMCDCUPTCostoUni + PAManoObraDCUPTCostUni + PAGastoIndDCUPTCostoUni
+
+        #Producto B
+        PBMADCUPTCosto = request.form['PBMADCUPTCosto']
+        PBMADCUPTCantidad = request.form['PBMADCUPTCantidad']
+        PBMADCUPTCostoUni = float(PBMADCUPTCosto) * float(PBMADCUPTCantidad)
+
+        PBMBDCUPTCosto = request.form['PBMBDCUPTCosto']
+        PBMBDCUPTCantidad = request.form['PBMBDCUPTCantidad']
+        PBMBDCUPTCostoUni = float(PAMBDCUPTCosto) * float(PBMBDCUPTCantidad)
+        
+        PBMCDCUPTCosto = request.form['PBMCDCUPTCosto']
+        PBMCDCUPTCantidad = request.form['PBMCDCUPTCantidad']
+        PBMCDCUPTCostoUni = float(PBMCDCUPTCosto) * float(PBMCDCUPTCantidad)
+
+        PBManoObraDCUPTCosto = request.form['PBManoObraDCUPTCosto']
+        PBManoObraDCUPTCantidad = request.form['PBManoObraDCUPTCantidad']
+        PBManoObraDCUPTCostUni = float(PBManoObraDCUPTCosto) * float(PBManoObraDCUPTCantidad)
+
+        PBGastoIndDCUPTCostoUni = PGIFCostoPorHoraGIF * float(PBManoObraDCUPTCantidad)
+
+        PBCostoUniDCUPTCostoUni = PBMADCUPTCostoUni + PBMBDCUPTCostoUni + PBMCDCUPTCostoUni + PBManoObraDCUPTCostUni + PBGastoIndDCUPTCostoUni
+
+        #Producto C
+        PCMADCUPTCosto = request.form['PCMADCUPTCosto']
+        PCMADCUPTCantidad = request.form['PCMADCUPTCantidad']
+        PCMADCUPTCostoUni = float(PCMADCUPTCosto) * float(PCMADCUPTCantidad)
+
+        PCMBDCUPTCosto = request.form['PCMBDCUPTCosto']
+        PCMBDCUPTCantidad = request.form['PCMBDCUPTCantidad']
+        PCMBDCUPTCostoUni = float(PCMBDCUPTCosto) * float(PCMBDCUPTCantidad)
+        
+        PCMCDCUPTCosto = request.form['PCMCDCUPTCosto']
+        PCMCDCUPTCantidad = request.form['PCMCDCUPTCantidad']
+        PCMCDCUPTCostoUni = float(PCMCDCUPTCosto) * float(PCMCDCUPTCantidad)
+
+        PCManoObraDCUPTCosto = request.form['PCManoObraDCUPTCosto']
+        PCManoObraDCUPTCantidad = request.form['PCManoObraDCUPTCantidad']
+        PCManoObraDCUPTCostUni = float(PCManoObraDCUPTCosto) * float(PCManoObraDCUPTCantidad)
+
+        PCGastoIndDCUPTCostoUni = PGIFCostoPorHoraGIF * float(PCManoObraDCUPTCantidad)
+
+        PCCostoUniDCUPTCostoUni = PCMADCUPTCostoUni + PCMBDCUPTCostoUni + PCMCDCUPTCostoUni + PCManoObraDCUPTCostUni + PCGastoIndDCUPTCostoUni
+
+        #11. Valuación de Inventarios Finales
+
+        MAVIFCostoTotal = float(MAPCMInvFinal2S) * float(PAMADCUPTCantidad)
+        MBVIFCostoTotal = float(MBPCMInvFinal2S) * float(PAMBDCUPTCantidad)
+        MCVIFCostoTotal = float(MCPCMInvFinal2S) * float(PAMCDCUPTCantidad)
+        VIFInvFinalMat = MAVIFCostoTotal + MBVIFCostoTotal + MCVIFCostoTotal
+
+        PAVIFCostoTotal = float(PAPPInvFinal2S) * float(PACostoUniDCUPTCostoUni)
+        PBVIFCostoTotal = float(PBPPInvFinal2S) * float(PBCostoUniDCUPTCostoUni)
+        PCVIFCostoTotal = float(PCPPInvFinal2S) * float(PCCostoUniDCUPTCostoUni)
+
+        VIFInvFinalProd = PAVIFCostoTotal + PBVIFCostoTotal + PCVIFCostoTotal
+
+        #Presupuesto Financiero
+        #Estado de Costo de Producciony ventas
+        ECPVSaldoInicialMat = request.form['ECPVSaldoInicialMat']
+        ECPVInvInicPT = request.form['ECPVInvInicPT']
+        
+        ECPVMaterialDisp = float(ECPVSaldoInicialMat) + TMPCMAnual
+        ECPVMaterialesUtil = ECPVMaterialDisp - VIFInvFinalMat
+        ECPVCostoProduccion = ECPVMaterialesUtil + PMODTotalMODAnual + PGIFTotalGIFPorSemAnual
+        ECPVTotalProdDisp = ECPVCostoProduccion + float(ECPVInvInicPT)
+        ECPVCostoVentas = float(ECPVTotalProdDisp) - float(VIFInvFinalProd)
+
+        #Estado de Resultados
+        ERUtilidadBruta = TotalVentasPorSemestre - ECPVCostoVentas
+        ERUtilidadOperacion = ERUtilidadBruta - PGOTotalAnual
+
+        ISRPorcentaje = request.form['ISRPorcentaje']
+
+        ERISRCalc = ERUtilidadOperacion * (float(ISRPorcentaje) / 100)
+        ERPTUCalc = ERUtilidadOperacion * 0.1
+        ERUtilidadNeta = ERUtilidadOperacion - ERISRCalc - ERPTUCalc
+
+        #Estado de Flujo de Efectivo
+        EFESaldoIni = request.form['EFESaldoIni']
+        EFECompraAvtivoFij = request.form['EFECompraAvtivoFij']
+        EFEPAGOISR = request.form['EFEPAGOISR']
+
+        EFETotalEntradas = DSCFECobranza2021 + float(DSCFESaldo2020)
+        EFEEfectivoDisp = float(EFESaldoIni) + EFETotalEntradas
+        EFEPagoGIF = PGIFTotalGIFPorSemAnual - float(PGIFDepreciacionAnual)
+        EFEPagoGO = PGOTotalAnual - float(PGODepreciacionAnual)
+        EFETotalSalidas = DSPFSPorProv2021 + DSPFSPorProv2020 + PMODTotalMODAnual + EFEPagoGIF + EFEPagoGO + float(EFECompraAvtivoFij) + float(EFEPAGOISR)
+        EFETotalFlujo = EFEEfectivoDisp - EFETotalSalidas
+
+        #Balance General
+        BGDuedoresDiv = request.form['BGDuedoresDiv']
+        BGFuncionariosEmp = request.form['BGFuncionariosEmp']
+        BGTerreno = request.form['BGTerreno']
+        BGPlantaEquipo = request.form['BGPlantaEquipo']
+        BGDepreciaAcum = request.form['BGDepreciaAcum']
+        BGDocPorPagar = request.form['BGDocPorPagar']
+        BGPrestamoBanc = request.form['BGPrestamoBanc']
+        BGCapCont = request.form['BGCapCont']
+        BGCapGan = request.form['BGCapGan']
+
+
+        BGTerreno = float(BGTerreno)
+        BGTotalActCir = EFETotalFlujo + DSCFESaldoClientes2021 + float(BGDuedoresDiv) + float(BGFuncionariosEmp) + VIFInvFinalMat + VIFInvFinalProd
+        BGPlantaEquipoCalc = float(BGPlantaEquipo) + float(EFECompraAvtivoFij)
+        BGTotalDepreciacion = (float(BGDepreciaAcum) + float(PGODepreciacionAnual) + float(PGIFDepreciacionAnual) * -1)
+        BGTotalActivosNoCir = BGTerreno + BGPlantaEquipoCalc + BGTotalDepreciacion
+        BGActivoTotal = BGTotalActCir + BGTotalActivosNoCir
+        BGTotalPasivCP = DSPFSSaldoTotal2021 + float(BGDocPorPagar) + ERISRCalc + ERPTUCalc
+        BFTotalCapCon = ERUtilidadNeta + float(BGCapCont) + float(BGCapGan)
+        BGPasivoTotal = float(BGPrestamoBanc) + BGTotalPasivCP
+        BGSumaPyC = BGPasivoTotal + BFTotalCapCon
+
 
         return render_template(
             'app.html',
@@ -328,6 +525,8 @@ def send():
             TotalAnualPB=TotalAnualPB, 
             PCIV1S=PCIV1S,
             PCIV2S=PCIV2S, TotalAnualPC=TotalAnualPC,
+            TotalVentasPorSemestre1S = TotalVentasPorSemestre1S,
+            TotalVentasPorSemestre2S = TotalVentasPorSemestre2S,
             TotalVentasPorSemestre=TotalVentasPorSemestre,
             DSCFESaldo2020=DSCFESaldo2020,
             DSCFETotal2021=DSCFETotal2021,
@@ -477,9 +676,97 @@ def send():
             PMODTotalHorasAnual = PMODTotalHorasAnual,
             PMODTotalMOD1S = PMODTotalMOD1S,
             PMODTotalMOD2S = PMODTotalMOD2S,
-            PMODTotalMODAnual = PMODTotalMODAnual)
+            PMODTotalMODAnual = PMODTotalMODAnual,
+            PGIFDepreciacion1S = PGIFDepreciacion1S,
+            PGIFDepreciacion2S = PGIFDepreciacion2S,
+            PGIFSeguros1S = PGIFSeguros1S,
+            PGIFSeguros2S = PGIFSeguros2S,
+            PGIFMantenimiento1S = PGIFMantenimiento1S,
+            PGIFMantenimiento2S = PGIFMantenimiento2S,
+            PGIFEnergeticosAnual = PGIFEnergeticosAnual,
+            PGIFVarios1S = PGIFVarios1S,
+            PGIFVarios2S = PGIFVarios2S,
+            PGIFTotalGIFPorSem1S = PGIFTotalGIFPorSem1S,
+            PGIFTotalGIFPorSem2S = PGIFTotalGIFPorSem2S,
+            PGIFTotalGIFPorSemAnual = PGIFTotalGIFPorSemAnual,
+            PGIFCostoPorHoraGIF = PGIFCostoPorHoraGIF,
+            PGODepreciacion1S = PGODepreciacion1S,
+            PGODepreciacion2S = PGODepreciacion2S,
+            PGOSueldos1S = PGOSueldos1S,
+            PGOSueldos2S = PGOSueldos2S,
+            PGOComisiones1S = PGOComisiones1S,
+            PGOComisiones2S = PGOComisiones2S,
+            PGOComisionesAnual = PGOComisionesAnual,
+            PGOVariosAnual = PGOVariosAnual,
+            PGOPrestamo1S = PGOPrestamo1S,
+            PGOPrestamo2S = PGOPrestamo2S,
+            PGOTotal1S = PGOTotal1S,
+            PGOTotal2S = PGOTotal2S,
+            PGOTotalAnual = PGOTotalAnual,
+            PAMADCUPTCostoUni = PAMADCUPTCostoUni,
+            PAMBDCUPTCostoUni = PAMBDCUPTCostoUni,
+            PAMCDCUPTCostoUni = PAMCDCUPTCostoUni,
+            PAManoObraDCUPTCostUni = PAManoObraDCUPTCostUni,
+            PAGastoIndDCUPTCostoUni = PAGastoIndDCUPTCostoUni,
+            PAManoObraDCUPTCantidad = PAManoObraDCUPTCantidad,
+            PACostoUniDCUPTCostoUni = PACostoUniDCUPTCostoUni,
+            PBMADCUPTCostoUni = PBMADCUPTCostoUni,
+            PBMBDCUPTCostoUni = PBMBDCUPTCostoUni,
+            PBMCDCUPTCostoUni = PBMCDCUPTCostoUni,
+            PBManoObraDCUPTCostUni = PBManoObraDCUPTCostUni,
+            PBGastoIndDCUPTCostoUni = PBGastoIndDCUPTCostoUni,
+            PBManoObraDCUPTCantidad = PBManoObraDCUPTCantidad,
+            PBCostoUniDCUPTCostoUni = PBCostoUniDCUPTCostoUni,
+            PCMADCUPTCostoUni = PCMADCUPTCostoUni,
+            PCMBDCUPTCostoUni = PCMBDCUPTCostoUni,
+            PCMCDCUPTCostoUni = PCMCDCUPTCostoUni,
+            PCManoObraDCUPTCostUni = PCManoObraDCUPTCostUni,
+            PCGastoIndDCUPTCostoUni = PCGastoIndDCUPTCostoUni,
+            PCManoObraDCUPTCantidad = PCManoObraDCUPTCantidad,
+            PCCostoUniDCUPTCostoUni = PCCostoUniDCUPTCostoUni,
+            PAMADCUPTCantidad = PAMADCUPTCantidad,
+            MAVIFCostoTotal = MAVIFCostoTotal,
+            PAMBDCUPTCantidad = PAMBDCUPTCantidad,
+            MBVIFCostoTotal = MBVIFCostoTotal,
+            PAMCDCUPTCantidad = PAMCDCUPTCantidad,
+            MCVIFCostoTotal = MCVIFCostoTotal,
+            VIFInvFinalMat = VIFInvFinalMat,
+            PAPPInvFinal2S = PAPPInvFinal2S,
+            PAVIFCostoTotal = PAVIFCostoTotal,
+            PBVIFCostoTotal = PBVIFCostoTotal,
+            PBPPInvFinal2S = PBPPInvFinal2S,
+            PCPPInvFinal2S = PCPPInvFinal2S,
+            PCVIFCostoTotal = PCVIFCostoTotal,
+            VIFInvFinalProd = VIFInvFinalProd,
+            ECPVMaterialDisp = ECPVMaterialDisp,
+            ECPVMaterialesUtil = ECPVMaterialesUtil,
+            ECPVCostoProduccion = ECPVCostoProduccion,
+            ECPVTotalProdDisp = ECPVTotalProdDisp,
+            ECPVCostoVentas = ECPVCostoVentas,
+            ERUtilidadBruta = ERUtilidadBruta,
+            ERUtilidadOperacion = ERUtilidadOperacion,
+            ERISRCalc = ERISRCalc,
+            ERPTUCalc = ERPTUCalc,
+            ERUtilidadNeta = ERUtilidadNeta,
+            EFETotalEntradas = EFETotalEntradas,
+            EFEEfectivoDisp = EFEEfectivoDisp,
+            EFEPagoGIF = EFEPagoGIF,
+            EFEPagoGO = EFEPagoGO,
+            EFETotalSalidas = EFETotalSalidas,
+            EFETotalFlujo = EFETotalFlujo,
+            BGTotalActCir = BGTotalActCir,
+            BGPlantaEquipoCalc = BGPlantaEquipoCalc,
+            BGTerreno = BGTerreno,
+            BGTotalDepreciacion = BGTotalDepreciacion,
+            BGTotalActivosNoCir = BGTotalActivosNoCir,
+            BGActivoTotal = BGActivoTotal,
+            BGDocPorPagar = BGDocPorPagar,
+            BGTotalPasivCP = BGTotalPasivCP,
+            BGPrestamoBanc = BGPrestamoBanc,
+            BGCapCont = BGCapCont,
+            BGCapGan= BGCapGan,
+            BFTotalCapCon = BFTotalCapCon,
+            BGPasivoTotal = BGPasivoTotal,
+            BGSumaPyC = BGSumaPyC)
 
 
-if __name__ == ' __main__':
-    app.debug = True
-    app.run()

@@ -201,6 +201,121 @@ def send():
         #Total 2021
         TotalPARPMMatC = PAPRMTotalMatCTotal + PBPRMTotalMatCTotal + PCPRMTotalMatCTotal
 
+        # 5. Presupuesto de Compra de Materiales
+        #Material A
+        MAPCMInvFinal1S = request.form['MAPCMInvFinal1S']
+        MAPCMInvFinal2S = request.form['MAPCMInvFinal2S']
+        MAPCMPrecioComp1S = request.form['MAPCMPrecioComp1S']
+        MAPCMPrecioComp2S = request.form['MAPCMPrecioComp2S']
+
+        MAPCMTotalMat1S = TotalMatAReqPP1S + int(MAPCMInvFinal1S)
+        MAPCMTotalMat2S = TotalMatAReqPP2S + int(MAPCMInvFinal2S)
+        MAPCMTotalMatAnual = TotalPARPMMatA + int(MAPCMInvFinal2S)
+        MAPCMMatComp1S = MAPCMTotalMat1S - int(MAPCMInvFinal1S)
+        MAPCMMatComp2S = MAPCMTotalMat2S - int(MAPCMInvFinal1S)
+        MAPCMMatCompAnual = MAPCMTotalMatAnual - int(MAPCMInvFinal1S)
+        MAPCMTotalEnPesos1S = MAPCMMatComp1S * int(MAPCMPrecioComp1S)
+        MAPCMTotalEnPesos2S = MAPCMMatComp2S * int(MAPCMPrecioComp2S)
+        MAPCMTotalEnPesosAnual = MAPCMTotalEnPesos1S + MAPCMTotalEnPesos2S
+
+        #Material B
+        MBPCMInvFinal1S = request.form['MBPCMInvFinal1S']
+        MBPCMInvFinal2S = request.form['MBPCMInvFinal2S']
+        MBPCMPrecioComp1S = request.form['MBPCMPrecioComp1S']
+        MBPCMPrecioComp2S = request.form['MBPCMPrecioComp2S']
+
+        MBPCMTotalMat1S = TotalMatBReqPP1S + int(MBPCMInvFinal1S)
+        MBPCMTotalMat2S = TotalMatBReqPP2S + int(MBPCMInvFinal2S)
+        MBPCMTotalMatAnual = TotalPARPMMatB + int(MBPCMInvFinal2S)
+        MBPCMMatComp1S = MBPCMTotalMat1S - int(MBPCMInvFinal1S)
+        MBPCMMatComp2S = MBPCMTotalMat2S - int(MBPCMInvFinal1S)
+        MBPCMMatCompAnual = MBPCMTotalMatAnual - int(MBPCMInvFinal1S)
+        MBPCMTotalEnPesos1S = MBPCMMatComp1S * int(MBPCMPrecioComp1S)
+        MBPCMTotalEnPesos2S = MBPCMMatComp2S * int(MBPCMPrecioComp2S)
+        MBPCMTotalEnPesosAnual = MBPCMTotalEnPesos1S + MBPCMTotalEnPesos2S
+
+        #Material C
+        MCPCMInvFinal1S = request.form['MCPCMInvFinal1S']
+        MCPCMInvFinal2S = request.form['MCPCMInvFinal2S']
+        MCPCMPrecioComp1S = request.form['MCPCMPrecioComp1S']
+        MCPCMPrecioComp2S = request.form['MCPCMPrecioComp2S']
+
+        MCPCMTotalMat1S = TotalMatCReqPP1S + int(MCPCMInvFinal1S)
+        MCPCMTotalMat2S = TotalMatCReqPP2S + int(MCPCMInvFinal2S)
+        MCPCMTotalMatAnual = TotalPARPMMatC + int(MCPCMInvFinal2S)
+        MCPCMMatComp1S = MCPCMTotalMat1S - int(MCPCMInvFinal1S)
+        MCPCMMatComp2S = MCPCMTotalMat2S - int(MCPCMInvFinal1S)
+        MCPCMMatCompAnual = MCPCMTotalMatAnual - int(MCPCMInvFinal1S)
+        MCPCMTotalEnPesos1S = MCPCMMatComp1S * int(MCPCMPrecioComp1S)
+        MCPCMTotalEnPesos2S = MBPCMMatComp2S * int(MCPCMPrecioComp2S)
+        MCPCMTotalEnPesosAnual = MCPCMTotalEnPesos1S + MCPCMTotalEnPesos2S
+
+        #Total de compras de materiales
+        TMPCM1S = MAPCMTotalEnPesos1S + MBPCMTotalEnPesos1S + MCPCMTotalEnPesos1S
+        TMPCM2S = MAPCMTotalEnPesos2S + MBPCMTotalEnPesos2S + MCPCMTotalEnPesos2S
+        TMPCMAnual = MAPCMTotalEnPesosAnual + MBPCMTotalEnPesosAnual + MCPCMTotalEnPesosAnual
+
+        # 6. Determinación del saldo de Proveedores y Flujo de Salidas
+
+        DSPFSSaldoProvTotal2020 = request.form['DSPFSSaldoProvTotal2020']
+        DSPFSPorceProv2020 = request.form['DSPFSPorceProv2020']
+        DSPFSPorceProv2021 = request.form['DSPFSPorceProv2021']
+
+        DSPFSTotalProv2021 = float(DSPFSSaldoProvTotal2020) + float(TMPCMAnual)
+        DSPFSPorProv2020 =   float(DSPFSSaldoProvTotal2020) * float((float(DSPFSPorceProv2020) / 100))
+        DSPFSPorProv2021 =   float(TMPCMAnual) * float((float(DSPFSPorceProv2021) / 100))
+        DSPFSTotalSalidas2021 = DSPFSPorProv2020 + DSPFSPorProv2021
+        DSPFSSaldoTotal2021 = DSPFSTotalProv2021 + DSPFSTotalSalidas2021
+
+        # 7. Presupuesto de Mano de Obra Directa
+
+        #Producto A
+        PAPMODHorasReq = request.form['PAPMODHorasReq']
+        PAPMODCuotaHora1S = request.form['PAPMODCuotaHora1S']
+        PAPMODCuotaHora2S = request.form['PAPMODCuotaHora2S']
+
+
+        PAPMODTotalHorasRequer1S = PAPPUnidsAProducir1S * int(PAPMODHorasReq)
+        PAPMODTotalHorasRequer2S = PAPPUnidsAProducir2S * int(PAPMODHorasReq)
+        PAPMODTotalHorasRequerAnual = PAPPUnidsAProducir2021 * int(PAPMODHorasReq)
+        PAMODImporte1S = float(PAPMODTotalHorasRequer1S) * float(PAPMODCuotaHora1S)
+        PAMODImporte2S = float(PAPMODTotalHorasRequer2S) * float(PAPMODCuotaHora2S)
+        PAMODImporteAnual = PAMODImporte1S + PAMODImporte2S
+
+        #Producto B 
+        PBPMODHorasReq = request.form['PBPMODHorasReq']
+        PBPMODCuotaHora1S = request.form['PBPMODCuotaHora1S']
+        PBPMODCuotaHora2S = request.form['PBPMODCuotaHora2S']
+
+
+        PBPMODTotalHorasRequer1S = PBPPUnidsAProducir1S * int(PBPMODHorasReq)
+        PBPMODTotalHorasRequer2S = PBPPUnidsAProducir2S * int(PBPMODHorasReq)
+        PBPMODTotalHorasRequerAnual = PBPPUnidsAProducir2021 * int(PBPMODHorasReq)
+        PBMODImporte1S = float(PBPMODTotalHorasRequer1S) * float(PBPMODCuotaHora1S)
+        PBMODImporte2S = float(PBPMODTotalHorasRequer2S) * float(PBPMODCuotaHora2S)
+        PBMODImporteAnual = PBMODImporte1S + PBMODImporte2S
+
+        #Producto C
+        PCPMODHorasReq = request.form['PCPMODHorasReq']
+        PCPMODCuotaHora1S = request.form['PCPMODCuotaHora1S']
+        PCPMODCuotaHora2S = request.form['PCPMODCuotaHora2S']
+
+
+        PCPMODTotalHorasRequer1S = PCPPUnidsAProducir1S * int(PCPMODHorasReq)
+        PCPMODTotalHorasRequer2S = PCPPUnidsAProducir2S * int(PCPMODHorasReq)
+        PCPMODTotalHorasRequerAnual = PCPPUnidsAProducir2021 * int(PCPMODHorasReq)
+        PCMODImporte1S = float(PCPMODTotalHorasRequer1S) * float(PCPMODCuotaHora1S)
+        PCMODImporte2S = float(PCPMODTotalHorasRequer2S) * float(PCPMODCuotaHora2S)
+        PCMODImporteAnual = PCMODImporte1S + PCMODImporte2S
+
+        #Totales
+        PMODTotalHoras1S = PAPMODTotalHorasRequer1S + PBPPUnidsAProducir1S + PCPMODTotalHorasRequer1S
+        PMODTotalHoras2S = PAPMODTotalHorasRequer2S + PBPPUnidsAProducir2S + PCPMODTotalHorasRequer2S
+        PMODTotalHorasAnual = PAPMODTotalHorasRequerAnual + PBPMODTotalHorasRequerAnual + PCPMODTotalHorasRequerAnual
+
+        PMODTotalMOD1S = PAMODImporte1S + PBMODImporte1S + PCMODImporte1S
+        PMODTotalMOD2S = PAMODImporte2S + PBMODImporte2S + PCMODImporte2S
+        PMODTotalMODAnual = PAMODImporteAnual + PBMODImporteAnual + PCMODImporteAnual
 
 
         return render_template(
@@ -208,8 +323,10 @@ def send():
             PAIV1S=PAIV1S,
             PAIV2S=PAIV2S,
             TotalAnualPA=TotalAnualPA,
-            PBIV1S=PBIV1S, PBIV2S=PBIV2S,
-            TotalAnualPB=TotalAnualPB, PCIV1S=PCIV1S,
+            PBIV1S=PBIV1S, 
+            PBIV2S=PBIV2S,
+            TotalAnualPB=TotalAnualPB, 
+            PCIV1S=PCIV1S,
             PCIV2S=PCIV2S, TotalAnualPC=TotalAnualPC,
             TotalVentasPorSemestre=TotalVentasPorSemestre,
             DSCFESaldo2020=DSCFESaldo2020,
@@ -292,7 +409,75 @@ def send():
             TotalPARPMMatB = TotalPARPMMatB,
             TotalMatCReqPP1S = TotalMatCReqPP1S,
             TotalMatCReqPP2S = TotalMatCReqPP2S,
-            TotalPARPMMatC = TotalPARPMMatC)
+            TotalPARPMMatC = TotalPARPMMatC,
+            MAPCMInvFinal1S = MAPCMInvFinal1S,
+            MAPCMInvFinal2S = MAPCMInvFinal2S,
+            MAPCMTotalMat1S = MAPCMTotalMat1S,
+            MAPCMTotalMat2S = MAPCMTotalMat2S,
+            MAPCMTotalMatAnual = MAPCMTotalMatAnual,
+            MAPCMMatComp1S = MAPCMMatComp1S,
+            MAPCMMatComp2S = MAPCMMatComp2S,
+            MAPCMMatCompAnual = MAPCMMatCompAnual,
+            MAPCMTotalEnPesos1S = MAPCMTotalEnPesos1S,
+            MAPCMTotalEnPesos2S = MAPCMTotalEnPesos2S,
+            MAPCMTotalEnPesosAnual = MAPCMTotalEnPesosAnual,
+            MBPCMInvFinal1S = MBPCMInvFinal1S,
+            MBPCMInvFinal2S = MBPCMInvFinal2S,
+            MBPCMTotalMat1S = MBPCMTotalMat1S,
+            MBPCMTotalMat2S = MBPCMTotalMat2S,
+            MBPCMTotalMatAnual = MBPCMTotalMatAnual,
+            MBPCMMatComp1S = MBPCMMatComp1S,
+            MBPCMMatComp2S = MBPCMMatComp2S,
+            MBPCMMatCompAnual = MBPCMMatCompAnual,
+            MBPCMTotalEnPesos1S = MBPCMTotalEnPesos1S,
+            MBPCMTotalEnPesos2S = MBPCMTotalEnPesos2S,
+            MBPCMTotalEnPesosAnual = MBPCMTotalEnPesosAnual,
+            MCPCMInvFinal1S = MCPCMInvFinal1S,
+            MCPCMInvFinal2S = MCPCMInvFinal2S,
+            MCPCMTotalMat1S = MCPCMTotalMat1S,
+            MCPCMTotalMat2S = MCPCMTotalMat2S,
+            MCPCMTotalMatAnual = MCPCMTotalMatAnual,
+            MCPCMMatComp1S = MCPCMMatComp1S,
+            MCPCMMatComp2S = MCPCMMatComp2S,
+            MCPCMMatCompAnual = MCPCMMatCompAnual,
+            MCPCMTotalEnPesos1S = MCPCMTotalEnPesos1S,
+            MCPCMTotalEnPesos2S = MCPCMTotalEnPesos2S,
+            MCPCMTotalEnPesosAnual = MCPCMTotalEnPesosAnual,
+            TMPCM1S = TMPCM1S,
+            TMPCM2S = TMPCM2S,
+            TMPCMAnual = TMPCMAnual,
+            DSPFSTotalProv2021 = DSPFSTotalProv2021,
+            DSPFSPorProv2020 = DSPFSPorProv2020,
+            DSPFSPorProv2021 = DSPFSPorProv2021,
+            DSPFSTotalSalidas2021 = DSPFSTotalSalidas2021,
+            DSPFSSaldoTotal2021 = DSPFSSaldoTotal2021,
+            PAPMODTotalHorasRequer1S = PAPMODTotalHorasRequer1S,
+            PAPMODTotalHorasRequer2S = PAPMODTotalHorasRequer2S,
+            PAPMODTotalHorasRequerAnual = PAPMODTotalHorasRequerAnual,
+            PAPMODHorasReq = PAPMODHorasReq,
+            PAMODImporte1S = PAMODImporte1S,
+            PAMODImporte2S = PAMODImporte2S,
+            PAMODImporteAnual = PAMODImporteAnual,
+            PBPMODTotalHorasRequer1S = PBPMODTotalHorasRequer1S,
+            PBPMODTotalHorasRequer2S = PBPMODTotalHorasRequer2S,
+            PBPMODTotalHorasRequerAnual = PBPMODTotalHorasRequerAnual,
+            PBPMODHorasReq = PBPMODHorasReq,
+            PBMODImporte1S = PBMODImporte1S,
+            PBMODImporte2S = PBMODImporte2S,
+            PBMODImporteAnual = PBMODImporteAnual,
+            PCPMODTotalHorasRequer1S = PCPMODTotalHorasRequer1S,
+            PCPMODTotalHorasRequer2S = PCPMODTotalHorasRequer2S,
+            PCPMODTotalHorasRequerAnual = PCPMODTotalHorasRequerAnual,
+            PCPMODHorasReq = PCPMODHorasReq,
+            PCMODImporte1S = PCMODImporte1S,
+            PCMODImporte2S = PCMODImporte2S,
+            PCMODImporteAnual = PCMODImporteAnual,
+            PMODTotalHoras1S = PMODTotalHoras1S,
+            PMODTotalHoras2S = PMODTotalHoras2S,
+            PMODTotalHorasAnual = PMODTotalHorasAnual,
+            PMODTotalMOD1S = PMODTotalMOD1S,
+            PMODTotalMOD2S = PMODTotalMOD2S,
+            PMODTotalMODAnual = PMODTotalMODAnual)
 
 
 if __name__ == ' __main__':

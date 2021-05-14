@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Presupueso Maestro</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
-  <link rel="stylesheet" href="CSS/estilos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
 </head>
-<body>
-  <div class="container">
-    <h1>Presupuesto Maestro</h1>
-  </div>
-  <div class="container">
-    <h3>Presupuesto de operación</h3>
-  </div>
-  <div class="container">
+
+<header>
+  <p>
+  <h1>Producto Integrador de Aprendizaje <br> Equipo 2</h1>
+  </p>
+  <p>
+  <h2>Presupuesto Maestro</h2>
+  </p>
+</header>
+
+<body class="container">
+  <h3>Presupuesto de operación</h3>
+  <div>
     <form action="/send" method="POST" autocomplete="on">
-      <table class="u-full-width">
+      <table>
         <thead>
           <tr>
             <h4>1. Presupuesto de Ventas</h4>
@@ -39,14 +44,18 @@
           </tr>
           <tr>
             <td>Unidades a vender</td>
-            <td><input type="number" step="0.01" placeholder="Unidades" autofocus name="PApresVenUnidVend1S" /></td>
-            <td><input type="number" step="0.01" placeholder="Unidades" name="PApresVenUnidVend2S" /></td>
+            <td><input type="number" step="0.01" placeholder="{{PApresVenUnidVend1S}}"" name=" PApresVenUnidVend1S" />
+            </td>
+            <td><input type="number" step="0.01" placeholder=" {{PApresVenUnidVend2S}} " name="PApresVenUnidVend2S" />
+            </td>
             <td></td>
           </tr>
           <tr>
             <td>Precio de venta</td>
-            <td><input type="number" step="0.01" placeholder="Precio" name="PApresVenPrecVent1S" /></td>
-            <td><input type="number" step="0.01" placeholder="Precio" name="PApresVenPrecVent2S" /></td>
+            <td><input type="number" step="0.01" placeholder=" {{PApresVenPrecVent1S}} " name="PApresVenPrecVent1S" />
+            </td>
+            <td><input type="number" step="0.01" placeholder=" {{PApresVenPrecVent2S}} " name="PApresVenPrecVent2S" />
+            </td>
             <td></td>
           </tr>
           <tr>
@@ -63,14 +72,18 @@
           </tr>
           <tr>
             <td>Unidades a vender</td>
-            <td><input type="number" step="0.01" placeholder="Unidades" name="PBpresVenUnidVend1S" /></td>
-            <td><input type="number" step="0.01" placeholder="Unidades" name="PBpresVenUnidVend2S" /></td>
+            <td><input type="number" step="0.01" placeholder=" {{PBpresVenUnidVend1S}} " name="PBpresVenUnidVend1S" />
+            </td>
+            <td><input type="number" step="0.01" placeholder=" {{PBpresVenUnidVend2S}} " name="PBpresVenUnidVend2S" />
+            </td>
             <td></td>
           </tr>
           <tr>
             <td>Precio de venta</td>
-            <td><input type="number" step="0.01" placeholder="Precio" name="PBpresVenPrecVent1S" /></td>
-            <td><input type="number" step="0.01" placeholder="Precio" name="PBpresVenPrecVent2S" /></td>
+            <td><input type="number" step="0.01" placeholder=" {{PBpresVenPrecVent1S}} " name="PBpresVenPrecVent1S" />
+            </td>
+            <td><input type="number" step="0.01" placeholder=" {{PBpresVenPrecVent2S}} " name="PBpresVenPrecVent2S" />
+            </td>
             <td></td>
           </tr>
           <tr>
@@ -87,14 +100,18 @@
           </tr>
           <tr>
             <td>Unidades a vender</td>
-            <td><input type="number" step="0.01" placeholder="Unidades" name="PCpresVenUnidVend1S" /></td>
-            <td><input type="number" step="0.01" placeholder="Unidades" name="PCpresVenUnidVend2S" /></td>
+            <td><input type="number" step="0.01" placeholder=" {{PCpresVenUnidVend1S}} " name="PCpresVenUnidVend1S" />
+            </td>
+            <td><input type="number" step="0.01" placeholder=" {{PCpresVenUnidVend2S}} " name="PCpresVenUnidVend2S" />
+            </td>
             <td></td>
           </tr>
           <tr>
             <td>Precio de venta</td>
-            <td><input type="number" step="0.01" placeholder="Precio" name="PCpresVenPrecVent1S" /></td>
-            <td><input type="number" step="0.01" placeholder="Precio" name="PCpresVenPrecVent2S" /></td>
+            <td><input type="number" step="0.01" placeholder=" {{PCpresVenPrecVent1S}} " name="PCpresVenPrecVent1S" />
+            </td>
+            <td><input type="number" step="0.01" placeholder=" {{PCpresVenPrecVent2S}} " name="PCpresVenPrecVent2S" />
+            </td>
             <td></td>
           </tr>
           <tr>
@@ -112,7 +129,7 @@
         </tbody>
       </table>
       <div>
-        <table class="u-full-width">
+        <table>
           <thead>
             <tr>
               <h4>2. Determinación del saldo de Clientes y Flujo de Entradas</h4>
@@ -127,7 +144,7 @@
             <tr>
               <td>Saldo de clientes 31-Dic-2020</td>
               <td></td>
-              <td><input type="number" placeholder="Cantidad" name="DSCFESaldo2020" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{DSCFESaldo2020}} " name="DSCFESaldo2020" /></td>
             </tr>
             <tr>
               <td>Ventas 2021</td>
@@ -146,12 +163,14 @@
             <tr>
               <td>Por Cobranza del 2020</td>
               <td> {{ DSCFESaldo2020 }} </td>
-              <td><input type="number" placeholder="Porcentaje" name="DSCFEPorcentaje2020" value="0" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{DSCFEPorcentaje2020}} " name="DSCFEPorcentaje2020"
+                  value="0" /></td>
             </tr>
             <tr>
               <td>Por Cobranza del 2021</td>
               <td> {{ DSCFECobranza2021 }} </td>
-              <td><input type="number" placeholder="Porcentaje" name="DSCFEPorcentaje2021" value="0" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{DSCFEPorcentaje2021}} " name="DSCFEPorcentaje2021"
+                  value="0" /></td>
             </tr>
             <tr>
               <td>Total de Entradas 2021: </td>
@@ -167,7 +186,7 @@
         </table>
       </div>
       <div>
-        <table class="u-full-width">
+        <table>
           <thead>
             <tr>
               <h4>3. Presupuesto de Producción</h4>
@@ -194,8 +213,8 @@
             </tr>
             <tr>
               <td>(+)Inventario Final</td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="PAPPInvFinal1S" /></td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="PAPPInvFinal2S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PAPPInvFinal1S}} " name="PAPPInvFinal1S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PAPPInvFinal2S}} " name="PAPPInvFinal2S" /></td>
               </td>
               <td> {{ PAPPInvFinalTotal2021 }} </td>
             </tr>
@@ -207,7 +226,7 @@
             </tr>
             <tr>
               <td>(-) Inventario Inicial</td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="PAPPInvInicial1S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PAPPInvInicial1S}} " name="PAPPInvInicial1S" /></td>
               <td> {{PAPPInvInicial2S}} </td>
               <td> {{PAPPInvTotal2021}} </td>
             </tr>
@@ -231,8 +250,8 @@
             </tr>
             <tr>
               <td>(+)Inventario Final</td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="PBPPInvFinal1S" /></td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="PBPPInvFinal2S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PBPPInvFinal1S}} " name="PBPPInvFinal1S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PBPPInvFinal2S}} " name="PBPPInvFinal2S" /></td>
               <td> {{ PBPPInvFinalTotal2021 }} </td>
             </tr>
             <tr>
@@ -243,7 +262,7 @@
             </tr>
             <tr>
               <td>(-) Inventario Inicial</td>
-              <td><input type="number" placeholder="Cantidad" name="PBPPInvInicial1S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PBPPInvInicial1S}} " name="PBPPInvInicial1S" /></td>
               <td> {{PBPPInvInicial2S}} </td>
               <td> {{PBPPInvTotal2021}}</td>
             </tr>
@@ -267,8 +286,8 @@
             </tr>
             <tr>
               <td>(+)Inventario Final</td>
-              <td><input type="number" placeholder="Cantidad" name="PCPPInvFinal1S" /></td>
-              <td><input type="number" placeholder="Cantidad" name="PCPPInvFinal2S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PCPPInvFinal1S}} " name="PCPPInvFinal1S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PCPPInvFinal2S}} " name="PCPPInvFinal2S" /></td>
               <td> {{ PCPPInvFinalTotal2021 }} </td>
             </tr>
             <tr>
@@ -279,7 +298,7 @@
             </tr>
             <tr>
               <td>(-) Inventario Inicial</td>
-              <td><input type="number" placeholder="Cantidad" name="PCPPInvInicial1S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PCPPInvInicial1S}} " name="PCPPInvInicial1S" /></td>
               <td> {{PCPPInvInicial2S}} </td>
               <td> {{PCPPInvTotal2021}}</td>
             </tr>
@@ -293,7 +312,7 @@
         </table>
       </div>
       <div>
-        <table class="u-full-width">
+        <table>
           <thead>
             <tr>
               <h4>4. Presupuesto de Requerimiento de Materiales</h4>
@@ -326,7 +345,7 @@
             </tr>
             <tr>
               <td>Requerimiento de material</td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="PAPRMReqMatA" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PAPRMReqMatA}} " name="PAPRMReqMatA" /></td>
               <td> {{ PAPRMReqMatA }} </td>
               <td> {{ PAPRMReqMatA }} </td>
             </tr>
@@ -344,7 +363,7 @@
             </tr>
             <tr>
               <td>Requerimiento de material</td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="PAPRMReqMatB" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PAPRMReqMatB}} " name="PAPRMReqMatB" /></td>
               <td> {{ PAPRMReqMatB }} </td>
               <td> {{ PAPRMReqMatB }} </td>
             </tr>
@@ -362,7 +381,7 @@
             </tr>
             <tr>
               <td>Requerimiento de material</td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="PAPRMReqMatC" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PAPRMReqMatC}} " name="PAPRMReqMatC" /></td>
               <td> {{ PAPRMReqMatC }} </td>
               <td> {{ PAPRMReqMatC }} </td>
             </tr>
@@ -392,7 +411,7 @@
             </tr>
             <tr>
               <td>Requerimiento de material</td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="PBPRMReqMatA" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PBPRMReqMatA}} " name="PBPRMReqMatA" /></td>
               <td> {{ PBPRMReqMatA }} </td>
               <td> {{ PBPRMReqMatA }} </td>
             </tr>
@@ -410,7 +429,7 @@
             </tr>
             <tr>
               <td>Requerimiento de material</td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="PBPRMReqMatB" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PBPRMReqMatB}} " name="PBPRMReqMatB" /></td>
               <td> {{ PBPRMReqMatB }} </td>
               <td> {{ PBPRMReqMatB }} </td>
             </tr>
@@ -428,7 +447,7 @@
             </tr>
             <tr>
               <td>Requerimiento de material</td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="PBPRMReqMatC" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PBPRMReqMatC}} " name="PBPRMReqMatC" /></td>
               <td> {{ PBPRMReqMatC }} </td>
               <td> {{ PBPRMReqMatC }} </td>
             </tr>
@@ -458,7 +477,7 @@
             </tr>
             <tr>
               <td>Requerimiento de material</td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="PCPRMReqMatA" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PCPRMReqMatA}} " name="PCPRMReqMatA" /></td>
               <td> {{ PCPRMReqMatA }} </td>
               <td> {{ PCPRMReqMatA }} </td>
             </tr>
@@ -476,7 +495,7 @@
             </tr>
             <tr>
               <td>Requerimiento de material</td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="PCPRMReqMatB" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PCPRMReqMatB}} " name="PCPRMReqMatB" /></td>
               <td> {{ PCPRMReqMatB }} </td>
               <td> {{ PCPRMReqMatB }} </td>
             </tr>
@@ -494,7 +513,7 @@
             </tr>
             <tr>
               <td>Requerimiento de material</td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="PCPRMReqMatC" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PCPRMReqMatC}} " name="PCPRMReqMatC" /></td>
               <td> {{ PCPRMReqMatC }} </td>
               <td> {{ PCPRMReqMatC }} </td>
             </tr>
@@ -532,7 +551,7 @@
         </table>
       </div>
       <div>
-        <table class="u-full-width">
+        <table>
           <thead>
             <h4>5. Presupuesto de Compra de Materiales</h4>
           </thead>
@@ -557,8 +576,8 @@
             </tr>
             <tr>
               <td>(+) Inventario Final</td>
-              <td><input type="number" placeholder="Unidades" name="MAPCMInvFinal1S" /></td>
-              <td><input type="number" placeholder="Unidades" name="MAPCMInvFinal2S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{MAPCMInvFinal1S}} " name="MAPCMInvFinal1S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{MAPCMInvFinal2S}} " name="MAPCMInvFinal2S" /></td>
               <td> {{ MAPCMInvFinal2S }} </td>
             </tr>
             <tr>
@@ -569,7 +588,7 @@
             </tr>
             <tr>
               <td>(-) Inventario Inicial</td>
-              <td><input type="number" placeholder="Unidades" name="MAPCMInvFinal1S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{MAPCMInvFinal1S}} " name="MAPCMInvFinal1S" /></td>
               <td> {{ MAPCMInvFinal1S }} </td>
               <td> {{ MAPCMInvFinal1S }} </td>
             </tr>
@@ -581,8 +600,10 @@
             </tr>
             <tr>
               <td>Precio de Compra</td>
-              <td><input type="number" step="0.01" placeholder="Precio" name="MAPCMPrecioComp1S" /></td>
-              <td><input type="number" step="0.01" placeholder="Precio" name="MAPCMPrecioComp2S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{MAPCMPrecioComp1S}} " name="MAPCMPrecioComp1S" />
+              </td>
+              <td><input type="number" step="0.01" placeholder=" {{MAPCMPrecioComp2S}} " name="MAPCMPrecioComp2S" />
+              </td>
               <td></td>
             </tr>
             <tr>
@@ -605,8 +626,8 @@
             </tr>
             <tr>
               <td>(+) Inventario Final</td>
-              <td><input type="number" placeholder="Unidades" name="MBPCMInvFinal1S" /></td>
-              <td><input type="number" placeholder="Unidades" name="MBPCMInvFinal2S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{MBPCMInvFinal1S}} " name="MBPCMInvFinal1S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{MBPCMInvFinal2S}} " name="MBPCMInvFinal2S" /></td>
               <td> {{ MBPCMInvFinal2S }} </td>
             </tr>
             <tr>
@@ -617,7 +638,7 @@
             </tr>
             <tr>
               <td>(-) Inventario Inicial</td>
-              <td><input type="number" placeholder="Unidades" name="MBPCMInvFinal1S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{MBPCMInvFinal1S}} " name="MBPCMInvFinal1S" /></td>
               <td> {{ MBPCMInvFinal1S }} </td>
               <td> {{ MBPCMInvFinal1S }} </td>
             </tr>
@@ -629,8 +650,10 @@
             </tr>
             <tr>
               <td>Precio de Compra</td>
-              <td><input type="number" step="0.01" placeholder="Precio" name="MBPCMPrecioComp1S" /></td>
-              <td><input type="number" step="0.01" placeholder="Precio" name="MBPCMPrecioComp2S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{MBPCMPrecioComp1S}} " name="MBPCMPrecioComp1S" />
+              </td>
+              <td><input type="number" step="0.01" placeholder=" {{MBPCMPrecioComp2S}} " name="MBPCMPrecioComp2S" />
+              </td>
               <td></td>
             </tr>
             <tr>
@@ -653,8 +676,8 @@
             </tr>
             <tr>
               <td>(+) Inventario Final</td>
-              <td><input type="number" placeholder="Unidades" name="MCPCMInvFinal1S" /></td>
-              <td><input type="number" placeholder="Unidades" name="MCPCMInvFinal2S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{MCPCMInvFinal1S}} " name="MCPCMInvFinal1S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{MCPCMInvFinal2S}} " name="MCPCMInvFinal2S" /></td>
               <td> {{ MCPCMInvFinal2S }} </td>
             </tr>
             <tr>
@@ -665,7 +688,7 @@
             </tr>
             <tr>
               <td>(-) Inventario Inicial</td>
-              <td><input type="number" placeholder="Unidades" name="MCPCMInvFinal1S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{MCPCMInvFinal1S}} " name="MCPCMInvFinal1S" /></td>
               <td> {{ MCPCMInvFinal1S }} </td>
               <td> {{ MCPCMInvFinal1S }} </td>
             </tr>
@@ -677,8 +700,10 @@
             </tr>
             <tr>
               <td>Precio de Compra</td>
-              <td><input type="number" placeholder="Precio" name="MCPCMPrecioComp1S" /></td>
-              <td><input type="number" placeholder="Precio" name="MCPCMPrecioComp2S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{MCPCMPrecioComp1S}} " name="MCPCMPrecioComp1S" />
+              </td>
+              <td><input type="number" step="0.01" placeholder=" {{MCPCMPrecioComp2S}} " name="MCPCMPrecioComp2S" />
+              </td>
               <td></td>
             </tr>
             <tr>
@@ -697,7 +722,7 @@
         </table>
       </div>
       <div>
-        <table class="u-full-width">
+        <table>
           <thead>
             <tr>
               <h4>6. Determinación del saldo de Proveedores y Flujo de Salidas</h4>
@@ -712,7 +737,8 @@
             <tr>
               <td>Saldo de Proveedores 31-Dic-2020</td>
               <td></td>
-              <td><input type="number" step="0.01" placeholder="Saldo" name="DSPFSSaldoProvTotal2020" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{DSPFSSaldoProvTotal2020}} "
+                  name="DSPFSSaldoProvTotal2020" /></td>
             </tr>
             <tr>
               <td>Compras 2021</td>
@@ -730,12 +756,14 @@
             <tr>
               <td>Por Proveedores del 2020</td>
               <td> {{ DSPFSPorProv2020 }} </td>
-              <td><input type="number" step="0.01" placeholder="Porcentaje" name="DSPFSPorceProv2020" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{DSPFSPorceProv2020}} " name="DSPFSPorceProv2020" />
+              </td>
             </tr>
             <tr>
               <td>Por Proveedores del 2021</td>
               <td> {{ DSPFSPorProv2021 }} </td>
-              <td><input type="number" step="0.01" placeholder="Porcentaje" name="DSPFSPorceProv2021" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{DSPFSPorceProv2021}} " name="DSPFSPorceProv2021" />
+              </td>
             </tr>
             <tr>
               <td>Total de Salidas 2021</td>
@@ -751,7 +779,7 @@
         </table>
       </div>
       <div>
-        <table class="u-full-width">
+        <table>
           <thead>
             <tr>
               <h4>7. Presupuesto de Mano de Obra Directa</h4>
@@ -775,7 +803,7 @@
             </tr>
             <tr>
               <td>Horas requeridas por unidad</td>
-              <td><input type="number" step="0.01" placeholder="Horas" name="PAPMODHorasReq" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PAPMODHorasReq}} " name="PAPMODHorasReq" /></td>
               <td> {{ PAPMODHorasReq }} </td>
               <td> {{ PAPMODHorasReq }} </td>
             </tr>
@@ -787,8 +815,10 @@
             </tr>
             <tr>
               <td>Cuota por hora</td>
-              <td><input type="number" step="0.01" placeholder="Cuota" name="PAPMODCuotaHora1S" /></td>
-              <td><input type="number" step="0.01" placeholder="Cuota" name="PAPMODCuotaHora2S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PAPMODCuotaHora1S}} " name="PAPMODCuotaHora1S" />
+              </td>
+              <td><input type="number" step="0.01" placeholder=" {{PAPMODCuotaHora2S}} " name="PAPMODCuotaHora2S" />
+              </td>
               <td></td>
             </tr>
             <tr>
@@ -808,7 +838,7 @@
             </tr>
             <tr>
               <td>Horas requeridas por unidad</td>
-              <td><input type="number" step="0.01" placeholder="Horas" name="PBPMODHorasReq" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PBPMODHorasReq}} " name="PBPMODHorasReq" /></td>
               <td> {{ PBPMODHorasReq }} </td>
               <td> {{ PBPMODHorasReq }} </td>
             </tr>
@@ -820,8 +850,10 @@
             </tr>
             <tr>
               <td>Cuota por hora</td>
-              <td><input type="number" step="0.01" placeholder="Cuota" name="PBPMODCuotaHora1S" /></td>
-              <td><input type="number" step="0.01" placeholder="Cuota" name="PBPMODCuotaHora2S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PBPMODCuotaHora1S}} " name="PBPMODCuotaHora1S" />
+              </td>
+              <td><input type="number" step="0.01" placeholder=" {{PBPMODCuotaHora2S}} " name="PBPMODCuotaHora2S" />
+              </td>
               <td></td>
             </tr>
             <tr>
@@ -841,7 +873,7 @@
             </tr>
             <tr>
               <td>Horas requeridas por unidad</td>
-              <td><input type="number" step="0.01" placeholder="Horas" name="PCPMODHorasReq" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PCPMODHorasReq}} " name="PCPMODHorasReq" /></td>
               <td> {{ PCPMODHorasReq }} </td>
               <td> {{ PCPMODHorasReq }} </td>
             </tr>
@@ -853,8 +885,10 @@
             </tr>
             <tr>
               <td>Cuota por hora</td>
-              <td><input type="number" step="0.01" placeholder="Cuota" name="PCPMODCuotaHora1S" /></td>
-              <td><input type="number" step="0.01" placeholder="Cuota" name="PCPMODCuotaHora2S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PCPMODCuotaHora1S}} " name="PCPMODCuotaHora1S" />
+              </td>
+              <td><input type="number" step="0.01" placeholder=" {{PCPMODCuotaHora2S}} " name="PCPMODCuotaHora2S" />
+              </td>
               <td></td>
             </tr>
             <tr>
@@ -879,7 +913,7 @@
         </table>
       </div>
       <div>
-        <table class="u-full-width">
+        <table>
           <thead>
             <tr>
               <h4>8. Presupuesto de Gastos Indirectos de Fabricación</h4>
@@ -896,31 +930,35 @@
               <td>Depreciación</td>
               <td> {{ PGIFDepreciacion1S }} </td>
               <td> {{ PGIFDepreciacion2S }} </td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="PGIFDepreciacionAnual" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PGIFDepreciacionAnual}} "
+                  name="PGIFDepreciacionAnual" /></td>
             </tr>
             <tr>
               <td>Seguros</td>
               <td> {{ PGIFSeguros1S }} </td>
               <td> {{ PGIFSeguros2S }} </td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="PGIFSegurosAnual" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PGIFSegurosAnual}} " name="PGIFSegurosAnual" /></td>
             </tr>
             <tr>
               <td>Mantenimiento</td>
               <td> {{ PGIFMantenimiento1S }} </td>
               <td> {{ PGIFMantenimiento2S }} </td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="PGIFMantenimientoAnual" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PGIFMantenimientoAnual}} "
+                  name="PGIFMantenimientoAnual" /></td>
             </tr>
             <tr>
               <td>Energéticos</td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="PGIFEnergeticos1S" /></td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="PGIFEnergeticos2S" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PGIFEnergeticos1S}} " name="PGIFEnergeticos1S" />
+              </td>
+              <td><input type="number" step="0.01" placeholder=" {{PGIFEnergeticos2S}} " name="PGIFEnergeticos2S" />
+              </td>
               <td> {{PGIFEnergeticosAnual}} </td>
             </tr>
             <tr>
               <td>Varios</td>
               <td> {{ PGIFVarios1S }} </td>
               <td> {{ PGIFVarios2S }} </td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="PGIFVariosAnual" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PGIFVariosAnual}} " name="PGIFVariosAnual" /></td>
             </tr>
             <tr>
               <td>Total G.I.F. por Semestre</td>
@@ -965,13 +1003,15 @@
                   <td>Depreciación</td>
                   <td> {{ PGODepreciacion1S }} </td>
                   <td> {{ PGODepreciacion2S }} </td>
-                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PGODepreciacionAnual" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PGODepreciacionAnual}} "
+                      name="PGODepreciacionAnual" /></td>
                 </tr>
                 <tr>
                   <td>Sueldos y Salarios</td>
                   <td> {{ PGOSueldos1S }} </td>
                   <td> {{ PGOSueldos2S }} </td>
-                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PGOSueldosAnual" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PGOSueldosAnual}} " name="PGOSueldosAnual" />
+                  </td>
                 </tr>
                 <tr>
                   <td>Comisiones</td>
@@ -981,15 +1021,16 @@
                 </tr>
                 <tr>
                   <td>Varios</td>
-                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PGOVarios1S" /></td>
-                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PGOVarios2S" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PGOVarios1S}} " name="PGOVarios1S" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PGOVarios2S}} " name="PGOVarios2S" /></td>
                   <td> {{ PGOVariosAnual }} </td>
                 </tr>
                 <tr>
                   <td>Intereses por préstamo</td>
                   <td> {{ PGOPrestamo1S }} </td>
                   <td> {{ PGOPrestamo2S }} </td>
-                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PGOPrestamoAnual" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PGOPrestamoAnual}} " name="PGOPrestamoAnual" />
+                  </td>
                 </tr>
                 <tr>
                   <td>Total de Gastos de Operación</td>
@@ -1019,26 +1060,31 @@
                 </tr>
                 <tr>
                   <td>Material A</td>
-                  <td><input type="number" step="0.01" placeholder="Costo" name="PAMADCUPTCosto" /></td>
-                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PAMADCUPTCantidad" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PAMADCUPTCosto}} " name="PAMADCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PAMADCUPTCantidad}} " name="PAMADCUPTCantidad" />
+                  </td>
                   <td> {{ PAMADCUPTCostoUni }} </td>
                 </tr>
                 <tr>
                   <td>Material B</td>
-                  <td><input type="number" step="0.01" placeholder="Costo" name="PAMBDCUPTCosto" /></td>
-                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PAMBDCUPTCantidad" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PAMBDCUPTCosto}} " name="PAMBDCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PAMBDCUPTCantidad}} " name="PAMBDCUPTCantidad" />
+                  </td>
                   <td> {{ PAMBDCUPTCostoUni }} </td>
                 </tr>
                 <tr>
                   <td>Material C</td>
-                  <td><input type="number" step="0.01" placeholder="Costo" name="PAMCDCUPTCosto" /></td>
-                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PAMCDCUPTCantidad" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PAMCDCUPTCosto}} " name="PAMCDCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PAMCDCUPTCantidad}} " name="PAMCDCUPTCantidad" />
+                  </td>
                   <td> {{ PAMCDCUPTCostoUni }} </td>
                 </tr>
                 <tr>
                   <td>Mano de Obra</td>
-                  <td><input type="number" step="0.01" placeholder="Costo" name="PAManoObraDCUPTCosto" /></td>
-                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PAManoObraDCUPTCantidad" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PAManoObraDCUPTCosto}} "
+                      name="PAManoObraDCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PAManoObraDCUPTCantidad}} "
+                      name="PAManoObraDCUPTCantidad" /></td>
                   <td> {{ PAManoObraDCUPTCostUni }} </td>
                 </tr>
                 <tr>
@@ -1064,26 +1110,31 @@
                 </tr>
                 <tr>
                   <td>Material A</td>
-                  <td><input type="number" step="0.01" placeholder="Costo" name="PBMADCUPTCosto" /></td>
-                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PBMADCUPTCantidad" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PBMADCUPTCosto}} " name="PBMADCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PBMADCUPTCantidad}} " name="PBMADCUPTCantidad" />
+                  </td>
                   <td> {{ PBMADCUPTCostoUni }} </td>
                 </tr>
                 <tr>
                   <td>Material B</td>
-                  <td><input type="number" step="0.01" placeholder="Costo" name="PBMBDCUPTCosto" /></td>
-                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PBMBDCUPTCantidad" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PBMBDCUPTCosto}} " name="PBMBDCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PBMBDCUPTCantidad}} " name="PBMBDCUPTCantidad" />
+                  </td>
                   <td> {{ PBMBDCUPTCostoUni }} </td>
                 </tr>
                 <tr>
                   <td>Material C</td>
-                  <td><input type="number" step="0.01" placeholder="Costo" name="PBMCDCUPTCosto" /></td>
-                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PBMCDCUPTCantidad" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PBMCDCUPTCosto}} " name="PBMCDCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PBMCDCUPTCantidad}} " name="PBMCDCUPTCantidad" />
+                  </td>
                   <td> {{ PBMCDCUPTCostoUni }} </td>
                 </tr>
                 <tr>
                   <td>Mano de Obra</td>
-                  <td><input type="number" step="0.01" placeholder="Costo" name="PBManoObraDCUPTCosto" /></td>
-                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PBManoObraDCUPTCantidad" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PBManoObraDCUPTCosto}} "
+                      name="PBManoObraDCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PBManoObraDCUPTCantidad}} "
+                      name="PBManoObraDCUPTCantidad" /></td>
                   <td> {{ PBManoObraDCUPTCostUni }} </td>
                 </tr>
                 <tr>
@@ -1109,26 +1160,31 @@
                 </tr>
                 <tr>
                   <td>Material A</td>
-                  <td><input type="number" step="0.01" placeholder="Costo" name="PCMADCUPTCosto" /></td>
-                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PCMADCUPTCantidad" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PCMADCUPTCosto}} " name="PCMADCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PCMADCUPTCantidad}} " name="PCMADCUPTCantidad" />
+                  </td>
                   <td> {{ PCMADCUPTCostoUni }} </td>
                 </tr>
                 <tr>
                   <td>Material B</td>
-                  <td><input type="number" step="0.01" placeholder="Costo" name="PCMBDCUPTCosto" /></td>
-                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PCMBDCUPTCantidad" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PCMBDCUPTCosto}} " name="PCMBDCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PCMBDCUPTCantidad}} " name="PCMBDCUPTCantidad" />
+                  </td>
                   <td> {{ PBMBDCUPTCostoUni }} </td>
                 </tr>
                 <tr>
                   <td>Material C</td>
-                  <td><input type="number" step="0.01" placeholder="Costo" name="PCMCDCUPTCosto" /></td>
-                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PCMCDCUPTCantidad" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PCMCDCUPTCosto}} " name="PCMCDCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PCMCDCUPTCantidad}} " name="PCMCDCUPTCantidad" />
+                  </td>
                   <td> {{ PCMCDCUPTCostoUni }} </td>
                 </tr>
                 <tr>
                   <td>Mano de Obra</td>
-                  <td><input type="number" step="0.01" placeholder="Costo" name="PCManoObraDCUPTCosto" /></td>
-                  <td><input type="number" step="0.01" placeholder="Cantidad" name="PCManoObraDCUPTCantidad" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PCManoObraDCUPTCosto}} "
+                      name="PCManoObraDCUPTCosto" /></td>
+                  <td><input type="number" step="0.01" placeholder=" {{PCManoObraDCUPTCantidad}} "
+                      name="PCManoObraDCUPTCantidad" /></td>
                   <td> {{ PCManoObraDCUPTCostUni }} </td>
                 </tr>
                 <tr>
@@ -1147,82 +1203,82 @@
             </table>
           </div>
           <div>
-          <table>
-            <thead>
-              <tr>
-                <h4>11. Valuación de Inventarios Finales</h4>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Inventario Final de Materiales</td>
-              </tr>
-              <tr>
-                <td>Descripción</td>
-                <td>Unidades</td>
-                <td>Costo Unitario</td>
-                <td>Costo Total</td>
-              </tr>
-              <tr>
-                <td>Material A</td>
-                <td> {{  MAPCMInvFinal2S  }} </td>
-                <td> {{  PAMADCUPTCantidad  }} </td>
-                <td> {{  MAVIFCostoTotal  }} </td>
-              </tr>
-              <tr>
-                <td>Material B</td>
-                <td> {{  MBPCMInvFinal2S  }} </td>
-                <td> {{  PAMBDCUPTCantidad  }} </td>
-                <td> {{  MBVIFCostoTotal  }} </td>
-              </tr>
-              <tr>
-                <td>Material C</td>
-                <td> {{  MCPCMInvFinal2S  }} </td>
-                <td> {{  PAMCDCUPTCantidad  }} </td>
-                <td> {{  MCVIFCostoTotal  }} </td>
-              </tr>
-              <tr>
-                <td>Inventario Final de Materiales</td>
-                <td></td>
-                <td></td>
-                <td> {{  VIFInvFinalMat  }} </td>
-              </tr>
-              <tr>
-                <td>Inventario Final de Producto Terminado
-                <td>
-              </tr>
-              <tr>
-                <td>Descripción</td>
-                <td>Unidades</td>
-                <td>Costo Unitario</td>
-                <td>Costo Total</td>
-              </tr>
-              <tr>
-                <td>Producto A</td>
-                <td> {{  PAPPInvFinal2S  }} </td>
-                <td> {{  PACostoUniDCUPTCostoUni  }} </td>
-                <td> {{  PAVIFCostoTotal  }} </td>
-              </tr>
-              <tr>
-                <td>Producto B</td>
-                <td> {{  PBPPInvFinal2S  }} </td>
-                <td> {{  PBCostoUniDCUPTCostoUni  }} </td>
-                <td> {{  PBVIFCostoTotal  }} </td>
-              </tr>
-              <tr>
-                <td>Producto C</td>
-                <td> {{  PCPPInvFinal2S  }} </td>
-                <td> {{  PCCostoUniDCUPTCostoUni  }} </td>
-                <td> {{  PCVIFCostoTotal  }} </td>
-              </tr>
-              <tr>
-                <td>Inventario Final de Producto Terminado</td>
-                <td></td>
-                <td></td>
-                <td> {{  VIFInvFinalProd }} </td>
-              </tr>
-            </tbody>
-          </table>
+            <table>
+              <thead>
+                <tr>
+                  <h4>11. Valuación de Inventarios Finales</h4>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Inventario Final de Materiales</td>
+                </tr>
+                <tr>
+                  <td>Descripción</td>
+                  <td>Unidades</td>
+                  <td>Costo Unitario</td>
+                  <td>Costo Total</td>
+                </tr>
+                <tr>
+                  <td>Material A</td>
+                  <td> {{ MAPCMInvFinal2S }} </td>
+                  <td> {{ PAMADCUPTCantidad }} </td>
+                  <td> {{ MAVIFCostoTotal }} </td>
+                </tr>
+                <tr>
+                  <td>Material B</td>
+                  <td> {{ MBPCMInvFinal2S }} </td>
+                  <td> {{ PAMBDCUPTCantidad }} </td>
+                  <td> {{ MBVIFCostoTotal }} </td>
+                </tr>
+                <tr>
+                  <td>Material C</td>
+                  <td> {{ MCPCMInvFinal2S }} </td>
+                  <td> {{ PAMCDCUPTCantidad }} </td>
+                  <td> {{ MCVIFCostoTotal }} </td>
+                </tr>
+                <tr>
+                  <td>Inventario Final de Materiales</td>
+                  <td></td>
+                  <td></td>
+                  <td> {{ VIFInvFinalMat }} </td>
+                </tr>
+                <tr>
+                  <td>Inventario Final de Producto Terminado
+                  <td>
+                </tr>
+                <tr>
+                  <td>Descripción</td>
+                  <td>Unidades</td>
+                  <td>Costo Unitario</td>
+                  <td>Costo Total</td>
+                </tr>
+                <tr>
+                  <td>Producto A</td>
+                  <td> {{ PAPPInvFinal2S }} </td>
+                  <td> {{ PACostoUniDCUPTCostoUni }} </td>
+                  <td> {{ PAVIFCostoTotal }} </td>
+                </tr>
+                <tr>
+                  <td>Producto B</td>
+                  <td> {{ PBPPInvFinal2S }} </td>
+                  <td> {{ PBCostoUniDCUPTCostoUni }} </td>
+                  <td> {{ PBVIFCostoTotal }} </td>
+                </tr>
+                <tr>
+                  <td>Producto C</td>
+                  <td> {{ PCPPInvFinal2S }} </td>
+                  <td> {{ PCCostoUniDCUPTCostoUni }} </td>
+                  <td> {{ PCVIFCostoTotal }} </td>
+                </tr>
+                <tr>
+                  <td>Inventario Final de Producto Terminado</td>
+                  <td></td>
+                  <td></td>
+                  <td> {{ VIFInvFinalProd }} </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </table>
       </div>
@@ -1239,51 +1295,52 @@
           <tbody>
             <tr>
               <td>Saldo Inicial de Materiales</td>
-              <td><input type="number" step="0.01" placeholder="Saldo" name="ECPVSaldoInicialMat" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{PCManoObraDCUPTCosto}} "
+                  name="ECPVSaldoInicialMat" /></td>
             </tr>
             <tr>
               <td>(+) Compras de Materiales</td>
-              <td> {{  TMPCMAnual  }} </td>
+              <td> {{ TMPCMAnual }} </td>
             </tr>
             <tr>
               <td>(=) Material Disponible</td>
-              <td> {{  ECPVMaterialDisp  }} </td>
+              <td> {{ ECPVMaterialDisp }} </td>
             </tr>
             <tr>
               <td>(-) Inventario Final de Materiales</td>
-              <td> {{  VIFInvFinalMat  }} </td>
+              <td> {{ VIFInvFinalMat }} </td>
             </tr>
             <tr>
               <td>(=) Materiales Utilizados</td>
-              <td> {{  ECPVMaterialesUtil  }} </td>
+              <td> {{ ECPVMaterialesUtil }} </td>
             </tr>
             <tr>
               <td>(+) Mano de Obra Directa</td>
-              <td> {{  PMODTotalMODAnual  }} </td>
+              <td> {{ PMODTotalMODAnual }} </td>
             </tr>
             <tr>
               <td>(+) Gastos de Fabricación Indirectos</td>
-              <td> {{  PGIFTotalGIFPorSemAnual  }} </td>
+              <td> {{ PGIFTotalGIFPorSemAnual }} </td>
             </tr>
             <tr>
               <td>(=) Costo de Produccón</td>
-              <td> {{  ECPVCostoProduccion  }} </td>
+              <td> {{ ECPVCostoProduccion }} </td>
             </tr>
             <tr>
               <td>(+) Inventario Inicial de Productos Terminados</td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="ECPVInvInicPT" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{ECPVInvInicPT}} " name="ECPVInvInicPT" /></td>
             </tr>
             <tr>
               <td>(=) Total de Produccón Disponible</td>
-              <td> {{  ECPVTotalProdDisp  }} </td>
+              <td> {{ ECPVTotalProdDisp }} </td>
             </tr>
             <tr>
               <td>(-) Inventario Final de Productos Terminados</td>
-              <td> {{  VIFInvFinalProd  }} </td>
+              <td> {{ VIFInvFinalProd }} </td>
             </tr>
             <tr>
               <td>(=) Costo de Ventas</td>
-              <td> {{  ECPVCostoVentas  }} </td>
+              <td> {{ ECPVCostoVentas }} </td>
             </tr>
           </tbody>
         </table>
@@ -1298,50 +1355,50 @@
           <tbody>
             <tr>
               <td>Ventas</td>
-              <td> {{  TotalVentasPorSemestre  }} </td>
+              <td> {{ TotalVentasPorSemestre }} </td>
             </tr>
             <tr>
               <td>(-) Costo de Ventas</td>
-              <td> {{  ECPVCostoVentas  }} </td>
+              <td> {{ ECPVCostoVentas }} </td>
             </tr>
             <tr>
               <td>(=) Utilidad Bruta</td>
-              <td> {{  ERUtilidadBruta  }} </td>
+              <td> {{ ERUtilidadBruta }} </td>
             </tr>
             <tr>
               <td>(-) Gastos de Operación</td>
-              <td> {{  PGOTotalAnual  }} </td>
+              <td> {{ PGOTotalAnual }} </td>
             </tr>
             <tr>
               <td>(=) Utilidad de Operacón</td>
-              <td> {{  ERUtilidadOperacion  }} </td>
+              <td> {{ ERUtilidadOperacion }} </td>
             </tr>
             <tr>
               <td>(-) ISR</td>
-              <td> {{  ERISRCalc  }} </td>
+              <td> {{ ERISRCalc }} </td>
               <td>
                 <select name="ISRPorcentaje">
-                  <option value="1.92">1.92%</option> 
-                  <option value="6.40">6.40%</option> 
+                  <option value="1.92">1.92%</option>
+                  <option value="6.40">6.40%</option>
                   <option value="10.88">10.88%</option>
-                  <option value="16.00">16.00%</option> 
-                  <option value="17.92">17.92%</option> 
+                  <option value="16.00">16.00%</option>
+                  <option value="17.92">17.92%</option>
                   <option value="21.36">21.36%</option>
-                  <option value="23.52">23.52%</option> 
-                  <option value="30.00">30.00%</option> 
+                  <option value="23.52">23.52%</option>
+                  <option value="30.00">30.00%</option>
                   <option value="32.00">32.00%</option>
-                  <option value="34.00">34.00%</option> 
-                  <option value="35.00">35.00%</option> 
+                  <option value="34.00">34.00%</option>
+                  <option value="35.00">35.00%</option>
                 </select>
               </td>
             </tr>
             <tr>
               <td>(-) PTU</td>
-              <td> {{  ERPTUCalc  }} </td>
+              <td> {{ ERPTUCalc }} </td>
             </tr>
             <tr>
               <td>(=) Utilidad Neta</td>
-              <td> {{  ERUtilidadNeta  }} </td>
+              <td> {{ ERUtilidadNeta }} </td>
             </tr>
           </tbody>
         </table>
@@ -1357,67 +1414,68 @@
             <tr>
               <td>Saldo Inicial de Efectivo</td>
               <td></td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="EFESaldoIni" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{EFESaldoIni}} " name="EFESaldoIni" /></td>
             </tr>
             <tr>
               <td>Entradas</td>
             </tr>
             <tr>
               <td>Cobranza 2021</td>
-              <td> {{  DSCFECobranza2021  }} </td>
+              <td> {{ DSCFECobranza2021 }} </td>
               <td></td>
             </tr>
             <tr>
               <td>Cobranza 2020</td>
-              <td> {{  DSCFESaldo2020  }} </td>
+              <td> {{ DSCFESaldo2020 }} </td>
               <td></td>
             </tr>
             <tr>
               <td>Total de Entradas</td>
               <td></td>
-              <td> {{  EFETotalEntradas  }} </td>
+              <td> {{ EFETotalEntradas }} </td>
             </tr>
             <tr>
               <td>Efectivo Disponible</td>
               <td></td>
-              <td> {{  EFEEfectivoDisp  }} </td>
+              <td> {{ EFEEfectivoDisp }} </td>
             </tr>
             <tr>
               <td>Salidas: </td>
             </tr>
             <tr>
               <td>Proveedores 2021</td>
-              <td> {{  DSPFSPorProv2021  }} </td>
+              <td> {{ DSPFSPorProv2021 }} </td>
               <td></td>
             </tr>
             <tr>
               <td>Proveedores 2020</td>
-              <td> {{  DSPFSPorProv2020  }} </td>
+              <td> {{ DSPFSPorProv2020 }} </td>
               <td></td>
             </tr>
             <tr>
               <td>Pago Mano de Obra Directa</td>
-              <td> {{  PMODTotalMODAnual  }} </td>
+              <td> {{ PMODTotalMODAnual }} </td>
               <td></td>
             </tr>
             <tr>
               <td>Pago Gastos Indirectos de Fabricación</td>
-              <td> {{  EFEPagoGIF  }} </td>
+              <td> {{ EFEPagoGIF }} </td>
               <td></td>
             </tr>
             <tr>
               <td>Pago de Gastos de Operacón</td>
-              <td> {{  EFEPagoGO  }} </td>
+              <td> {{ EFEPagoGO }} </td>
               <td></td>
             </tr>
             <tr>
               <td>Compra de Activo Fijo (Maquinaria)</td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="EFECompraAvtivoFij" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{EFECompraAvtivoFij}} " name="EFECompraAvtivoFij" />
+              </td>
               <td></td>
             </tr>
             <tr>
               <td>Pago ISR 2020</td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="EFEPAGOISR" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{EFEPAGOISR}} " name="EFEPAGOISR" /></td>
               <td></td>
             </tr>
             <tr>
@@ -1426,12 +1484,12 @@
             <tr>
               <td>Total de Salidas</td>
               <td></td>
-              <td> {{  EFETotalSalidas  }} </td>
+              <td> {{ EFETotalSalidas }} </td>
             </tr>
             <tr>
               <td>Flujo de Efectivo Actual</td>
               <td></td>
-              <td> {{  EFETotalFlujo  }} </td>
+              <td> {{ EFETotalFlujo }} </td>
             </tr>
           </tbody>
         </table>
@@ -1452,32 +1510,33 @@
             </tr>
             <tr>
               <td>Efectivo</td>
-              <td>{{  EFETotalFlujo  }}</td>
+              <td>{{ EFETotalFlujo }}</td>
             </tr>
             <tr>
               <td>Clientes</td>
-              <td> {{  DSCFESaldoClientes2021  }} </td>
+              <td> {{ DSCFESaldoClientes2021 }} </td>
             </tr>
             <tr>
               <td>Deudores Diversos</td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="BGDuedoresDiv" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{BGDuedoresDiv}} " name="BGDuedoresDiv" /></td>
             </tr>
             <tr>
               <td>Funcionarios y Empleados</td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="BGFuncionariosEmp" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{BGFuncionariosEmp}} " name="BGFuncionariosEmp" />
+              </td>
             </tr>
             <tr>
               <td>Inventario de Materiales</td>
-              <td> {{  VIFInvFinalMat  }} </td>
+              <td> {{ VIFInvFinalMat }} </td>
             </tr>
             <tr>
               <td>Inventario de Producto Terminado</td>
-              <td> {{  VIFInvFinalProd  }} </td>
+              <td> {{ VIFInvFinalProd }} </td>
             </tr>
             <tr>
               <td>Total de Activos Circulante</td>
               <td></td>
-              <td> {{  BGTotalActCir  }} </td>
+              <td> {{ BGTotalActCir }} </td>
             </tr>
             <tr>
               <td></td>
@@ -1487,33 +1546,41 @@
             </tr>
             <tr>
               <td>Terreno</td>
-              <td> {{  BGTerreno  }}  </td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="BGTerreno" /></td>
+              <td> {{ BGTerreno }} </td>
+              <td><input type="number" step="0.01" placeholder=" {{BGTerreno}} " name="BGTerreno" /></td>
             </tr>
             <tr>
               <td>Planta y Equipo</td>
               <td> {{BGPlantaEquipoCalc}} </td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="BGPlantaEquipo" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{BGPlantaEquipo}} " name="BGPlantaEquipo" /></td>
             </tr>
             <tr>
               <td>Depreciación Acumulada</td>
               <td> {{BGTotalDepreciacion}} </td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="BGDepreciaAcum" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{BGDepreciaAcum}} " name="BGDepreciaAcum" /></td>
             </tr>
             <tr>
               <td>Total Activos No Circulante</td>
               <td></td>
-              <td> {{  BGTotalActivosNoCir  }} </td>
+              <td> {{ BGTotalActivosNoCir }} </td>
             </tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
+            <tr>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
             <tr>
               <td>ACTIVO TOTAL</td>
               <td></td>
-              <td> {{  BGActivoTotal  }} </td>
+              <td> {{ BGActivoTotal }} </td>
             </tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
+            <tr>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
             <tr>
               <td>PASIVO</td>
             </tr>
@@ -1527,7 +1594,7 @@
             <tr>
               <td>Documentos por Pagar</td>
               <td> {{BGDocPorPagar}} </td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="BGDocPorPagar" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{BGDocPorPagar}} " name="BGDocPorPagar" /></td>
             </tr>
             <tr>
               <td>ISR por Pagar</td>
@@ -1540,22 +1607,26 @@
             <tr>
               <td>Total de Pasivo Corto Plazo</td>
               <td></td>
-              <td> {{  BGTotalPasivCP  }} </td>
+              <td> {{ BGTotalPasivCP }} </td>
             </tr>
-            <tr><td></td></tr>
+            <tr>
+              <td></td>
+            </tr>
             <tr>
               <td>Largo Plazo</td>
             </tr>
             <tr>
               <td>Préstamos Bancarios</td>
               <td> {{BGPrestamoBanc}} </td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="BGPrestamoBanc" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{BGPrestamoBanc}} " name="BGPrestamoBanc" /></td>
             </tr>
             <tr>
               <td>Total de Pasivo Largo Plazo</td>
               <td> {{BGPrestamoBanc}} </td>
             </tr>
-            <tr><td></td></tr>
+            <tr>
+              <td></td>
+            </tr>
             <tr>
               <td>PASIVO TOTAL</td>
               <td></td>
@@ -1567,12 +1638,12 @@
             <tr>
               <td>Capital Contribuido</td>
               <td>{{BGCapCont}} </td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="BGCapCont" /></td>
+              <td><input type="number" step="0.01" placeholder=" {{BGCapCont}} " name="BGCapCont" /></td>
             </tr>
             <tr>
               <td>Capital Ganado</td>
               <td>{{BGCapGan}} </td>
-              <td><input type="number" step="0.01" placeholder="Cantidad" name="BGCapGan" />
+              <td><input type="number" step="0.01" placeholder=" {{BGCapGan}} " name="BGCapGan" />
             </tr>
             <tr>
               <td>Utilidad del Ejercicio</td>
@@ -1583,8 +1654,12 @@
               <td></td>
               <td> {{BFTotalCapCon}} </td>
             </tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
+            <tr>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
             <tr>
               <td>SUMA DE PASIVO Y CAPITAL</td>
               <td></td>
@@ -1593,7 +1668,9 @@
           </tbody>
         </table>
       </div>
-      <input type="submit" class="u-full-width" value="Calcular" id="calc_btn" />
+      <div class="d-grid gap-2">
+        <input type="submit" class="btn btn-lg btn-primary" value="CALCULAR" />
+      </div>
     </form>
   </div>
 </body>

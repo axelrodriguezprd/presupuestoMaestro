@@ -1,9 +1,10 @@
 body{
-    background-color: #F1F8F9;
+    background:url(../imagenes/fondo.jpg);
+    background-color:#8aa8b3;
     background-repeat:no-repeat ;
     background-attachment: fixed;
     background-position: 50%;
-    background-size: 130cm 100cm;
+    background-size: 135cm 90cm;
 }
 
 tr:nth-child(even){
@@ -48,15 +49,19 @@ h3 {
 
 h1 {
     text-align: center;
-    background-color: #5EBEB3;
+    background-color: #565d67;
     background-position: 50%;
     font-family: 'century gothic';
-    color: white;
+    color:white;
     font-weight: bold;
     width: 700;
     padding: 50px;
     margin: -10px -300px;
     background-repeat:no-repeat ;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 
@@ -66,4 +71,8 @@ table{
     text-align: left;
     width: 100%;
     border-collapse: collapse;;
+}
+
+input:focus{
+    background-color: yellow;
 }

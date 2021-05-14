@@ -2,8 +2,8 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-if __name__ == ' __main__':
-    app.run(debug = True)
+if __name__ == '__main__':
+    app.run(debug=True)
 
 @app.route('/')
 def main():
@@ -64,54 +64,54 @@ def send():
         PAPPInvFinal2S = request.form['PAPPInvFinal2S']
         PAPPInvInicial1S = request.form['PAPPInvInicial1S']
 
-        PAPPPApresVenUnidVend1S = int(PApresVenUnidVend1S)
-        PAPPPApresVenUnidVend2S = int(PApresVenUnidVend2S)
-        PAPPUnidsAVender = int(PApresVenUnidVend1S) + int(PApresVenUnidVend2S)
+        PAPPPApresVenUnidVend1S = float(PApresVenUnidVend1S)
+        PAPPPApresVenUnidVend2S = float(PApresVenUnidVend2S)
+        PAPPUnidsAVender = float(PApresVenUnidVend1S) + float(PApresVenUnidVend2S)
         PAPPInvFinalTotal2021 = PAPPPApresVenUnidVend2S
-        PAPPTotalUnidades1S = PAPPUnidsAVender + int(PAPPInvFinal1S)
-        PAPPTotalUnidades2S = PAPPPApresVenUnidVend2S + int(PAPPInvFinal2S)
+        PAPPTotalUnidades1S = PAPPUnidsAVender + float(PAPPInvFinal1S)
+        PAPPTotalUnidades2S = PAPPPApresVenUnidVend2S + float(PAPPInvFinal2S)
         PAPPTotalUnidades2021 = PAPPUnidsAVender + PAPPInvFinalTotal2021
-        PAPPInvInicial2S = int(PAPPInvFinal1S)
-        PAPPInvTotal2021 = int(PAPPInvInicial1S)
-        PAPPUnidsAProducir1S = PAPPTotalUnidades1S - int(PAPPInvInicial1S)
-        PAPPUnidsAProducir2S = PAPPTotalUnidades2S - int(PAPPInvInicial2S)
-        PAPPUnidsAProducir2021 = PAPPTotalUnidades2021 - int(PAPPInvTotal2021)
+        PAPPInvInicial2S = float(PAPPInvFinal1S)
+        PAPPInvTotal2021 = float(PAPPInvInicial1S)
+        PAPPUnidsAProducir1S = PAPPTotalUnidades1S - float(PAPPInvInicial1S)
+        PAPPUnidsAProducir2S = PAPPTotalUnidades2S - float(PAPPInvInicial2S)
+        PAPPUnidsAProducir2021 = PAPPTotalUnidades2021 - float(PAPPInvTotal2021)
 
         #Producto B    
         PBPPInvFinal1S = request.form['PBPPInvFinal1S']
         PBPPInvFinal2S = request.form['PBPPInvFinal2S']
         PBPPInvInicial1S = request.form['PBPPInvInicial1S']
 
-        PBPPPApresVenUnidVend1S = int(PBpresVenUnidVend1S)
-        PBPPPApresVenUnidVend2S = int(PBpresVenUnidVend2S)
-        PBPPUnidsAVender = int(PBpresVenUnidVend1S) + int(PBpresVenUnidVend2S)
+        PBPPPApresVenUnidVend1S = float(PBpresVenUnidVend1S)
+        PBPPPApresVenUnidVend2S = float(PBpresVenUnidVend2S)
+        PBPPUnidsAVender = float(PBpresVenUnidVend1S) + float(PBpresVenUnidVend2S)
         PBPPInvFinalTotal2021 = PBPPPApresVenUnidVend2S
-        PBPPTotalUnidades1S = PBPPUnidsAVender + int(PBPPInvFinal1S)
-        PBPPTotalUnidades2S = PBPPPApresVenUnidVend2S + int(PBPPInvFinal2S)
+        PBPPTotalUnidades1S = PBPPUnidsAVender + float(PBPPInvFinal1S)
+        PBPPTotalUnidades2S = PBPPPApresVenUnidVend2S + float(PBPPInvFinal2S)
         PBPPTotalUnidades2021 = PBPPUnidsAVender + PBPPInvFinalTotal2021
-        PBPPInvInicial2S = int(PBPPInvFinal1S)
-        PBPPInvTotal2021 = int(PBPPInvInicial1S)
-        PBPPUnidsAProducir1S = PBPPTotalUnidades1S - int(PBPPInvInicial1S)
-        PBPPUnidsAProducir2S = PBPPTotalUnidades2S - int(PBPPInvInicial2S)
-        PBPPUnidsAProducir2021 = PBPPTotalUnidades2021 - int(PBPPInvTotal2021)
+        PBPPInvInicial2S = float(PBPPInvFinal1S)
+        PBPPInvTotal2021 = float(PBPPInvInicial1S)
+        PBPPUnidsAProducir1S = PBPPTotalUnidades1S - float(PBPPInvInicial1S)
+        PBPPUnidsAProducir2S = PBPPTotalUnidades2S - float(PBPPInvInicial2S)
+        PBPPUnidsAProducir2021 = PBPPTotalUnidades2021 - float(PBPPInvTotal2021)
 
         #Producto C
         PCPPInvFinal1S = request.form['PCPPInvFinal1S']
         PCPPInvFinal2S = request.form['PCPPInvFinal2S']
         PCPPInvInicial1S = request.form['PCPPInvInicial1S']
 
-        PCPPPApresVenUnidVend1S = int(PCpresVenUnidVend1S)
-        PCPPPApresVenUnidVend2S = int(PCpresVenUnidVend2S)
-        PCPPUnidsAVender = int(PCpresVenUnidVend1S) + int(PCpresVenUnidVend2S)
+        PCPPPApresVenUnidVend1S = float(PCpresVenUnidVend1S)
+        PCPPPApresVenUnidVend2S = float(PCpresVenUnidVend2S)
+        PCPPUnidsAVender = float(PCpresVenUnidVend1S) + float(PCpresVenUnidVend2S)
         PCPPInvFinalTotal2021 = PCPPPApresVenUnidVend2S
-        PCPPTotalUnidades1S = PCPPUnidsAVender + int(PCPPInvFinal1S)
-        PCPPTotalUnidades2S = PCPPPApresVenUnidVend2S + int(PCPPInvFinal2S)
+        PCPPTotalUnidades1S = PCPPUnidsAVender + float(PCPPInvFinal1S)
+        PCPPTotalUnidades2S = PCPPPApresVenUnidVend2S + float(PCPPInvFinal2S)
         PCPPTotalUnidades2021 = PCPPUnidsAVender + PCPPInvFinalTotal2021
-        PCPPInvInicial2S = int(PCPPInvFinal1S)
-        PCPPInvTotal2021 = int(PCPPInvInicial1S)
-        PCPPUnidsAProducir1S = PCPPTotalUnidades1S - int(PCPPInvInicial1S)
-        PCPPUnidsAProducir2S = PCPPTotalUnidades2S - int(PCPPInvInicial2S)
-        PCPPUnidsAProducir2021 = PCPPTotalUnidades2021 - int(PCPPInvTotal2021)
+        PCPPInvInicial2S = float(PCPPInvFinal1S)
+        PCPPInvTotal2021 = float(PCPPInvInicial1S)
+        PCPPUnidsAProducir1S = PCPPTotalUnidades1S - float(PCPPInvInicial1S)
+        PCPPUnidsAProducir2S = PCPPTotalUnidades2S - float(PCPPInvInicial2S)
+        PCPPUnidsAProducir2021 = PCPPTotalUnidades2021 - float(PCPPInvTotal2021)
 
         # 4. Presupuesto de Requerimiento de Materiales
 
@@ -119,67 +119,67 @@ def send():
         #Material A
         PAPRMReqMatA = request.form['PAPRMReqMatA']
 
-        PAPRMTotalMatA1S = PAPPUnidsAProducir1S * int(PAPRMReqMatA)
-        PAPRMTotalMatA2S = PAPPUnidsAProducir2S * int(PAPRMReqMatA)
-        PAPRMTotalMatATotal = PAPPUnidsAProducir2021 * int(PAPRMReqMatA)
+        PAPRMTotalMatA1S = PAPPUnidsAProducir1S * float(PAPRMReqMatA)
+        PAPRMTotalMatA2S = PAPPUnidsAProducir2S * float(PAPRMReqMatA)
+        PAPRMTotalMatATotal = PAPPUnidsAProducir2021 * float(PAPRMReqMatA)
         
         #Material B
         PAPRMReqMatB = request.form['PAPRMReqMatB']
 
-        PAPRMTotalMatB1S = PAPPUnidsAProducir1S * int(PAPRMReqMatB)
-        PAPRMTotalMatB2S = PAPPUnidsAProducir2S * int(PAPRMReqMatB)
-        PAPRMTotalMatBTotal = PAPPUnidsAProducir2021 * int(PAPRMReqMatB)
+        PAPRMTotalMatB1S = PAPPUnidsAProducir1S * float(PAPRMReqMatB)
+        PAPRMTotalMatB2S = PAPPUnidsAProducir2S * float(PAPRMReqMatB)
+        PAPRMTotalMatBTotal = PAPPUnidsAProducir2021 * float(PAPRMReqMatB)
 
         #Material B
         PAPRMReqMatC = request.form['PAPRMReqMatC']
 
-        PAPRMTotalMatC1S = PAPPUnidsAProducir1S * int(PAPRMReqMatC)
-        PAPRMTotalMatC2S = PAPPUnidsAProducir2S * int(PAPRMReqMatC)
-        PAPRMTotalMatCTotal = PAPPUnidsAProducir2021 * int(PAPRMReqMatC)
+        PAPRMTotalMatC1S = PAPPUnidsAProducir1S * float(PAPRMReqMatC)
+        PAPRMTotalMatC2S = PAPPUnidsAProducir2S * float(PAPRMReqMatC)
+        PAPRMTotalMatCTotal = PAPPUnidsAProducir2021 * float(PAPRMReqMatC)
 
         #Producto B
         #Material A
         PBPRMReqMatA = request.form['PBPRMReqMatA']
 
-        PBPRMTotalMatA1S = PBPPUnidsAProducir1S * int(PBPRMReqMatA)
-        PBPRMTotalMatA2S = PBPPUnidsAProducir2S * int(PBPRMReqMatA)
-        PBPRMTotalMatATotal = PBPPUnidsAProducir2021 * int(PBPRMReqMatA)
+        PBPRMTotalMatA1S = PBPPUnidsAProducir1S * float(PBPRMReqMatA)
+        PBPRMTotalMatA2S = PBPPUnidsAProducir2S * float(PBPRMReqMatA)
+        PBPRMTotalMatATotal = PBPPUnidsAProducir2021 * float(PBPRMReqMatA)
         
         #Material B
         PBPRMReqMatB = request.form['PBPRMReqMatB']
 
-        PBPRMTotalMatB1S = PBPPUnidsAProducir1S * int(PBPRMReqMatB)
-        PBPRMTotalMatB2S = PBPPUnidsAProducir2S * int(PBPRMReqMatB)
-        PBPRMTotalMatBTotal = PBPPUnidsAProducir2021 * int(PBPRMReqMatB)
+        PBPRMTotalMatB1S = PBPPUnidsAProducir1S * float(PBPRMReqMatB)
+        PBPRMTotalMatB2S = PBPPUnidsAProducir2S * float(PBPRMReqMatB)
+        PBPRMTotalMatBTotal = PBPPUnidsAProducir2021 * float(PBPRMReqMatB)
 
         #Material B
         PBPRMReqMatC = request.form['PBPRMReqMatC']
 
-        PBPRMTotalMatC1S = PBPPUnidsAProducir1S * int(PBPRMReqMatC)
-        PBPRMTotalMatC2S = PBPPUnidsAProducir2S * int(PBPRMReqMatC)
-        PBPRMTotalMatCTotal = PBPPUnidsAProducir2021 * int(PBPRMReqMatC)
+        PBPRMTotalMatC1S = PBPPUnidsAProducir1S * float(PBPRMReqMatC)
+        PBPRMTotalMatC2S = PBPPUnidsAProducir2S * float(PBPRMReqMatC)
+        PBPRMTotalMatCTotal = PBPPUnidsAProducir2021 * float(PBPRMReqMatC)
 
         #Producto C
         #Material A
         PCPRMReqMatA = request.form['PCPRMReqMatA']
 
-        PCPRMTotalMatA1S = PCPPUnidsAProducir1S * int(PCPRMReqMatA)
-        PCPRMTotalMatA2S = PCPPUnidsAProducir2S * int(PCPRMReqMatA)
-        PCPRMTotalMatATotal = PCPPUnidsAProducir2021 * int(PCPRMReqMatA)
+        PCPRMTotalMatA1S = PCPPUnidsAProducir1S * float(PCPRMReqMatA)
+        PCPRMTotalMatA2S = PCPPUnidsAProducir2S * float(PCPRMReqMatA)
+        PCPRMTotalMatATotal = PCPPUnidsAProducir2021 * float(PCPRMReqMatA)
         
         #Material B
         PCPRMReqMatB = request.form['PCPRMReqMatB']
 
-        PCPRMTotalMatB1S = PCPPUnidsAProducir1S * int(PCPRMReqMatB)
-        PCPRMTotalMatB2S = PCPPUnidsAProducir2S * int(PCPRMReqMatB)
-        PCPRMTotalMatBTotal = PCPPUnidsAProducir2021 * int(PCPRMReqMatB)
+        PCPRMTotalMatB1S = PCPPUnidsAProducir1S * float(PCPRMReqMatB)
+        PCPRMTotalMatB2S = PCPPUnidsAProducir2S * float(PCPRMReqMatB)
+        PCPRMTotalMatBTotal = PCPPUnidsAProducir2021 * float(PCPRMReqMatB)
 
         #Material B
         PCPRMReqMatC = request.form['PCPRMReqMatC']
 
-        PCPRMTotalMatC1S = PCPPUnidsAProducir1S * int(PCPRMReqMatC)
-        PCPRMTotalMatC2S = PCPPUnidsAProducir2S * int(PCPRMReqMatC)
-        PCPRMTotalMatCTotal = PCPPUnidsAProducir2021 * int(PCPRMReqMatC)
+        PCPRMTotalMatC1S = PCPPUnidsAProducir1S * float(PCPRMReqMatC)
+        PCPRMTotalMatC2S = PCPPUnidsAProducir2S * float(PCPRMReqMatC)
+        PCPRMTotalMatCTotal = PCPPUnidsAProducir2021 * float(PCPRMReqMatC)
 
         #Total De Requerimientos 
         #Material A
@@ -213,14 +213,14 @@ def send():
         MAPCMPrecioComp1S = request.form['MAPCMPrecioComp1S']
         MAPCMPrecioComp2S = request.form['MAPCMPrecioComp2S']
 
-        MAPCMTotalMat1S = TotalMatAReqPP1S + int(MAPCMInvFinal1S)
-        MAPCMTotalMat2S = TotalMatAReqPP2S + int(MAPCMInvFinal2S)
-        MAPCMTotalMatAnual = TotalPARPMMatA + int(MAPCMInvFinal2S)
-        MAPCMMatComp1S = MAPCMTotalMat1S - int(MAPCMInvFinal1S)
-        MAPCMMatComp2S = MAPCMTotalMat2S - int(MAPCMInvFinal1S)
-        MAPCMMatCompAnual = MAPCMTotalMatAnual - int(MAPCMInvFinal1S)
-        MAPCMTotalEnPesos1S = MAPCMMatComp1S * int(MAPCMPrecioComp1S)
-        MAPCMTotalEnPesos2S = MAPCMMatComp2S * int(MAPCMPrecioComp2S)
+        MAPCMTotalMat1S = TotalMatAReqPP1S + float(MAPCMInvFinal1S)
+        MAPCMTotalMat2S = TotalMatAReqPP2S + float(MAPCMInvFinal2S)
+        MAPCMTotalMatAnual = TotalPARPMMatA + float(MAPCMInvFinal2S)
+        MAPCMMatComp1S = MAPCMTotalMat1S - float(MAPCMInvFinal1S)
+        MAPCMMatComp2S = MAPCMTotalMat2S - float(MAPCMInvFinal1S)
+        MAPCMMatCompAnual = MAPCMTotalMatAnual - float(MAPCMInvFinal1S)
+        MAPCMTotalEnPesos1S = MAPCMMatComp1S * float(MAPCMPrecioComp1S)
+        MAPCMTotalEnPesos2S = MAPCMMatComp2S * float(MAPCMPrecioComp2S)
         MAPCMTotalEnPesosAnual = MAPCMTotalEnPesos1S + MAPCMTotalEnPesos2S
 
         #Material B
@@ -229,14 +229,14 @@ def send():
         MBPCMPrecioComp1S = request.form['MBPCMPrecioComp1S']
         MBPCMPrecioComp2S = request.form['MBPCMPrecioComp2S']
 
-        MBPCMTotalMat1S = TotalMatBReqPP1S + int(MBPCMInvFinal1S)
-        MBPCMTotalMat2S = TotalMatBReqPP2S + int(MBPCMInvFinal2S)
-        MBPCMTotalMatAnual = TotalPARPMMatB + int(MBPCMInvFinal2S)
-        MBPCMMatComp1S = MBPCMTotalMat1S - int(MBPCMInvFinal1S)
-        MBPCMMatComp2S = MBPCMTotalMat2S - int(MBPCMInvFinal1S)
-        MBPCMMatCompAnual = MBPCMTotalMatAnual - int(MBPCMInvFinal1S)
-        MBPCMTotalEnPesos1S = MBPCMMatComp1S * int(MBPCMPrecioComp1S)
-        MBPCMTotalEnPesos2S = MBPCMMatComp2S * int(MBPCMPrecioComp2S)
+        MBPCMTotalMat1S = TotalMatBReqPP1S + float(MBPCMInvFinal1S)
+        MBPCMTotalMat2S = TotalMatBReqPP2S + float(MBPCMInvFinal2S)
+        MBPCMTotalMatAnual = TotalPARPMMatB + float(MBPCMInvFinal2S)
+        MBPCMMatComp1S = MBPCMTotalMat1S - float(MBPCMInvFinal1S)
+        MBPCMMatComp2S = MBPCMTotalMat2S - float(MBPCMInvFinal1S)
+        MBPCMMatCompAnual = MBPCMTotalMatAnual - float(MBPCMInvFinal1S)
+        MBPCMTotalEnPesos1S = MBPCMMatComp1S * float(MBPCMPrecioComp1S)
+        MBPCMTotalEnPesos2S = MBPCMMatComp2S * float(MBPCMPrecioComp2S)
         MBPCMTotalEnPesosAnual = MBPCMTotalEnPesos1S + MBPCMTotalEnPesos2S
 
         #Material C
@@ -245,14 +245,14 @@ def send():
         MCPCMPrecioComp1S = request.form['MCPCMPrecioComp1S']
         MCPCMPrecioComp2S = request.form['MCPCMPrecioComp2S']
 
-        MCPCMTotalMat1S = TotalMatCReqPP1S + int(MCPCMInvFinal1S)
-        MCPCMTotalMat2S = TotalMatCReqPP2S + int(MCPCMInvFinal2S)
-        MCPCMTotalMatAnual = TotalPARPMMatC + int(MCPCMInvFinal2S)
-        MCPCMMatComp1S = MCPCMTotalMat1S - int(MCPCMInvFinal1S)
-        MCPCMMatComp2S = MCPCMTotalMat2S - int(MCPCMInvFinal1S)
-        MCPCMMatCompAnual = MCPCMTotalMatAnual - int(MCPCMInvFinal1S)
-        MCPCMTotalEnPesos1S = MCPCMMatComp1S * int(MCPCMPrecioComp1S)
-        MCPCMTotalEnPesos2S = MBPCMMatComp2S * int(MCPCMPrecioComp2S)
+        MCPCMTotalMat1S = TotalMatCReqPP1S + float(MCPCMInvFinal1S)
+        MCPCMTotalMat2S = TotalMatCReqPP2S + float(MCPCMInvFinal2S)
+        MCPCMTotalMatAnual = TotalPARPMMatC + float(MCPCMInvFinal2S)
+        MCPCMMatComp1S = MCPCMTotalMat1S - float(MCPCMInvFinal1S)
+        MCPCMMatComp2S = MCPCMTotalMat2S - float(MCPCMInvFinal1S)
+        MCPCMMatCompAnual = MCPCMTotalMatAnual - float(MCPCMInvFinal1S)
+        MCPCMTotalEnPesos1S = MCPCMMatComp1S * float(MCPCMPrecioComp1S)
+        MCPCMTotalEnPesos2S = MBPCMMatComp2S * float(MCPCMPrecioComp2S)
         MCPCMTotalEnPesosAnual = MCPCMTotalEnPesos1S + MCPCMTotalEnPesos2S
 
         #Total de compras de materiales
@@ -280,9 +280,9 @@ def send():
         PAPMODCuotaHora2S = request.form['PAPMODCuotaHora2S']
 
 
-        PAPMODTotalHorasRequer1S = PAPPUnidsAProducir1S * int(PAPMODHorasReq)
-        PAPMODTotalHorasRequer2S = PAPPUnidsAProducir2S * int(PAPMODHorasReq)
-        PAPMODTotalHorasRequerAnual = PAPPUnidsAProducir2021 * int(PAPMODHorasReq)
+        PAPMODTotalHorasRequer1S = PAPPUnidsAProducir1S * float(PAPMODHorasReq)
+        PAPMODTotalHorasRequer2S = PAPPUnidsAProducir2S * float(PAPMODHorasReq)
+        PAPMODTotalHorasRequerAnual = PAPPUnidsAProducir2021 * float(PAPMODHorasReq)
         PAMODImporte1S = float(PAPMODTotalHorasRequer1S) * float(PAPMODCuotaHora1S)
         PAMODImporte2S = float(PAPMODTotalHorasRequer2S) * float(PAPMODCuotaHora2S)
         PAMODImporteAnual = PAMODImporte1S + PAMODImporte2S
@@ -293,9 +293,9 @@ def send():
         PBPMODCuotaHora2S = request.form['PBPMODCuotaHora2S']
 
 
-        PBPMODTotalHorasRequer1S = PBPPUnidsAProducir1S * int(PBPMODHorasReq)
-        PBPMODTotalHorasRequer2S = PBPPUnidsAProducir2S * int(PBPMODHorasReq)
-        PBPMODTotalHorasRequerAnual = PBPPUnidsAProducir2021 * int(PBPMODHorasReq)
+        PBPMODTotalHorasRequer1S = PBPPUnidsAProducir1S * float(PBPMODHorasReq)
+        PBPMODTotalHorasRequer2S = PBPPUnidsAProducir2S * float(PBPMODHorasReq)
+        PBPMODTotalHorasRequerAnual = PBPPUnidsAProducir2021 * float(PBPMODHorasReq)
         PBMODImporte1S = float(PBPMODTotalHorasRequer1S) * float(PBPMODCuotaHora1S)
         PBMODImporte2S = float(PBPMODTotalHorasRequer2S) * float(PBPMODCuotaHora2S)
         PBMODImporteAnual = PBMODImporte1S + PBMODImporte2S
@@ -305,9 +305,9 @@ def send():
         PCPMODCuotaHora1S = request.form['PCPMODCuotaHora1S']
         PCPMODCuotaHora2S = request.form['PCPMODCuotaHora2S']
 
-        PCPMODTotalHorasRequer1S = PCPPUnidsAProducir1S * int(PCPMODHorasReq)
-        PCPMODTotalHorasRequer2S = PCPPUnidsAProducir2S * int(PCPMODHorasReq)
-        PCPMODTotalHorasRequerAnual = PCPPUnidsAProducir2021 * int(PCPMODHorasReq)
+        PCPMODTotalHorasRequer1S = PCPPUnidsAProducir1S * float(PCPMODHorasReq)
+        PCPMODTotalHorasRequer2S = PCPPUnidsAProducir2S * float(PCPMODHorasReq)
+        PCPMODTotalHorasRequerAnual = PCPPUnidsAProducir2021 * float(PCPMODHorasReq)
         PCMODImporte1S = float(PCPMODTotalHorasRequer1S) * float(PCPMODCuotaHora1S)
         PCMODImporte2S = float(PCPMODTotalHorasRequer2S) * float(PCPMODCuotaHora2S)
         PCMODImporteAnual = PCMODImporte1S + PCMODImporte2S
@@ -760,13 +760,88 @@ def send():
             BGTotalDepreciacion = BGTotalDepreciacion,
             BGTotalActivosNoCir = BGTotalActivosNoCir,
             BGActivoTotal = BGActivoTotal,
-            BGDocPorPagar = BGDocPorPagar,
+            BGDocPorPagar = float(BGDocPorPagar),
             BGTotalPasivCP = BGTotalPasivCP,
-            BGPrestamoBanc = BGPrestamoBanc,
-            BGCapCont = BGCapCont,
-            BGCapGan= BGCapGan,
+            BGPrestamoBanc = float(BGPrestamoBanc),
+            BGCapCont = float(BGCapCont),
+            BGCapGan= float(BGCapGan),
             BFTotalCapCon = BFTotalCapCon,
             BGPasivoTotal = BGPasivoTotal,
-            BGSumaPyC = BGSumaPyC)
-
-
+            BGSumaPyC = BGSumaPyC,
+            PApresVenUnidVend1S = PApresVenUnidVend1S,
+            PApresVenUnidVend2S = PApresVenUnidVend2S,
+            PApresVenPrecVent1S = PApresVenPrecVent1S,
+            PApresVenPrecVent2S = PApresVenPrecVent2S,
+            PBpresVenUnidVend1S = PBpresVenUnidVend1S,
+            PBpresVenUnidVend2S = PBpresVenUnidVend2S,
+            PBpresVenPrecVent1S = PBpresVenPrecVent1S,
+            PBpresVenPrecVent2S = PBpresVenPrecVent2S,
+            PCpresVenUnidVend1S = PCpresVenUnidVend1S,
+            PCpresVenUnidVend2S = PCpresVenUnidVend2S,
+            PCpresVenPrecVent1S = PCpresVenPrecVent1S,
+            PCpresVenPrecVent2S = PCpresVenPrecVent2S,
+            DSCFEPorcentaje2020 = DSCFEPorcentaje2020,
+            DSCFEPorcentaje2021 = DSCFEPorcentaje2021,
+            PAPPInvFinal1S = PAPPInvFinal1S,
+            PAPPInvInicial1S = PAPPInvInicial1S,
+            PBPPInvFinal1S = PBPPInvFinal1S,
+            PBPPInvInicial1S = PBPPInvInicial1S,
+            PCPPInvInicial1S = PCPPInvInicial1S,
+            PAPRMReqMatB = PAPRMReqMatB,
+            PAPRMReqMatC = PAPRMReqMatC,
+            PCPRMReqMatB = PCPRMReqMatB,
+            PCPRMReqMatC = PCPRMReqMatC,
+            MAPCMPrecioComp1S = MAPCMPrecioComp1S,
+            MAPCMPrecioComp2S = MAPCMPrecioComp2S,
+            MBPCMPrecioComp1S = MBPCMPrecioComp1S,
+            MBPCMPrecioComp2S = MBPCMPrecioComp2S,
+            MCPCMPrecioComp1S = MCPCMPrecioComp1S,
+            MCPCMPrecioComp2S = MCPCMPrecioComp2S,
+            DSPFSSaldoProvTotal2020 = DSPFSSaldoProvTotal2020,
+            DSPFSPorceProv2020 = DSPFSPorceProv2020,
+            DSPFSPorceProv2021 = DSPFSPorceProv2021,
+            PAPMODCuotaHora1S = PAPMODCuotaHora1S,
+            PAPMODCuotaHora2S = PAPMODCuotaHora2S,
+            PBPMODCuotaHora1S = PBPMODCuotaHora1S,
+            PBPMODCuotaHora2S = PBPMODCuotaHora2S,
+            PCPMODCuotaHora1S = PCPMODCuotaHora1S,
+            PCPMODCuotaHora2S = PCPMODCuotaHora2S,
+            PGIFDepreciacionAnual = PGIFDepreciacionAnual,
+            PGIFSegurosAnual = PGIFSegurosAnual,
+            PGIFMantenimientoAnual = PGIFMantenimientoAnual,
+            PGIFEnergeticos1S = PGIFEnergeticos1S,
+            PGIFEnergeticos2S = PGIFEnergeticos2S,
+            PGIFVariosAnual = PGIFVariosAnual,
+            PGODepreciacionAnual = PGODepreciacionAnual,
+            PGOSueldosAnual = PGOSueldosAnual,
+            PGOVarios1S = PGOVarios1S,
+            PGOVarios2S = PGOVarios2S,
+            PGOPrestamoAnual = PGOPrestamoAnual,
+            PAMADCUPTCosto = PAMADCUPTCosto,
+            PAMBDCUPTCosto = PAMBDCUPTCosto,
+            PAMCDCUPTCosto = PAMCDCUPTCosto,
+            PAManoObraDCUPTCosto = PAManoObraDCUPTCosto,
+            PBMADCUPTCosto = PBMADCUPTCosto,
+            PBMADCUPTCantidad = PBMADCUPTCantidad,
+            PBMBDCUPTCosto = PBMBDCUPTCosto,
+            PBMBDCUPTCantidad = PBMBDCUPTCantidad,
+            PBMCDCUPTCosto = PBMCDCUPTCosto,
+            PBMCDCUPTCantidad = PBMCDCUPTCantidad,
+            PBManoObraDCUPTCosto = PBManoObraDCUPTCosto,
+            PCMADCUPTCosto = PCMADCUPTCosto,
+            PCMADCUPTCantidad = PCMADCUPTCantidad,
+            PCMBDCUPTCosto = PCMBDCUPTCosto,
+            PCMBDCUPTCantidad = PCMBDCUPTCantidad,
+            PCMCDCUPTCosto = PCMCDCUPTCosto,
+            PCMCDCUPTCantidad = PCMCDCUPTCantidad,
+            PCManoObraDCUPTCosto = PCManoObraDCUPTCosto,
+            ECPVSaldoInicialMat = ECPVSaldoInicialMat,
+            ECPVInvInicPT = ECPVInvInicPT,
+            EFECompraAvtivoFij = EFECompraAvtivoFij,
+            EFEPAGOISR = EFEPAGOISR,
+            BGDuedoresDiv = BGDuedoresDiv,
+            BGFuncionariosEmp = BGFuncionariosEmp,
+            BGPlantaEquipo = BGPlantaEquipo,
+            BGDepreciaAcum = BGDepreciaAcum,
+            EFESaldoIni = EFESaldoIni,
+            PCPPInvFinal1S = PCPPInvFinal1S)

@@ -41,9 +41,9 @@ def send():
         PCIV2S = float(PCpresVenUnidVend2S) * float(PCpresVenPrecVent2S)
         TotalAnualPC = PCIV1S + PCIV2S
 
-        TotalVentasPorSemestre1S = PAIV1S + PBIV1S + PBIV1S
-        TotalVentasPorSemestre2S = PAIV2S + PBIV2S + PBIV2S
-        TotalVentasPorSemestre = TotalAnualPA + TotalAnualPB + TotalAnualPC
+        TotalVentasPorSemestre1S = PAIV1S + PBIV1S + PBIV1S #############
+        TotalVentasPorSemestre2S = PAIV2S + PBIV2S + PBIV2S #############
+        TotalVentasPorSemestre = TotalAnualPA + TotalAnualPB + TotalAnualPC ##############
 
         # 2 Determinacion del saldo de Clientes y Flujo de Entradas
 
@@ -305,6 +305,7 @@ def send():
         PCPMODCuotaHora1S = request.form['PCPMODCuotaHora1S']
         PCPMODCuotaHora2S = request.form['PCPMODCuotaHora2S']
 
+
         PCPMODTotalHorasRequer1S = PCPPUnidsAProducir1S * float(PCPMODHorasReq)
         PCPMODTotalHorasRequer2S = PCPPUnidsAProducir2S * float(PCPMODHorasReq)
         PCPMODTotalHorasRequerAnual = PCPPUnidsAProducir2021 * float(PCPMODHorasReq)
@@ -320,6 +321,7 @@ def send():
         PMODTotalMOD1S = PAMODImporte1S + PBMODImporte1S + PCMODImporte1S
         PMODTotalMOD2S = PAMODImporte2S + PBMODImporte2S + PCMODImporte2S
         PMODTotalMODAnual = PAMODImporteAnual + PBMODImporteAnual + PCMODImporteAnual
+
 
         # 8. Presupuesto de Gastos Indirectos de Fabricación
 
@@ -445,6 +447,7 @@ def send():
 
         PCCostoUniDCUPTCostoUni = PCMADCUPTCostoUni + PCMBDCUPTCostoUni + PCMCDCUPTCostoUni + PCManoObraDCUPTCostUni + PCGastoIndDCUPTCostoUni
 
+
         #11. Valuación de Inventarios Finales
 
         MAVIFCostoTotal = float(MAPCMInvFinal2S) * float(PAMADCUPTCantidad)
@@ -460,6 +463,7 @@ def send():
 
         #Presupuesto Financiero
         #Estado de Costo de Producciony ventas
+
         ECPVSaldoInicialMat = request.form['ECPVSaldoInicialMat']
         ECPVInvInicPT = request.form['ECPVInvInicPT']
         
@@ -525,8 +529,6 @@ def send():
             TotalAnualPB=TotalAnualPB, 
             PCIV1S=PCIV1S,
             PCIV2S=PCIV2S, TotalAnualPC=TotalAnualPC,
-            TotalVentasPorSemestre1S = TotalVentasPorSemestre1S,
-            TotalVentasPorSemestre2S = TotalVentasPorSemestre2S,
             TotalVentasPorSemestre=TotalVentasPorSemestre,
             DSCFESaldo2020=DSCFESaldo2020,
             DSCFETotal2021=DSCFETotal2021,
@@ -677,13 +679,19 @@ def send():
             PMODTotalMOD1S = PMODTotalMOD1S,
             PMODTotalMOD2S = PMODTotalMOD2S,
             PMODTotalMODAnual = PMODTotalMODAnual,
+            PGIFDepreciacionAnual = PGIFDepreciacionAnual,
             PGIFDepreciacion1S = PGIFDepreciacion1S,
             PGIFDepreciacion2S = PGIFDepreciacion2S,
+            PGIFSegurosAnual = PGIFSegurosAnual,
             PGIFSeguros1S = PGIFSeguros1S,
             PGIFSeguros2S = PGIFSeguros2S,
+            PGIFMantenimientoAnual = PGIFMantenimientoAnual,
             PGIFMantenimiento1S = PGIFMantenimiento1S,
             PGIFMantenimiento2S = PGIFMantenimiento2S,
+            PGIFEnergeticos1S = PGIFEnergeticos1S,
+            PGIFEnergeticos2S = PGIFEnergeticos2S,
             PGIFEnergeticosAnual = PGIFEnergeticosAnual,
+            PGIFVariosAnual = PGIFVariosAnual,
             PGIFVarios1S = PGIFVarios1S,
             PGIFVarios2S = PGIFVarios2S,
             PGIFTotalGIFPorSem1S = PGIFTotalGIFPorSem1S,
@@ -703,41 +711,52 @@ def send():
             PGOTotal1S = PGOTotal1S,
             PGOTotal2S = PGOTotal2S,
             PGOTotalAnual = PGOTotalAnual,
+            PAMADCUPTCantidad = PAMADCUPTCantidad,
             PAMADCUPTCostoUni = PAMADCUPTCostoUni,
+            PAMBDCUPTCantidad = PAMBDCUPTCantidad,
             PAMBDCUPTCostoUni = PAMBDCUPTCostoUni,
+            PAMCDCUPTCantidad = PAMCDCUPTCantidad,
             PAMCDCUPTCostoUni = PAMCDCUPTCostoUni,
-            PAManoObraDCUPTCostUni = PAManoObraDCUPTCostUni,
-            PAGastoIndDCUPTCostoUni = PAGastoIndDCUPTCostoUni,
+            PAManoObraDCUPTCosto = PAManoObraDCUPTCosto,
             PAManoObraDCUPTCantidad = PAManoObraDCUPTCantidad,
             PACostoUniDCUPTCostoUni = PACostoUniDCUPTCostoUni,
+            PAGastoIndDCUPTCostoUni = PAGastoIndDCUPTCostoUni,
+            PBMADCUPTCosto = PBMADCUPTCosto,
+            PBMADCUPTCantidad = PBMADCUPTCantidad,
             PBMADCUPTCostoUni = PBMADCUPTCostoUni,
+            PBMBDCUPTCosto = PBMBDCUPTCosto,
+            PBMBDCUPTCantidad = PBMBDCUPTCantidad,
             PBMBDCUPTCostoUni = PBMBDCUPTCostoUni,
+            PBMCDCUPTCosto = PBMCDCUPTCosto,
+            PBMCDCUPTCantidad = PBMCDCUPTCantidad,
             PBMCDCUPTCostoUni = PBMCDCUPTCostoUni,
+            PBManoObraDCUPTCosto = PBManoObraDCUPTCosto,
+            PBManoObraDCUPTCantidad = PBManoObraDCUPTCantidad,
             PBManoObraDCUPTCostUni = PBManoObraDCUPTCostUni,
             PBGastoIndDCUPTCostoUni = PBGastoIndDCUPTCostoUni,
-            PBManoObraDCUPTCantidad = PBManoObraDCUPTCantidad,
             PBCostoUniDCUPTCostoUni = PBCostoUniDCUPTCostoUni,
+            PCMADCUPTCosto = PCMADCUPTCosto,
+            PCMADCUPTCantidad = PCMADCUPTCantidad,
             PCMADCUPTCostoUni = PCMADCUPTCostoUni,
+            PCMBDCUPTCosto = PCMBDCUPTCosto,
+            PCMBDCUPTCantidad = PCMBDCUPTCantidad,
             PCMBDCUPTCostoUni = PCMBDCUPTCostoUni,
+            PCMCDCUPTCosto = PCMCDCUPTCosto,
+            PCMCDCUPTCantidad = PCMCDCUPTCantidad,
             PCMCDCUPTCostoUni = PCMCDCUPTCostoUni,
+            PCManoObraDCUPTCosto = PCManoObraDCUPTCosto,
+            PCManoObraDCUPTCantidad = PCManoObraDCUPTCantidad,
             PCManoObraDCUPTCostUni = PCManoObraDCUPTCostUni,
             PCGastoIndDCUPTCostoUni = PCGastoIndDCUPTCostoUni,
-            PCManoObraDCUPTCantidad = PCManoObraDCUPTCantidad,
             PCCostoUniDCUPTCostoUni = PCCostoUniDCUPTCostoUni,
-            PAMADCUPTCantidad = PAMADCUPTCantidad,
             MAVIFCostoTotal = MAVIFCostoTotal,
-            PAMBDCUPTCantidad = PAMBDCUPTCantidad,
             MBVIFCostoTotal = MBVIFCostoTotal,
-            PAMCDCUPTCantidad = PAMCDCUPTCantidad,
-            MCVIFCostoTotal = MCVIFCostoTotal,
             VIFInvFinalMat = VIFInvFinalMat,
-            PAPPInvFinal2S = PAPPInvFinal2S,
             PAVIFCostoTotal = PAVIFCostoTotal,
             PBVIFCostoTotal = PBVIFCostoTotal,
-            PBPPInvFinal2S = PBPPInvFinal2S,
-            PCPPInvFinal2S = PCPPInvFinal2S,
-            PCVIFCostoTotal = PCVIFCostoTotal,
             VIFInvFinalProd = VIFInvFinalProd,
+            ECPVSaldoInicialMat = ECPVSaldoInicialMat,
+            ECPVInvInicPT = ECPVInvInicPT,
             ECPVMaterialDisp = ECPVMaterialDisp,
             ECPVMaterialesUtil = ECPVMaterialesUtil,
             ECPVCostoProduccion = ECPVCostoProduccion,
@@ -748,26 +767,33 @@ def send():
             ERISRCalc = ERISRCalc,
             ERPTUCalc = ERPTUCalc,
             ERUtilidadNeta = ERUtilidadNeta,
+            EFESaldoIni = EFESaldoIni,
+            EFECompraAvtivoFij = EFECompraAvtivoFij,
+            EFEPAGOISR = EFEPAGOISR,
             EFETotalEntradas = EFETotalEntradas,
             EFEEfectivoDisp = EFEEfectivoDisp,
             EFEPagoGIF = EFEPagoGIF,
             EFEPagoGO = EFEPagoGO,
             EFETotalSalidas = EFETotalSalidas,
             EFETotalFlujo = EFETotalFlujo,
-            BGTotalActCir = BGTotalActCir,
-            BGPlantaEquipoCalc = BGPlantaEquipoCalc,
+            BGDuedoresDiv = BGDuedoresDiv,
+            BGFuncionariosEmp = BGFuncionariosEmp,
             BGTerreno = BGTerreno,
-            BGTotalDepreciacion = BGTotalDepreciacion,
-            BGTotalActivosNoCir = BGTotalActivosNoCir,
-            BGActivoTotal = BGActivoTotal,
+            BGPlantaEquipo = BGPlantaEquipo,
+            BGDepreciaAcum = BGDepreciaAcum,
             BGDocPorPagar = float(BGDocPorPagar),
-            BGTotalPasivCP = BGTotalPasivCP,
             BGPrestamoBanc = float(BGPrestamoBanc),
             BGCapCont = float(BGCapCont),
             BGCapGan= float(BGCapGan),
+            BGTotalActCir = BGTotalActCir,
+            BGPlantaEquipoCalc = BGPlantaEquipoCalc,
+            BGTotalDepreciacion = BGTotalDepreciacion,
+            BGTotalActivosNoCir = BGTotalActivosNoCir,
+            BGActivoTotal = BGActivoTotal,
+            BGTotalPasivCP = BGTotalPasivCP,
             BFTotalCapCon = BFTotalCapCon,
             BGPasivoTotal = BGPasivoTotal,
-            BGSumaPyC = BGSumaPyC,
+            BGSumaPyC = BGSumaPyC,###
             PApresVenUnidVend1S = PApresVenUnidVend1S,
             PApresVenUnidVend2S = PApresVenUnidVend2S,
             PApresVenPrecVent1S = PApresVenPrecVent1S,
@@ -806,12 +832,6 @@ def send():
             PBPMODCuotaHora2S = PBPMODCuotaHora2S,
             PCPMODCuotaHora1S = PCPMODCuotaHora1S,
             PCPMODCuotaHora2S = PCPMODCuotaHora2S,
-            PGIFDepreciacionAnual = PGIFDepreciacionAnual,
-            PGIFSegurosAnual = PGIFSegurosAnual,
-            PGIFMantenimientoAnual = PGIFMantenimientoAnual,
-            PGIFEnergeticos1S = PGIFEnergeticos1S,
-            PGIFEnergeticos2S = PGIFEnergeticos2S,
-            PGIFVariosAnual = PGIFVariosAnual,
             PGODepreciacionAnual = PGODepreciacionAnual,
             PGOSueldosAnual = PGOSueldosAnual,
             PGOVarios1S = PGOVarios1S,
@@ -820,28 +840,4 @@ def send():
             PAMADCUPTCosto = PAMADCUPTCosto,
             PAMBDCUPTCosto = PAMBDCUPTCosto,
             PAMCDCUPTCosto = PAMCDCUPTCosto,
-            PAManoObraDCUPTCosto = PAManoObraDCUPTCosto,
-            PBMADCUPTCosto = PBMADCUPTCosto,
-            PBMADCUPTCantidad = PBMADCUPTCantidad,
-            PBMBDCUPTCosto = PBMBDCUPTCosto,
-            PBMBDCUPTCantidad = PBMBDCUPTCantidad,
-            PBMCDCUPTCosto = PBMCDCUPTCosto,
-            PBMCDCUPTCantidad = PBMCDCUPTCantidad,
-            PBManoObraDCUPTCosto = PBManoObraDCUPTCosto,
-            PCMADCUPTCosto = PCMADCUPTCosto,
-            PCMADCUPTCantidad = PCMADCUPTCantidad,
-            PCMBDCUPTCosto = PCMBDCUPTCosto,
-            PCMBDCUPTCantidad = PCMBDCUPTCantidad,
-            PCMCDCUPTCosto = PCMCDCUPTCosto,
-            PCMCDCUPTCantidad = PCMCDCUPTCantidad,
-            PCManoObraDCUPTCosto = PCManoObraDCUPTCosto,
-            ECPVSaldoInicialMat = ECPVSaldoInicialMat,
-            ECPVInvInicPT = ECPVInvInicPT,
-            EFECompraAvtivoFij = EFECompraAvtivoFij,
-            EFEPAGOISR = EFEPAGOISR,
-            BGDuedoresDiv = BGDuedoresDiv,
-            BGFuncionariosEmp = BGFuncionariosEmp,
-            BGPlantaEquipo = BGPlantaEquipo,
-            BGDepreciaAcum = BGDepreciaAcum,
-            EFESaldoIni = EFESaldoIni,
             PCPPInvFinal1S = PCPPInvFinal1S)
